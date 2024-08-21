@@ -32,14 +32,14 @@ class Container
             return new $className;
         }
 
-        $parmas = $constructor->getParameters();
-        if (count($parmas) === 0) {
+        $params = $constructor->getParameters();
+        if (count($params) === 0) {
             return new $className;
         }
 
         $dependencies = [];
 
-        foreach ($parmas as $param) {
+        foreach ($params as $param) {
             $name = $param->getName();
             $type = $param->getType();
 
