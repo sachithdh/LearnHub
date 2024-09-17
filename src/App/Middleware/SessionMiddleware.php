@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Middleware;
 
+use App\Config\AppConstants;
 use App\Exceptions\SessionException;
 use Framework\Contracts\MiddlewareInterface;
 
@@ -19,6 +20,13 @@ class SessionMiddleware implements MiddlewareInterface
             throw new SessionException("Headers already sent. Consider enabling output buffering. 
             Data outputted from $filename - Line: $line");
         }
+
+        session_set_cookie_params([
+            'secure' => AppConstants::APP_ENV === 'production',
+            'httponly' => true,
+            'samesite' => 'lax'
+        ]);
+
         session_start();
         $next();
 
