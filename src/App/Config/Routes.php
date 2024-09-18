@@ -20,4 +20,6 @@ function registerRoutes(App $app)
     $app->get('/login', [AuthController::class, 'loginView'], [GuestOnlyMiddleware::class]);
     $app->post('/login', [AuthController::class, 'login']);
     $app->get('/logout', [AuthController::class, 'logout']);
+    // This is how paths with router params are added
+    $app->get('/auth/{param1}/something/{param2}', [AuthController::class, 'testParamRoute']);
 }
