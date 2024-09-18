@@ -23,10 +23,11 @@ To configure these details:
 2. Define the following constants with your database connection details:
 
    ```php
-   define('DB_HOST', 'localhost');   // Database host (e.g., 'localhost' or '127.0.0.1')
-   define('DB_USER', 'root');        // Database username (e.g., 'root')
-   define('DB_PASS', 'password');    // Database password (e.g., 'your_password')
-   define('DB_NAME', 'my_database'); // Database name (e.g., 'my_database')
+   public const DB_HOST = 'localhost';
+   public const DB_PORT = 3306;
+   public const DB_NAME = 'learnhub';
+   public const DB_USER = 'root';
+   public const DB_PASS = '';
    ```
 
 ### 3. Run the Database Creation Command
