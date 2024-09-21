@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | LearnHub</title>
+    <title><?php echo $title ?> | LearnHub</title>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="/assets/styles/profile-styles.css">
     <link rel="stylesheet" href="/assets/styles/main.css">
     <link rel="stylesheet" href="/assets/styles/header.css">
+
+    <link rel="stylesheet" href="/assets/main.css">
     <!-- Link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Archivo:wght@700&display=swap" rel="stylesheet">
 
