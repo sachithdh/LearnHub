@@ -21,16 +21,17 @@
     <div class="header">
         <div class="left-section">
             <div class="hamburger-menu-container">
-                <img class="hamburger-menu" src="/assets/icons/hamburger-menu.svg" height="30px" />
-
-                <div class="tooltip">Menu</div>
+                <!-- <img class="hamburger-menu" src="/assets/icons/hamburger-menu.svg" height="30px" /> -->
+                <svg class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
             </div>
-            <a href="#">
+            <a href="/">
 
                 <img class="site-logo" src="/assets/icons/lernhub-logo.png" />
             </a>
 
-            <ul>
+            <ul class="desktop-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -64,16 +65,28 @@
 
             </div>
             <div class="user-picture-container">
-                <a href="/profile">
-
-                    <img class="current-user-picture" src="/assets/icons/my-channel.jpeg">
-                </a>
+                <img class="current-user-picture" src="/assets/icons/my-channel.jpeg" alt="User Profile">
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="/logout">Logout</a>
+                </div>
                 <div class="tooltip">Profile</div>
-
             </div>
-
-
-
+            <!-- Side Menu for smaller screens -->
         </div>
-
     </div>
+    <div class="side-menu">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </div>
+
+    <script>
+        // JavaScript to toggle the side menu
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+            document.querySelector('.side-menu').classList.toggle('active');
+        });
+    </script>
