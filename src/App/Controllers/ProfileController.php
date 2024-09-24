@@ -13,6 +13,8 @@ class ProfileController
 
     public function profile()
     {
-        echo $this->view->render('profile.php');
+        echo $this->view->render('profile.php', [
+            "title" => "Profile"
+        ]);
     }
 }
