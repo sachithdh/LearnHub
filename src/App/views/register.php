@@ -17,7 +17,7 @@
             <li><a href="#">Contact Us</a></li>
             <li><a href="#">Help</a></li>
         </ul>
-        <button class="login-button" onclick="window.location.href='../Login/login.html'">Log in</button>
+        <a class="login-button" href="/login">Log in</a>
 
     </nav>
 
