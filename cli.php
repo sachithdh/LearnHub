@@ -1,6 +1,7 @@
 <?php
 
 include __DIR__ . '/src/Framework/Database.php';
+include __DIR__ . '/src/App/Config/AppConstants.php';
 
 use App\Config\AppConstants;
 use Framework\Database;

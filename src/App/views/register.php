@@ -1,128 +1,112 @@
-<?php include $this->resolve("partials/_header.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
 
-<section
-    class="max-w-2xl mx-auto mt-12 p-4 bg-white shadow-md border border-gray-200 rounded">
-    <form method="POST" class="grid grid-cols-1 gap-6">
-        <?php include $this->resolve('partials/_csrf.php') ?>
-        <!-- Email -->
-        <label class="block">
-            <span class="text-gray-700">Email address</span>
-            <input
-                name="email"
-                type="email"
-                value="<?php echo e($oldFormData['email'] ?? '') ?>"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="john@example.com" />
-            <?php if (array_key_exists('email', $errors)) : ?>
-                <div class="bg-gray-100 mt-2 p-2 text-red-500">
-                    <?php echo e($errors['email'][0]); ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup | LearnHub</title>
+    <link rel="stylesheet" href="/assets/styles/signup-style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="download.png" alt="LearnHub Logo" class="logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+        <a class="login-button" href="/login">Log in</a>
+
+    </nav>
+
+    <div class="page">
+        <div class="container">
+            <h1 class="header-text">Welcome to Learn<span style="color: #ffc400;">Hub</span></h1>
+            <p class="subtitle">Start your learning journey with LearnHub today!</p>
+
+            <form id="signup-form" method="POST" action="/register">
+                <?php include $this->resolve('partials/_csrf.php') ?>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <input type="text" name="first_name" id="fname" placeholder="First Name" required>
+                    </div>
                 </div>
-            <?php endif; ?>
-        </label>
-        <!-- Age -->
-        <label class="block">
-            <span class="text-gray-700">Age</span>
-            <input
-                name="age"
-                type="number"
-                value="<?php echo e($oldFormData['age'] ?? '') ?>"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="" />
-            <?php if (array_key_exists('age', $errors)) : ?>
-                <div class="bg-gray-100 mt-2 p-2 text-red-500">
-                    <?php echo e($errors['age'][0]); ?>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        <input type="text" name="last_name" id="lname" placeholder="Last Name" required>
+                    </div>
                 </div>
-            <?php endif; ?>
-        </label>
-        <!-- Country -->
-        <label class="block">
-            <span class="text-gray-700">Country</span>
-            <select
-                name="country"
-                class="block w-full mt-1 rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                <option value="USA">USA</option>
-                <option value="Canada" <?php echo array_key_exists('country', $oldFormData) && $oldFormData['country'] === 'Canada' ? 'selected' : '' ?>>
-                    Canada
-                </option>
-                <option value="Mexico" <?php echo array_key_exists('country', $oldFormData) && $oldFormData['country'] === 'Mexico' ? 'selected' : '' ?>>
-                    Mexico
-                </option>
-                <option value=" Invalid">Invalid Country</option>
-            </select>
-            <?php if (array_key_exists('country', $errors)) : ?>
-                <div class="bg-gray-100 mt-2 p-2 text-red-500">
-                    <?php echo e($errors['country'][0]); ?>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <input type="email" name="email" id="email" placeholder="Email Address" required>
+                    </div>
                 </div>
-            <?php endif; ?>
-        </label>
-        <!-- Social Media URL -->
-        <label class="block">
-            <span class="text-gray-700">Social Media URL</span>
-            <input
-                name="socialMediaUrl"
-                type="text"
-                value="<?php echo e($oldFormData['socialMediaUrl'] ?? '') ?>"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="" />
-            <?php if (array_key_exists('socialMediaUrl', $errors)) : ?>
-                <div class="bg-gray-100 mt-2 p-2 text-red-500">
-                    <?php echo e($errors['socialMediaUrl'][0]); ?>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75-1.5.75a3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0 3.354 3.354 0 0 0-3 0 3.354 3.354 0 0 1-3 0L3 16.5m15-3.379a48.474 48.474 0 0 0-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 0 1 3 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 0 1 6 13.12M12.265 3.11a.375.375 0 1 1-.53 0L12 2.845l.265.265Zm-3 0a.375.375 0 1 1-.53 0L9 2.845l.265.265Zm6 0a.375.375 0 1 1-.53 0L15 2.845l.265.265Z" />
+                        </svg>
+
+                        <input type="date" name="date_of_birth" id="dob" placeholder="Date of Birth" required>
+                    </div>
                 </div>
-            <?php endif; ?>
-        </label>
-        <!-- Password -->
-        <label class="block">
-            <span class="text-gray-700">Password</span>
-            <input
-                name="password"
-                type="password"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="" />
-            <?php if (array_key_exists('password', $errors)) : ?>
-                <div class="bg-gray-100 mt-2 p-2 text-red-500">
-                    <?php echo e($errors['password'][0]); ?>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                    </div>
                 </div>
-            <?php endif; ?>
-        </label>
-        <!-- Confirm Password -->
-        <label class="block">
-            <span class="text-gray-700">Confirm Password</span>
-            <input
-                name="confirmPassword"
-                type="password"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                placeholder="" />
-            <?php if (array_key_exists('confirmPassword', $errors)) : ?>
-                <div class="bg-gray-100 mt-2 p-2 text-red-500">
-                    <?php echo e($errors['confirmPassword'][0]); ?>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                        <input type="password" name="confirmPassword" id="confirm-password" placeholder="Confirm Password" required>
+                    </div>
                 </div>
-            <?php endif; ?>
-        </label>
-        <!-- Terms of Service -->
-        <div class="block">
-            <div class="mt-2">
-                <div>
-                    <label class="inline-flex items-center">
-                        <input
-                            name="tos"
-                            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-offset-0 focus:ring-indigo-200 focus:ring-opacity-50"
-                            type="checkbox" />
-                        <span class="ml-2">I accept the terms of service.</span>
-                        <?php if (array_key_exists('tos', $errors)) : ?>
-                            <div class="bg-gray-100 mt-2 p-2 text-red-500">
-                                <?php echo e($errors['tos'][0]); ?>
-                            </div>
-                        <?php endif; ?>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="show-password">
+                    <label for="show-password">
+                        <span class="checkbox">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                            </svg>
+                        </span>
+                        Show Password
                     </label>
                 </div>
-            </div>
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
         </div>
-        <button
-            type="submit"
-            class="block w-full py-2 bg-indigo-600 text-white rounded">
-            Submit
-        </button>
-    </form>
-</section>
+    </div>
 
-<?php include $this->resolve("partials/_footer.php"); ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm-password');
+            const showPasswordCheckbox = document.getElementById('show-password');
+
+            showPasswordCheckbox.addEventListener('change', function() {
+                const type = this.checked ? 'text' : 'password';
+                password.type = type;
+                confirmPassword.type = type;
+            });
+
+        });
+    </script>
+</body>
+
+</html>

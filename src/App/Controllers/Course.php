@@ -6,15 +6,15 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class HomeController
+class Course
 {
 
     public function __construct(private TemplateEngine $view) {}
 
-    public function home()
+    public function course()
     {
-        echo $this->view->render('index.php', [
-            "title" => "Home"
+        echo $this->view->render('course/SearchCourse.php', [
+            "title" => "Search Course"
         ]);
     }
 }
