@@ -30,14 +30,15 @@ class UserService
         $password = password_hash($formData['password'], PASSWORD_BCRYPT, ["const" => 12]);
 
         $this->db->query(
-            "INSERT INTO users(email, password, age, country, social_media_url) 
-            VALUES (:email, :password, :age, :country, :socialMediaUrl)",
+            "INSERT INTO users(first_name, last_name, email, date_of_birth, password, user_role) 
+            VALUES (:first_name, :last_name, :email, :date_of_birth, :password, :user_role)",
             [
+                "first_name" => $formData['first_name'],
+                "last_name" => $formData['last_name'],
+                "date_of_birth" => $formData['date_of_birth'],
                 "email" => $formData['email'],
+                "user_role" => 'student',
                 "password" => $password,
-                "age" => $formData['age'],
-                "country" => $formData['country'],
-                "socialMediaUrl" => $formData['socialMediaUrl'],
             ]
         );
         session_regenerate_id();
@@ -59,7 +60,7 @@ class UserService
         }
 
         session_regenerate_id();
-        $_SESSION['user'] = $user['id'];
+        $_SESSION['user'] = $user['user_id'];
     }
 
     public function logout()

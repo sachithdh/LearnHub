@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/assets/styles/profile-styles.css">
     <link rel="stylesheet" href="/assets/styles/main.css">
     <link rel="stylesheet" href="/assets/styles/header.css">
+    <link rel="stylesheet" href="/assets/styles/teacher-styles.css">
+    <link rel="stylesheet" href="/assets/styles/Course/search-courses.css">
 
     <link rel="stylesheet" href="/assets/main.css">
     <!-- Link to Google Fonts -->
@@ -21,16 +23,17 @@
     <div class="header">
         <div class="left-section">
             <div class="hamburger-menu-container">
-                <img class="hamburger-menu" src="/assets/icons/hamburger-menu.svg" height="30px" />
-
-                <div class="tooltip">Menu</div>
+                <!-- <img class="hamburger-menu" src="/assets/icons/hamburger-menu.svg" height="30px" /> -->
+                <svg class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
             </div>
-            <a href="#">
+            <a href="/">
 
                 <img class="site-logo" src="/assets/icons/lernhub-logo.png" />
             </a>
 
-            <ul>
+            <ul class="desktop-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -64,16 +67,12 @@
 
             </div>
             <div class="user-picture-container">
-                <a href="/profile">
-
-                    <img class="current-user-picture" src="/assets/icons/my-channel.jpeg">
-                </a>
+                <img class="current-user-picture" src="/assets/icons/my-channel.jpeg" alt="User Profile">
+                <div class="dropdown-content">
+                    <a href="/profile">Profile</a>
+                    <a href="/logout">Logout</a>
+                </div>
                 <div class="tooltip">Profile</div>
-
             </div>
-
-
-
         </div>
-
     </div>

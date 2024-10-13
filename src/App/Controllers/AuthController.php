@@ -17,7 +17,15 @@ class AuthController
 
     public function registerView()
     {
-        echo $this->view->render("register.php");
+        echo $this->view->render("register.php", [
+            "title" => "Register"
+        ]);
+    }
+    public function registerRoleView()
+    {
+        echo $this->view->render("choose_role.php", [
+            "title" => "RegisterRole"
+        ]);
     }
 
     public function register()
@@ -30,7 +38,9 @@ class AuthController
 
     public function loginView()
     {
-        echo $this->view->render("login.php");
+        echo $this->view->render("login.php", [
+            "title" => "Login"
+        ]);
     }
 
     public function login()
