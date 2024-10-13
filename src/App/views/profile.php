@@ -1,9 +1,11 @@
 <?php include $this->resolve("partials/_header.php"); ?>
+<?php include $this->resolve("partials/_sidebar.php"); ?>
 
 <section class="profile">
     <!-- Include the navbar component -->
     <?php include '../components/navbar.php' ?>
-    <div class="profile-container">
+
+    <div class="main-container">
         <div class="left-container">
             <div class="avatar">
                 <!-- User avatar image -->

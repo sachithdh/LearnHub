@@ -14,10 +14,12 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: 50px;
+    margin-left: 50px;
 }
 
 /* Main layout */
-.profile-container {
+.main-container {
     display: flex;
     max-width: 1500px;
     width: 100%;
@@ -439,7 +441,7 @@
 
 /* Responsive design */
 @media (max-width: 1024px) {
-    .profile-container {
+    .main-container {
         flex-direction: column;
     }
 
@@ -483,6 +485,7 @@
 @media (max-width: 480px) {
     .profile {
         padding: 10px;
+        margin-left: 0;
     }
 
     .left-container,
