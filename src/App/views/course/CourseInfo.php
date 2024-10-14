@@ -2,7 +2,7 @@
 
 <section class="course-info-container">
     <div class="course-header">
-        <h1 class="course-title">Advanced Python Programming</h1>
+        <h1 class="course-info-title">Advanced Python Programming</h1>
         <div class="course-meta">
             <div class="course-rating">★★★★★ 4.8 (256 reviews)</div>
             <div class="course-info">
@@ -10,7 +10,7 @@
                 <span>Level: Advanced</span> |
                 <span>Price: Rs. 35,500</span>
             </div>
-            <a href="#" class="enroll-button">Enroll Now</a>
+            <a href="/course/enroll" class="enroll-button">Enroll Now</a>
         </div>
     </div>
     <div class="teacher-section">
