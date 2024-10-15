@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/assets/styles/teacher-styles.css">
     <link rel="stylesheet" href="/assets/styles/Course/search-courses.css">
     <link rel="stylesheet" href="/assets/styles/Course/course-info.css">
+    <link rel="stylesheet" href="/assets/styles/Course/course-enroll.css">
 
     <link rel="stylesheet" href="/assets/main.css">
     <!-- Link to Google Fonts -->
@@ -43,8 +44,8 @@
         </div>
         <div class="middle-section">
             <input class="search-bar" type="text" name="search" placeholder="Search Course...">
-            <button class="search-button"> <img class="search-icon" src="/assets/icons/search.svg">
-                <div class="tooltip">Search</div>
+            <a href="/courses"><button class="search-button"> <img class="search-icon" src="/assets/icons/search.svg"></a>
+            <div class="tooltip">Search</div>
             </button>
 
 
