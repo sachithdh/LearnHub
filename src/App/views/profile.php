@@ -3,8 +3,7 @@
 
 <section class="profile">
     <!-- Include the navbar component -->
-    <?php include '../components/navbar.php' ?>
-
+    <!-- <?php include '../components/navbar.php' ?> -->
     <div class="main-container">
         <div class="left-container">
             <div class="avatar">
@@ -13,7 +12,9 @@
             </div>
             <div class="user-data">
                 <!-- User name and username -->
-                <h1 class="name">John Doe</h1>
+                <h1 class="name">
+                    <?php echo e($userDetails['first_name'] . ' ' . $userDetails['last_name']); ?>
+                </h1>
                 <p class="username">@john_doe</p>
             </div>
             <!-- Edit profile button -->

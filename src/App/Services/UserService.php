@@ -11,6 +11,19 @@ class UserService
 {
     public function __construct(private Database $db) {}
 
+    public function getUserProfile()
+    {
+        $userDetails = $this->db->query(
+            "SELECT * FROM users
+            WHERE user_id = :userId",
+            ['userId' => $_SESSION['user']]
+        )->find();
+
+        unset($userDetails['password']);
+
+        return $userDetails;
+    }
+
     public function isEmailTaken(string $email)
     {
         $emailCount =  $this->db->query(
