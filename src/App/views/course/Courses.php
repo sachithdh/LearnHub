@@ -1,5 +1,10 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
+<head>
+    <link rel="stylesheet" href="/assets/styles/Course/courses.css">
+
+</head>
+
 <section class="course-result-container">
     <div class="left-course-container">
         <div class="search-container">
