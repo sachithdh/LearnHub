@@ -1,5 +1,10 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
+<head>
+    <link rel="stylesheet" href="/assets/styles/Course/course-info.css">
+
+</head>
+
 <section class="course-info-container">
     <div class="course-header">
         <h1 class="course-info-title">Advanced Python Programming</h1>

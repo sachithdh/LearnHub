@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
     <link rel="stylesheet" href="/assets/styles/header.css">
     <link rel="stylesheet" href="/assets/styles/teacher-styles.css">
-    <link rel="stylesheet" href="/assets/styles/Course/search-courses.css">
-    <link rel="stylesheet" href="/assets/styles/Course/course-info.css">
-    <link rel="stylesheet" href="/assets/styles/Course/course-enroll.css">
 
     <link rel="stylesheet" href="/assets/main.css">
     <!-- Link to Google Fonts -->

@@ -1,5 +1,10 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
+<head>
+    <link rel="stylesheet" href="/assets/styles/Course/course-enroll.css">
+
+</head>
+
 <section class="enroll-container">
     <div class="enrollment-header">
         <h1>Enroll in Course</h1>
@@ -52,12 +57,10 @@
 
         <p class="terms">By enrolling, you agree to our Terms of Service and Privacy Policy.</p>
     </div>
+    <script>
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Enrollment confirmed! Thank you for joining the course.');
+        });
+    </script>
 </section>
-
-<script>
-    document.getElementById('payment-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Enrollment confirmed! Thank you for joining the course.');
-        // Here you would typically handle the form submission and payment processing
-    });
-</script>
