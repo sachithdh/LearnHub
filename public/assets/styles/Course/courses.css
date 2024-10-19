@@ -104,6 +104,10 @@
     color: #1a1a1a;
 }
 
+.results a{
+    text-decoration: none;
+}
+
 .search-course-card {
     background-color: #fcfcfc;
     border: 1px solid #e9ecef;
