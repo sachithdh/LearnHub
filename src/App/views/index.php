@@ -8,8 +8,8 @@
                 <h1>Unlock Your Potential with LearnHub</h1>
                 <p>Discover a world of knowledge at your fingertips. Start your learning journey today!</p>
                 <div class="cta-buttons">
-                    <button class="cta-primary">Get Started</button>
-                    <button class="cta-secondary">Explore Courses</button>
+                    <a href="#" class="cta-primary">Get Started</a>
+                    <a href="/courses" class="cta-secondary">Explore Courses</a>
                 </div>
             </div>
         </section>
@@ -71,7 +71,7 @@
         <section id="community" class="community">
             <h2>Join Our Learning Community</h2>
             <p>Connect with fellow learners, share your goals, and find the perfect course for your needs.</p>
-            <button class="cta-primary" id="post-requirement">Post Your Course Requirement</button>
+            <a href="/course/request" class="cta-primary" id="post-requirement">Post Your Course Requirement</a>
         </section>
 
         <section class="features">
