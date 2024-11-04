@@ -420,6 +420,8 @@
     background-color: #ff3333;
 }
 
+
+
 /* Responsive design for the popup */
 @media (max-width: 768px) {
     .edit-profile-content {
@@ -438,6 +440,7 @@
         margin-bottom: 10px;
     }
 }
+
 
 /* Responsive design */
 @media (max-width: 1024px) {

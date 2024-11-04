@@ -6,15 +6,15 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class TeacherController
+class MyCoursesController
 {
 
     public function __construct(private TemplateEngine $view) {}
 
-    public function teacher()
+    public function myCourses()
     {
-        echo $this->view->render('User/TeacherDashboard.php', [
-            "title" => "Teacher"
+        echo $this->view->render('User/my_courses.php', [
+            "title" => "My Courses"
         ]);
     }
 }

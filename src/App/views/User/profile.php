@@ -1,5 +1,8 @@
 <?php include $this->resolve("partials/_header.php"); ?>
-<?php include $this->resolve("partials/_sidebar.php"); ?>
+
+<head>
+    <link rel="stylesheet" href="/assets/styles/profile-styles.css">
+</head>
 
 <section class="profile">
     <!-- Include the navbar component -->
@@ -17,9 +20,6 @@
                 </h1>
                 <p class="username">@john_doe</p>
             </div>
-            <!-- Edit profile button -->
-            <button class="edit-button">Edit Profile</button>
-
             <div class="courses">
                 <h3>Courses</h3>
 
@@ -51,6 +51,9 @@
                 <p>chemistry</p>
                 <p>English</p>
             </div>
+
+
+
         </div>
         <div class="right-container">
             <div class="user-info">
@@ -99,69 +102,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Edit profile PopUp -->
-    <div class="edit-profile-popup">
-        <div class="edit-profile-content">
-            <h2>Edit Profile</h2>
-            <form id="edit-profile-form">
-                <div class="form-group">
-                    <label for="edit-name">Name</label>
-                    <input type="text" id="edit-name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="edit-username">Username</label>
-                    <input type="text" id="edit-username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="edit-bio">Bio</label>
-                    <textarea id="edit-bio" name="bio" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="edit-phone">Phone Number</label>
-                    <input type="tel" id="edit-phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="edit-location">Location</label>
-                    <input type="text" id="edit-location" name="location">
-                </div>
-                <div class="form-group">
-                    <label for="edit-password">Change Password</label>
-                    <input type="password" id="edit-password" name="password">
-                </div>
-                <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password">
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn-submit">Submit Changes</button>
-                    <button type="button" class="btn-cancel">Cancel</button>
-                </div>
-            </form>
-            <button class="btn-delete-account">Delete Account</button>
-        </div>
-    </div>
-
-    <script>
-        const editProfileButton = document.querySelector('.edit-button');
-        const editProfilePopup = document.querySelector('.edit-profile-popup');
-        const cancelButton = document.querySelector('.btn-cancel');
-
-        editProfileButton.addEventListener('click', () => {
-            editProfilePopup.style.display = 'block';
-        });
-
-        cancelButton.addEventListener('click', () => {
-            editProfilePopup.style.display = 'none';
-        });
-
-        // Close the popup if the user clicks outside of it
-        editProfilePopup.addEventListener('click', (e) => {
-            if (e.target === editProfilePopup) {
-                editProfilePopup.style.display = 'none';
-            }
-        });
-    </script>
 </section>
 
 </html>
