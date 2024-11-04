@@ -13,7 +13,7 @@ class TeacherController
 
     public function teacher()
     {
-        echo $this->view->render('TeacherDashboard.php', [
+        echo $this->view->render('User/TeacherDashboard.php', [
             "title" => "Teacher"
         ]);
     }
