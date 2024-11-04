@@ -15,7 +15,7 @@ class ProfileController
     public function profile()
     {
         $userDetails = $this->userService->getUserProfile();
-        echo $this->view->render('profile.php', [
+        echo $this->view->render('User/profile.php', [
             "title" => "Profile",
             "userDetails" => $userDetails
         ]);
