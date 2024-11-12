@@ -9,7 +9,6 @@
 
     <link rel="stylesheet" href="/assets/styles/main.css">
     <link rel="stylesheet" href="/assets/styles/header.css">
-    <link rel="stylesheet" href="/assets/styles/teacher-styles.css">
 
     <link rel="stylesheet" href="/assets/main.css">
     <!-- Link to Google Fonts -->

@@ -1,9 +1,7 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
-<head>
-  <link rel="stylesheet" href="/assets/styles/profile-styles.css">
-</head>
-
+<link rel="stylesheet" href="/assets/styles/profile-styles.css">
+<link rel="stylesheet" href="/assets/styles/teacher-styles.css">
 
 <section class="profile">
   <!-- Include the navbar component -->
