@@ -5,7 +5,7 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 <!-- Start Main Content Area -->
 <section class="about">
-    <div class="row">
+    <div class="head">
 
         <div class="image">
             <img src="/assets/images/about-img.svg" alt="About Us" class="about-image">
@@ -25,6 +25,22 @@
             </div>
         </div>
 
+    </div>
+    <div class="mision">
+        <p>
+            To bridge the gap in educational infrastructure, empowering passionate tutors to share their knowledge seamlessly while providing learners with flexible and diverse opportunities to connect, learn, and grow. Through a collaborative ecosystem, we aim to transform education into an accessible and engaging experience for everyone.
+        </p>
+        <h3>Our Mission</h3>
+    </div>
+
+    <div class="work-flow">
+        <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
+        <h3>How Learn Hub Works</h3>
+    </div>
+    
+    <div class="members">
+        <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
+        <h3>How Learn Hub Works</h3>
     </div>
 
 </section>

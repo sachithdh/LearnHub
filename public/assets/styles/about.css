@@ -1,36 +1,96 @@
-.about .row{
+.head{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap:1.5rem;
  }
 
- .about .row .image{
+ .head .image{
     flex: 1 1 40rem;
  }
 
- .about .row .image img{
+ .head .image img{
     width: 100%;
     height: 50rem;
  }
 
- .about .row .content{
+ .head .content{
     flex: 1 1 40rem;
  }
 
- .about .row .content p{
+ .head .content p,
+ .mision p,
+ .work-flow p {
     font-size: 1.7rem;
     line-height: 2;
     color: var(--light-color);
     padding: 1rem 0;
  }
 
- .about .row .content h3{
+ .head .content h3,
+ .mision h3,
+ .work-flow h3 {
     font-size: 3rem;
     color:var(--black);
     text-transform: capitalize;
  }
 
-.about .row .cta-buttons {
+.head .cta-buttons {
     margin-top: 1rem;
 }
+
+.mision {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5rem ;
+    margin-right: 5rem ;
+    background-color: rgb(248, 248, 248);
+    padding: 4rem;
+    border-radius: 2rem;
+
+}
+
+.mision h3 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.mision  h3 {
+    flex : 1 1 40rem;
+}
+
+.mision p {
+    flex: 1 1 40rem;
+}
+
+.work-flow
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    padding: 4rem;
+}
+
+.work-flow img {
+    width: 100%;
+    height: 40rem;
+    border-radius: 2rem;
+}
+
+.work-flow h3 {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.work-flow h3 {
+    flex: 1 1 40rem;
+}
+
+.work-flow img {
+    flex: 1 1 40rem;
+}
+
+
