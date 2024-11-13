@@ -1,4 +1,4 @@
-.head{
+.head {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -29,7 +29,8 @@
 
  .head .content h3,
  .mision h3,
- .work-flow h3 {
+ .work-flow h3,
+ .team h3 {
     font-size: 3rem;
     color:var(--black);
     text-transform: capitalize;
@@ -93,4 +94,74 @@
     flex: 1 1 40rem;
 }
 
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.members {
+  display: flex;
+  gap: 2rem;
+  margin: 4rem;
+}
+
+.members .container {
+    width: 250px;
+    height: 400px;
+    perspective: 800px;
+  }
+  
+.members  .container:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+  
+  .members  .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+  }
+
+  
+  .members .front,
+  .members .back {
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  
+  .members  .front {
+    /* background-image: url(/assets/images/teacher1.png); */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: azure;
+  }
+
+  .members .front h3 {
+    font-size: 2.5rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .members  .back {
+    background-color: #3a3a3a;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+  }
 

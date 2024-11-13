@@ -37,10 +37,56 @@
         <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
         <h3>How Learn Hub Works</h3>
     </div>
-    
-    <div class="members">
-        <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
-        <h3>How Learn Hub Works</h3>
+
+    <div class="team">
+        <h3>Our Team members</h3>
+
+        <div class="members">
+            <div class="container">
+                <div class="card">
+                    <div class="front member01" style="background-image: url('/assets/images/team-members/member01.jpg');">
+                        <h3>CEO</h3>
+                    </div>
+                    <div class="back">
+                        <h1>Back of Card</h1>
+                        <p>Additional info on the back of the card</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front member02" style="background-image: url('/assets/images/team-members/member02.jpg');">
+                        <h3>ARCHITECT</h3>
+                    </div>
+                    <div class="back">
+                        <h1>Back of Card</h1>
+                        <p>Additional info on the back of the card</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front member03" style="background-image: url('/assets/images/team-members/member03.jpg');">
+                        <h3>MANEGER</h3>
+                    </div>
+                    <div class="back">
+                        <h1>Back of Card</h1>
+                        <p>Additional info on the back of the card</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="front member04" style="background-image: url('/assets/images/team-members/member04.jpg');">
+                        <h3>DEV</h3>
+                    </div>
+                    <div class="back">
+                        <h1>Back of Card</h1>
+                        <p>Additional info on the back of the card</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </section>
