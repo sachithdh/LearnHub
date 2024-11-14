@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="/assets/styles/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 
 <?php include $this->resolve("partials/_header.php"); ?>
@@ -13,9 +14,9 @@
 
         <div class="content">
             <img src="/assets/images/left-quote-svgrepo-com.svg" alt="quote-svg" class="quote-svg">
-            <h3>Beyond the ordinary <br>
+            <h2>Beyond the ordinary <br>
                 A new Era of learining await.
-            </h3>
+            </h2>
             <p>
                 Transform your learning experience through engaging, immersive education.
             </p>
@@ -26,29 +27,59 @@
         </div>
 
     </div>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+                <h3>+10k</h3>
+                <p>online courses</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-user-graduate"></i>
+            <div>
+                <h3>+40k</h3>
+                <p>brilliant students</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-chalkboard-user"></i>
+            <div>
+                <h3>+2k</h3>
+                <p>expert tutors</p>
+            </div>
+        </div>
+
+    </div>
+
     <div class="mision">
         <p>
             To bridge the gap in educational infrastructure, empowering passionate tutors to share their knowledge seamlessly while providing learners with flexible and diverse opportunities to connect, learn, and grow. Through a collaborative ecosystem, we aim to transform education into an accessible and engaging experience for everyone.
         </p>
-        <h3>Our Mission</h3>
+        <h2>Our Mission</h2>
     </div>
 
     <div class="work-flow">
         <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
-        <h3>How Learn Hub Works</h3>
+        <h2>How Learn Hub Works</h2>
+        <p>The Learn Hub workflow seamlessly connects tutors and learners: tutors register and create engaging classes, while learners sign up to explore and enroll in diverse learning opportunities, fostering collaboration and interactive learning within a vibrant, connected ecosystem.</p>
     </div>
 
     <div class="team">
-        <h3>Our Team members</h3>
+        <h2>Our Team members</h2>
 
         <div class="members">
             <div class="container">
                 <div class="card">
                     <div class="front member01" style="background-image: url('/assets/images/team-members/member01.jpg');">
-                        <h3>CEO</h3>
+                        <h2>Project manager</h2>
                     </div>
                     <div class="back">
-                        <h1>Back of Card</h1>
+                        <h1>Manupasan</h1>
                         <p>Additional info on the back of the card</p>
                     </div>
                 </div>
@@ -56,10 +87,10 @@
             <div class="container">
                 <div class="card">
                     <div class="front member02" style="background-image: url('/assets/images/team-members/member02.jpg');">
-                        <h3>ARCHITECT</h3>
+                        <h2>ARCHITECT</h2>
                     </div>
                     <div class="back">
-                        <h1>Back of Card</h1>
+                        <h1>Mahima</h1>
                         <p>Additional info on the back of the card</p>
                     </div>
                 </div>
@@ -67,10 +98,10 @@
             <div class="container">
                 <div class="card">
                     <div class="front member03" style="background-image: url('/assets/images/team-members/member03.jpg');">
-                        <h3>MANEGER</h3>
+                        <h2>DEV</h2>
                     </div>
                     <div class="back">
-                        <h1>Back of Card</h1>
+                        <h1>Dinuka</h1>
                         <p>Additional info on the back of the card</p>
                     </div>
                 </div>
@@ -78,13 +109,39 @@
             <div class="container">
                 <div class="card">
                     <div class="front member04" style="background-image: url('/assets/images/team-members/member04.jpg');">
-                        <h3>DEV</h3>
+                        <h2>UI/UX</h2>
                     </div>
                     <div class="back">
-                        <h1>Back of Card</h1>
-                        <p>Additional info on the back of the card</p>
+                        <h1>Sachith</h1>
+                        <p></p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="features">
+        <h2>LearnHub Features</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <!-- <img src="/api/placeholder/64/64" alt="Interactive Lessons"> -->
+                <h3>Interactive Lessons</h3>
+                <p>Engage with dynamic content and real-time feedback.</p>
+            </div>
+            <div class="feature-card">
+                <!-- <img src="/api/placeholder/64/64" alt="Progress Tracking"> -->
+                <h3>Progress Tracking</h3>
+                <p>Monitor your learning journey with detailed analytics.</p>
+            </div>
+            <div class="feature-card">
+                <!-- <img src="/api/placeholder/64/64" alt="Personalized Learning Paths"> -->
+                <h3>Personalized Learning Paths</h3>
+                <p>Tailored course recommendations based on your goals.</p>
+            </div>
+            <div class="feature-card">
+                <!-- <img src="/api/placeholder/64/64" alt="Certification"> -->
+                <h3>Certification</h3>
+                <p>Earn recognized certificates upon course completion.</p>
             </div>
         </div>
     </div>
