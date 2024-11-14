@@ -341,7 +341,7 @@ footer p {
     margin-bottom: 1rem;
 }
 
-.tutor-card button {
+.tutor-card a {
     padding: 0.5rem 1rem;
     background-color: #FFC400;
     color: #584300;
@@ -349,10 +349,11 @@ footer p {
     border-radius: 5px;
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
-.tutor-card button:hover {
+.tutor-card a:hover {
     background-color: #FFD033;
 }
 
