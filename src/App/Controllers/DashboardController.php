@@ -6,15 +6,15 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class CourseInfoController
+class DashboardController
 {
 
     public function __construct(private TemplateEngine $view) {}
 
-    public function courseInfo()
+    public function dashboard()
     {
-        echo $this->view->render('course/CourseInfo.php', [
-            "title" => "Course"
+        echo $this->view->render('User/dashboard.php', [
+            "title" => "Dashboard"
         ]);
     }
 }
