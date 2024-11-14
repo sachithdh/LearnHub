@@ -181,12 +181,14 @@ margin: 4rem;
 }
 
 .box-container{
-  display: grid;
+
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-  gap:1.5rem;
+  gap: 4rem;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .box-container .box{
