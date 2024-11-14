@@ -87,4 +87,10 @@ class CoursesController
         $this->courseService->update($_POST, $params['id']);
         redirectTo($_SERVER['HTTP_REFERER']);
     }
+
+    public function deleteCourse(array $params)
+    {
+        $this->courseService->delete((int)$params['course']);
+        redirectTo('/courses/my');
+    }
 }

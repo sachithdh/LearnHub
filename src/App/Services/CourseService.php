@@ -85,4 +85,15 @@ class CourseService
             ]
         );
     }
+
+    public function delete(int $id)
+    {
+        $this->db->query(
+            "DELETE FROM courses WHERE course_id = :id AND tutor_id = :user_id",
+            [
+                "id" => $id,
+                "user_id" => $_SESSION['user']
+            ]
+        );
+    }
 }

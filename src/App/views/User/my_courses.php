@@ -61,25 +61,32 @@
                         <button class="details-btn">Details</button>
                     </div>
                 </div>
+                <!-- Delete confirmation -->
+
+                <div id="deleteModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Confirm Delete</h3>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete this item? This action cannot be undone.
+                        </div>
+                        <div class="modal-footer">
+                            <button onclick="hideModal()" class="btn btn-cancel">Cancel</button>
+                            <form method="POST" action="/manage-course/delete/<?php echo e($courseData['course_id']) ?>">
+
+                                <?php include $this->resolve("partials/_csrf.php"); ?>
+                                <input type="hidden" name="_METHOD" value="DELETE" />
+                                <button type="submit" class="btn btn-delete">Delete</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
             <?php endforeach; ?>
         </div>
     </div>
-    <!-- Delete confirmation -->
 
-    <div id="deleteModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Confirm Delete</h3>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete this item? This action cannot be undone.
-            </div>
-            <div class="modal-footer">
-                <button onclick="hideModal()" class="btn btn-cancel">Cancel</button>
-                <button onclick="confirmDelete()" class="btn btn-delete">Delete</button>
-            </div>
-        </div>
-    </div>
     <script>
         const modal = document.getElementById('deleteModal');
 

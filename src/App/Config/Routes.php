@@ -33,6 +33,7 @@ function registerRoutes(App $app)
     $app->get('/courses', [CoursesController::class, 'course']);
     $app->get('/manage-course/edit/{course}', [CoursesController::class, 'courseEditView']);
     $app->post('/manage-course/edit/{course}', [CoursesController::class, 'editCourse']);
+    $app->delete('/manage-course/delete/{course}', [CoursesController::class, 'deleteCourse']);
     $app->get('/course/course-info', [CoursesController::class, 'courseInfo']);
     $app->get('/course/enroll', [CoursesController::class, 'enrollCourse']);
     $app->get('/course/create', [CoursesController::class, 'createCourseView']);
