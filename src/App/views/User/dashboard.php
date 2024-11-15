@@ -1,79 +1,79 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
 <head>
-  <link rel="stylesheet" href="/assets/styles/profile-styles.css">
+  <link rel="stylesheet" href="/assets/styles/dashboard.css">
 </head>
 
-
 <section class="profile">
-  <!-- Include the navbar component -->
+  <!-- Navbar -->
   <!-- <?php include '../components/navbar.php' ?> -->
+
   <div class="main-container">
+    <!-- Left Sidebar -->
     <div class="left-container">
-      <div class="avatar">
-        <!-- User avatar image -->
-        <img src="/assets/images/user.jpeg" alt="John Doe">
-      </div>
-      <div class="user-data">
-        <!-- User name and username -->
-        <h1 class="name">
-          <?php echo e($userDetails['first_name'] . ' ' . $userDetails['last_name']); ?>
-        </h1>
-        <p class="username">@john_doe</p>
-      </div>
-      <div class="courses">
-        <h3>Courses</h3>
-
-        <!-- List of courses -->
-        <div class="course-container">
-          <p class="course-title">Computer Science</p>
-          <svg class="course-left-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-          </svg>
+      <!-- User Profile Summary -->
+      <section class="user-profile-summary">
+        <img src="/assets/images/user.jpeg" alt="User Profile Picture" class="profile-picture">
+        <div class="user-info">
+          <h3>Welcome, John Doe</h3>
+          <p>johndoe@example.com</p>
         </div>
-        <div class="course-container">
-          <p class="course-title">Physics</p>
-          <svg class="course-left-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-          </svg>
-        </div>
-        <div class="course-container">
-          <p class="course-title">Chemistry</p>
-          <svg class="course-left-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-          </svg>
-        </div>
-      </div>
+      </section>
 
-    </div>
-    <div class="right-container">
-
-
-      <!-- <section class="teacher"> -->
-      <div class="main-content">
-
-
-        <section class="course-stats">
-          <h2>Course Statistics</h2>
-          <div class="stats-container">
-            <div class="stat-card">
-              <div class="stat-value">5</div>
-              <div class="stat-label">Courses</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">20</div>
-              <div class="stat-label">Total Sessions</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">18</div>
-              <div class="stat-label">Attended Sessions</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value">36h 30m</div>
-              <div class="stat-label">Total Time</div>
-            </div>
+      <!-- Course Statistics -->
+      <section class="course-stats">
+        <h2>Course Statistics</h2>
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Courses</div>
           </div>
-        </section>
+          <div class="stat-card">
+            <div class="stat-value">20</div>
+            <div class="stat-label">Total Sessions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">18</div>
+            <div class="stat-label">Attended Sessions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">36h 30m</div>
+            <div class="stat-label">Total Time</div>
+          </div>
+        </div>
+      </section>
+      <!-- Upcoming Events/Tasks -->
+      <section class="upcoming-tasks">
+        <h2>Upcoming Tasks</h2>
+        <ul>
+          <li>Complete "HTML Basics" assignment by 11/18</li>
+          <li>Prepare for "JavaScript Fundamentals" test on 11/20</li>
+        </ul>
+      </section>
+      <!-- Notifications -->
+      <section class="notifications">
+        <h2>Notifications</h2>
+        <ul>
+          <li>New course available: Advanced Web Development</li>
+          <li>Your course "Intro to Programming" starts in 1 hour</li>
+          <li>Upcoming assignment due on Friday</li>
+        </ul>
+      </section>
+      <!-- Recent Activity Feed -->
+      <section class="recent-activity">
+        <h2>Recent Activity</h2>
+        <ul>
+          <li>Completed "HTML Basics" module</li>
+          <li>Scored 85% in "CSS Fundamentals" quiz</li>
+          <li>Attended "JavaScript Basics" session</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Main Content -->
+    <div class="right-container">
+      <div class="main-content">
+        <!-- Timeline/Course Schedule -->
         <section class="timeline-section">
           <h2>Course Schedule</h2>
           <table class="timeline-table">
@@ -99,34 +99,54 @@
                 <div class="course-slot">Intro to Programming</div>
               </td>
             </tr>
-            <tr>
-              <td>11:00 AM</td>
-              <td></td>
-              <td>
-                <div class="course-slot">Web Development</div>
-              </td>
-              <td></td>
-              <td>
-                <div class="course-slot">Intro to Programming</div>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>03:00 PM</td>
-              <td></td>
-              <td></td>
-              <td>
-                <div class="course-slot">Web Development</div>
-              </td>
-              <td></td>
-              <td>
-                <div class="course-slot">Intro to Programming</div>
-              </td>
-              <td></td>
-            </tr>
+            <!-- Add more schedule rows as needed -->
           </table>
         </section>
-      </div>
-      <!-- </section> -->
 
+        <!-- Enrolled Courses Section -->
+        <div class="enrolled-courses">
+          <h2>Enrolled Courses</h2>
+
+          <!-- Loop through enrolled courses, displaying up to 4 in rows -->
+          <div class="course-list">
+            <div class="course-row">
+              <h4>Introduction to Web Development</h4>
+              <p>Learn the basics of HTML, CSS, and JavaScript.</p>
+            </div>
+
+            <div class="course-row">
+              <h4>Advanced CSS Techniques</h4>
+              <p>Master CSS and create visually engaging web layouts.</p>
+            </div>
+
+            <div class="course-row">
+              <h4>JavaScript Fundamentals</h4>
+              <p>Understand core JavaScript concepts and syntax.</p>
+            </div>
+
+            <div class="course-row">
+              <h4>Backend Development with PHP</h4>
+              <p>Learn PHP basics, server interactions, and database connectivity.</p>
+            </div>
+          </div>
+
+          <!-- View All button -->
+          <div class="view-all-container">
+            <button class="view-all-button">View All Courses</button>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Quick Actions Section -->
+  <div class="quick-actions">
+    <h2>Quick Actions</h2>
+    <button class="quick-action-button">Enroll in a New Course</button>
+    <button class="quick-action-button">Update Profile</button>
+    <button class="quick-action-button">Contact Support</button>
+  </div>
+
+
+
+</section>

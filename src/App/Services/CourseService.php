@@ -68,20 +68,20 @@ class CourseService
             price = :price,
             pricing_period = :pricing_period,
             duration = :duration
-            WHERE course_id = :course_id AND tutor_id = :tutor_id",
+            WHERE course_id = :course_id",
             [
                 'course_id' => $id,
                 'title' => $formData['title'],
                 'description' => $formData['description'],
                 'subject_id' => $formData['subject_id'],
                 'grade_id' => $formData['grade_id'],
-                'tutor_id' => $_SESSION['user'],
                 'start_time' => $formData['start_time'],
                 'end_time' => $formData['end_time'],
                 'day' => $formData['day'],
                 'price' => $formData['price'],
                 'pricing_period' => $formData['pricing_period'],
-                'duration' => $formData['duration']
+                'duration' => $formData['duration'],
+
             ]
         );
     }

@@ -12,6 +12,7 @@
     </div>
 
     <form class="create-course-form" id="createCourseForm" method="POST" action="/manage-course/edit/<?php echo $course['course_id']; ?>">
+        <?php include $this->resolve("partials/_csrf.php"); ?>
         <div class="create-course-section">
             <h2>Basic Information</h2>
             <div class="create-course-form-group">
