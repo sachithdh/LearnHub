@@ -28,19 +28,19 @@ header {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
-    font-family: 'Archivo', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: #FFC400;
+  font-family: "Archivo", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffc400;
 }
 
 nav ul {
@@ -49,19 +49,19 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-    color: #FFC400;
+  color: #ffc400;
 }
 
 .login-btn {
@@ -77,7 +77,7 @@ nav ul li a.active {
 }
 
 .login-btn:hover {
-    background-color: #FFD033;
+  background-color: #ffd033;
 }
 
 /* Hero Section */
@@ -127,9 +127,9 @@ nav ul li a.active {
 }
 
 .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .cta-primary,
@@ -144,21 +144,21 @@ nav ul li a.active {
 }
 
 .cta-primary {
-    background-color: #FFC400;
-    color: #584300;
+  background-color: #ffc400;
+  color: #584300;
 }
 
 .cta-primary:hover {
-    background-color: #FFD033;
+  background-color: #ffd033;
 }
 
 .cta-secondary {
-    background-color: #f0f2f5;
-    color: #2c3e50;
+  background-color: #f0f2f5;
+  color: #2c3e50;
 }
 
 .cta-secondary:hover {
-    background-color: #e9ecef;
+  background-color: #e9ecef;
 }
 
 /* Courses Section */
@@ -236,7 +236,7 @@ nav ul li a.active {
 }
 
 .course-card button:hover {
-    background-color: #FFD033;
+  background-color: #ffd033;
 }
 
 /* Tutors Section */
@@ -481,8 +481,8 @@ nav ul li a.active {
 }
 
 .feature-card p {
-    font-size: 0.9rem;
-    color: #565D6D;
+  font-size: 0.9rem;
+  color: #565d6d;
 }
 
 /* Footer */

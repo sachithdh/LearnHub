@@ -1,5 +1,7 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
+<link rel="stylesheet" href="/assets/styles/main.css">
+
 
 <section class="main">
     <main>
