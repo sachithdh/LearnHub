@@ -49,7 +49,7 @@ function registerRoutes(App $app)
     $app->get('/resource', [ResourceController::class, 'resource']);
 
     // Assignments
-    $app->get('/course/{courseId}/assignmnet/create', [AssignmentController::class, 'createAssignment']);
+    $app->get('/course/{courseId}/assignment/create', [AssignmentController::class, 'createAssignment']);
 
     // This is how paths with router params are added
     $app->get('/auth/{param1}/something/{param2}', [AuthController::class, 'testParamRoute']);
