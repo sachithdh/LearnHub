@@ -48,7 +48,7 @@ class ValidatorService
         $this->validator->validate($formData, [
             "title" => ["required"],
             "description" => ["required"],
-            "subject_id " => ["required"],
+            "subject_id" => ["required"],
             "grade_id" => ["required"],
             "start_time" => ["required"],
             "end_time" => ["required"],

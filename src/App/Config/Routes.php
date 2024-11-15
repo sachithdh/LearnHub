@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 namespace App\Config;
 
-use App\Controllers\{HomeController, AboutController, AlertController, AssignmentController, AuthController, ProfileController, DashboardController, CoursesController,  CreateCourseController, TutorProfileController, SettingController, MyCoursesController, ResourceController, PostController};
+use App\Controllers\{HomeController, AboutController, AlertController, AssignmentController, AuthController, ProfileController, DashboardController, CoursesController,  CreateCourseController, TutorProfileController, SettingController, MyCoursesController, ResourceController, PostController, ReviewController};
 use App\Middleware\AuthRequiredMiddleware;
 use App\Middleware\GuestOnlyMiddleware;
 use Framework\App;
@@ -47,6 +47,12 @@ function registerRoutes(App $app)
 
     // Resources
     $app->get('/resource', [ResourceController::class, 'resource']);
+
+    // Reviews
+    $app->post('/add-review', [ReviewController::class, 'addReview']);
+    $app->get('/review/edit/{review}', [ReviewController::class, 'editView']);
+    $app->post('/review/edit/{review}', [ReviewController::class, 'edit']);
+    $app->delete('/review/delete/{review}', [ReviewController::class, 'deleteReview']);
 
     // Assignments
     $app->get('/course/{courseId}/assignment/create', [AssignmentController::class, 'createAssignment']);

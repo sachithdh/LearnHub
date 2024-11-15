@@ -143,6 +143,8 @@ CREATE TABLE IF NOT EXISTS posts_requests (
     post_req_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     description TEXT NOT NULL,
     title VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
     created_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     updated_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     user_id BIGINT(20) UNSIGNED NOT NULL,
@@ -162,3 +164,15 @@ CREATE TABLE IF NOT EXISTS post_request_comments (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (post_req_id) REFERENCES posts_requests(post_req_id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS tutor_review(
+    review_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    review TEXT NOT NULL,
+    rating TINYINT UNSIGNED CHECK (rating BETWEEN 0 AND 5),
+    tutor_id BIGINT(20) UNSIGNED NOT NULL,
+    user_id BIGINT(20) UNSIGNED NOT NULL,
+    PRIMARY KEY(review_id),
+    FOREIGN KEY(tutor_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+

@@ -63,6 +63,66 @@
                 </div>
 
                 <!-- Review Cards -->
+                <!-- Current user reviews-->
+                <?php foreach ($userReview as $review) : ?>
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <img src="/assets/images/user.jpeg" alt="Sarah Johnson" class="reviewer-avatar">
+                                <div>
+                                    <div class="reviewer-name"><?php echo e($userDetails['first_name'] . ' ' . $userDetails['last_name']); ?></div>
+                                    <div class="review-course">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        Advanced JavaScript Mastery
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="review-date">2 weeks ago</span>
+                            <div class="cart-menu">
+                                <div class="cart-btn" onclick="toggleCartMenu(this)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 12.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5ZM12 18.75a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5Z" />
+                                    </svg>
+                                </div>
+                                <!-- Option menu-->
+                                <div class="cart-options">
+                                    <a class="menu-button" href="/review/edit/<?php echo e($review['review_id']); ?>">Edit</a>
+                                    <a href="#" class="menu-button" onclick="showModal()">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text"><?php echo $review['review'] ?></p>
+                        <div class="review-rating">
+                            <?php
+                            for ($i = 0; $i < $review['rating']; $i++) {
+                                echo '<i class="fas fa-star"></i>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <!-- Delete confirmation -->
+
+                    <div id="deleteModal" class="modal">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title">Confirm Delete</h3>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this item? This action cannot be undone.
+                            </div>
+                            <div class="modal-footer">
+                                <button onclick="hideModal()" class="btn btn-cancel">Cancel</button>
+                                <form method="POST" action="/review/delete/<?php echo e($review['review_id']); ?>">
+
+                                    <?php include $this->resolve("partials/_csrf.php"); ?>
+                                    <input type="hidden" name="_METHOD" value="DELETE" />
+                                    <button type="submit" class="btn btn-delete">Delete</button>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
                 <div class="review-card">
                     <div class="review-header">
                         <div class="reviewer-info">
@@ -116,6 +176,41 @@
                     <button class="load-more-btn">
                         Load More Reviews
                     </button>
+                </div>
+                <!-- Add review -->
+                <div class="add-review-section">
+                    <h3>Add Your Review</h3>
+                    <form class="review-form" id="newReviewForm" method="POST" action="/add-review">
+                        <div class="rating-input">
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5" required>
+                                <label for="star5"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2"><i class="fas fa-star"></i></label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1"><i class="fas fa-star"></i></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reviewText">Your Review:</label>
+                            <textarea
+                                id="reviewText"
+                                name="review"
+                                rows="4"
+                                placeholder="Share your experience with this course..."
+                                required></textarea>
+                        </div>
+                        <input type="hidden" name="tutor_id" value="1" />
+
+                        <button type="submit" class="submit-review-btn">
+                            Submit Review
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -188,4 +283,72 @@
             </div>
         </div>
     </div>
+    <script>
+        // Cart menu
+        function toggleCartMenu(button) {
+            const cartOptions = button.nextElementSibling;
+            cartOptions.style.display = cartOptions.style.display === 'block' ? 'none' : 'block';
+
+            // Close the menu if clicked outside
+            window.onclick = function(event) {
+                if (!button.contains(event.target) && !cartOptions.contains(event.target)) {
+                    cartOptions.style.display = 'none';
+                }
+            }
+        }
+
+        function editCourse() {
+            alert('Edit course clicked!');
+            // Add your edit logic here
+        }
+
+        //Delete confirmation
+        const modal = document.getElementById('deleteModal');
+
+        function showModal() {
+            modal.style.display = 'block';
+
+            // Prevent scrolling of background content
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal() {
+            modal.style.display = 'none';
+
+            // Restore scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        function confirmDelete() {
+            // Add your delete logic here
+            console.log('Item deleted!');
+            hideModal();
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                hideModal();
+            }
+        }
+
+        // Close modal on escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                hideModal();
+            }
+        });
+
+        function toggleCartMenu(button) {
+            const cartOptions = button.nextElementSibling;
+            cartOptions.style.display = cartOptions.style.display === 'block' ? 'none' : 'block';
+
+            // Close the menu if clicked outside
+            window.onclick = function(event) {
+                if (!button.contains(event.target) && !cartOptions.contains(event.target)) {
+                    cartOptions.style.display = 'none';
+                }
+            }
+        }
+    </script>
 </section>

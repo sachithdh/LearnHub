@@ -84,7 +84,7 @@ class CoursesController
             redirectTo('/courses/my');
         }
         $this->validatorService->validateCourse($_POST);
-        $this->courseService->update($_POST, $params['id']);
+        $this->courseService->update($_POST, (int)$params['course']);
         redirectTo($_SERVER['HTTP_REFERER']);
     }
 
