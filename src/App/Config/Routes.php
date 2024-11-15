@@ -6,7 +6,7 @@ declare(strict_types=1);
 
 namespace App\Config;
 
-use App\Controllers\{HomeController, AboutController, AlertController, AuthController, ProfileController, DashboardController, CoursesController,  CreateCourseController, TutorProfileController, SettingController, MyCoursesController, ResourceController, PostController};
+use App\Controllers\{HomeController, AboutController, AlertController, AssignmentController, AuthController, ProfileController, DashboardController, CoursesController,  CreateCourseController, TutorProfileController, SettingController, MyCoursesController, ResourceController, PostController};
 use App\Middleware\AuthRequiredMiddleware;
 use App\Middleware\GuestOnlyMiddleware;
 use Framework\App;
@@ -48,6 +48,8 @@ function registerRoutes(App $app)
     // Resources
     $app->get('/resource', [ResourceController::class, 'resource']);
 
+    // Assignments
+    $app->get('/course/{courseId}/assignment/create', [AssignmentController::class, 'createAssignment']);
 
     // This is how paths with router params are added
     $app->get('/auth/{param1}/something/{param2}', [AuthController::class, 'testParamRoute']);

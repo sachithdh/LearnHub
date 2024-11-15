@@ -1,5 +1,6 @@
+<link href="/assets/styles/footer.css" rel="stylesheet">
 <!-- Footer -->
-<footer class="container mx-auto my-12 text-center">
+<footer class="footer">
     &copy; LearnHub
 </footer>
 <!-- End Footer -->

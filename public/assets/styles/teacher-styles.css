@@ -1,237 +1,241 @@
 /* Reset and base styles */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .teacher {
-    font-family: 'Inter', sans-serif;
-    color: #171A1F;
-    min-height: 100vh;
-    display: flex;
-    padding: 20px;
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
+  font-family: "Inter", sans-serif;
+  color: #171a1f;
+  min-height: 100vh;
+  display: flex;
+  padding: 20px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 /* Main layout */
 .teacher .main-container {
-    padding: 20px;
-    margin-left: 50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 1500px;
-    width: 100%;
+  padding: 20px;
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 1500px;
+  width: 100%;
 }
-
-
 
 /* Timeline Section */
 .timeline-section {
-    padding: 24px;
-    border-radius: 16px;
-    background-color: #ffffff;
-    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); */
-    margin-bottom: 20px;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); */
+  margin-bottom: 20px;
 }
 
 .timeline-section h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: 600;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .timeline-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    text-align: center;
-    min-width: 600px;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: center;
+  min-width: 600px;
 }
 
-.timeline-table th, .timeline-table td {
-    padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #e0e0e0;
+.timeline-table th,
+.timeline-table td {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .timeline-table th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-    color: #495057;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .timeline-table tr:last-child td {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .course-slot {
-    background-color: #ffedbb;
-    color: #495057;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  background-color: #ffedbb;
+  color: #495057;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .course-slot:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffd966;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffd966;
 }
 
 /* Course Stats Section */
 .course-stats {
-    background-color: #ffffff;
-    border-radius: 16px;
-    /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); */
-    padding: 24px;
-    margin-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); */
+  padding: 24px;
+  margin-bottom: 20px;
 }
 
 .course-stats h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: 600;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .stats-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .stat-card {
-    background-color: #f8f9fa;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1;
-    min-width: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .stat-value {
-    font-size: 28px;
-    font-weight: 700;
-    color: #2c3e50;
-    margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
 }
 
 .stat-label {
-    font-size: 14px;
-    color: #6c757d;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 14px;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Responsive styles */
 @media (max-width: 1024px) {
-    .main-container {
-        margin-left: 0;
-        padding: 20px;
-    }
+  .main-container {
+    margin-left: 0;
+    padding: 20px;
+  }
 
-    .timeline-section, .course-stats {
-        margin-top: 20px;
-    }
-    .timeline-table {
-        min-width: 100%;
-        font-size: 10px;
-    }
+  .timeline-section,
+  .course-stats {
+    margin-top: 20px;
+  }
+  .timeline-table {
+    min-width: 100%;
+    font-size: 10px;
+  }
 
-    .timeline-table th, .timeline-table td {
-        padding: 10px;
-        font-size: 12px;
-    }
+  .timeline-table th,
+  .timeline-table td {
+    padding: 10px;
+    font-size: 12px;
+  }
 
-    .course-slot {
-        font-size: 15px;
-        padding: 10px;
-    }
+  .course-slot {
+    font-size: 15px;
+    padding: 10px;
+  }
 
-    .course-stats h2, .timeline-section h2 {
-        font-size: 20px;
-    }
+  .course-stats h2,
+  .timeline-section h2 {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-    .teacher {
-        padding: 10px;
-    }
+  .teacher {
+    padding: 10px;
+  }
 
-    .main-container {
-        padding: 10px;
-    }
+  .main-container {
+    padding: 10px;
+  }
 
-    .timeline-table {
-        min-width: 90%;
-        font-size: 10px;
-    }
+  .timeline-table {
+    min-width: 90%;
+    font-size: 10px;
+  }
 
-    .timeline-table th, .timeline-table td {
-        padding: 8px;
-        font-size: 10px;
-    }
+  .timeline-table th,
+  .timeline-table td {
+    padding: 8px;
+    font-size: 10px;
+  }
 
-    .course-slot {
-        font-size: 12px;
-        padding: 10px 8px;
-    }
+  .course-slot {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
 
-    .course-stats h2, .timeline-section h2 {
-        font-size: 12px;
-    }
+  .course-stats h2,
+  .timeline-section h2 {
+    font-size: 12px;
+  }
 
-    .stat-card {
-        min-width: 100%;
-    }
+  .stat-card {
+    min-width: 100%;
+  }
 
-    .stat-value {
-        font-size: 24px;
-    }
+  .stat-value {
+    font-size: 24px;
+  }
 
-    .stat-label {
-        font-size: 12px;
-    }
+  .stat-label {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 480px) {
+  .timeline-table th,
+  .timeline-table td {
+    padding: 5px;
+    font-size: 5px;
+  }
 
-    .timeline-table th, .timeline-table td {
-        padding: 5px;
-        font-size: 5px;
-    }
+  .course-slot {
+    font-size: 5px;
+    padding: 5px;
+  }
 
-    .course-slot {
-        font-size: 5px;
-        padding: 5px;
-    }
-
-    .stat-value {
-        font-size: 20px;
-    }
+  .stat-value {
+    font-size: 20px;
+  }
 }
