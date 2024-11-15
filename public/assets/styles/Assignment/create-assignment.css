@@ -1,0 +1,13 @@
+.time-inputs {
+  display: flex;
+  flex-direction: row;
+  margin-left: 26px;
+}
+
+.time-label {
+  margin-right: 26px;
+}
+
+.end-time-label {
+  margin-left: 16px;
+}
