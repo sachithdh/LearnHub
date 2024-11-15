@@ -47,25 +47,25 @@
                     <img src="/assets/images/teacher1.png" alt="Tutor 1">
                     <h3>Dr. Jane Smith</h3>
                     <p>Computer Science</p>
-                    <button>View Profile</button>
+                    <a href="/tutor">View Profile</a>
                 </div>
                 <div class="tutor-card">
                     <img src="/assets/images/teacher2.jpeg" alt="Tutor 2">
                     <h3>Prof. John Doe</h3>
                     <p>Data Science</p>
-                    <button>View Profile</button>
+                    <a href="/tutor">View Profile</a>
                 </div>
                 <div class="tutor-card">
                     <img src="/assets/images/teacher3.jpg" alt="Tutor 3">
                     <h3>Sarah Johnson</h3>
                     <p>Digital Marketing</p>
-                    <button>View Profile</button>
+                    <a href="/tutor">View Profile</a>
                 </div>
                 <div class="tutor-card">
                     <img src="/assets/images/teacher4.jpg" alt="Tutor 4">
                     <h3>Michael Brown</h3>
                     <p>Business Management</p>
-                    <button>View Profile</button>
+                    <a href="/tutor">View Profile</a>
                 </div>
             </div>
         </section>
@@ -73,7 +73,7 @@
         <section id="community" class="community">
             <h2>Join Our Learning Community</h2>
             <p>Connect with fellow learners, share your goals, and find the perfect course for your needs.</p>
-            <a href="/course/request" class="cta-primary" id="post-requirement">Post Your Course Requirement</a>
+            <a href="/post/create" class="cta-primary" id="post-requirement">Post Your Course Requirement</a>
         </section>
 
         <section class="features">
