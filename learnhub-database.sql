@@ -139,8 +139,8 @@ CREATE TABLE IF NOT EXISTS attendance (
 );
 
 -- Post requests (discussions, help requests, etc.)
-CREATE TABLE IF NOT EXISTS posts_requests (
-    post_req_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS posts (
+    post_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     description TEXT NOT NULL,
     title VARCHAR(255) NOT NULL,
     location VARCHAR(255) NOT NULL,
@@ -148,21 +148,21 @@ CREATE TABLE IF NOT EXISTS posts_requests (
     created_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     updated_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     user_id BIGINT(20) UNSIGNED NOT NULL,
-    PRIMARY KEY(post_req_id),
+    PRIMARY KEY(post_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
 -- Comments on post requests
-CREATE TABLE IF NOT EXISTS post_request_comments (
+CREATE TABLE IF NOT EXISTS post_comments (
     comment_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     comment TEXT NOT NULL,
     created_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     updated_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     user_id BIGINT(20) UNSIGNED NOT NULL,
-    post_req_id BIGINT(20) UNSIGNED NOT NULL,
+    post_id BIGINT(20) UNSIGNED NOT NULL,
     PRIMARY KEY(comment_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
-    FOREIGN KEY (post_req_id) REFERENCES posts_requests(post_req_id) ON DELETE CASCADE
+    FOREIGN KEY (post_id) REFERENCES posts(post_id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS tutor_review(
