@@ -1,21 +1,35 @@
-.head {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap:1.5rem;
+Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins;
 }
 
-.head .image{
-  flex: 1 1 40rem;
+body {
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.head {
+  align-items: center;
+  display: grid;
+  gap:2rem;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(70vh, 1fr));
+  margin-top: 4rem;
 }
 
 .head .image img{
-  width: 100%;
-  height: 50rem;
+  max-width: 100%;
+  height: 35rem;
 }
 
-.head .content{
-  flex: 1 1 40rem;
+.head .image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .head .content p,
@@ -41,10 +55,11 @@
 }
 
 .mision {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 5rem ;
-  margin-right: 5rem ;
+  align-items: center;
+  display: grid;
+  gap:2rem;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(40vh, 1fr));
   background-color: rgb(248, 248, 248);
   padding: 2rem;
   border-radius: 2rem;
@@ -72,6 +87,15 @@
   flex-wrap: wrap;
   gap:1.5rem;
   padding: 4rem;
+}
+
+.work-flow .box {
+  align-items: center;
+  display: grid;
+  gap:2rem;
+  grid-template-columns: 
+    repeat(auto-fit, minmax(70vh, 1fr));
+  margin-top: 4rem;
 }
 
 .work-flow img {
@@ -102,10 +126,18 @@
 }
 
 .members {
-display: flex;
-gap: 2rem;
-margin: 4rem;
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(30vh, 1fr)); */
+  gap: 2rem;
+  margin: 4rem 0;
 }
+
+@media(max-width: 768px){
+  .members {
+    flex-direction: column;
+  }
+}
+
 
 .members .container {
   width: 250px;
@@ -170,7 +202,6 @@ margin: 4rem;
 
 .features {
   padding: 0;
-  margin: 12rem ;
   font-size: 2.5rem;
   color: #1a1a1a;
   margin-bottom: 2rem;
@@ -182,11 +213,9 @@ margin: 4rem;
 
 .box-container{
 
-  display: flex;
-  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-  gap: 4rem;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50vh, 1fr));
+  gap: 2rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
 }

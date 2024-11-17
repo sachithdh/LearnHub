@@ -57,15 +57,17 @@
     </div>
 
     <div class="mision">
+        <h2>Our Mission</h2>
         <p>
             To bridge the gap in educational infrastructure, empowering passionate tutors to share their knowledge seamlessly while providing learners with flexible and diverse opportunities to connect, learn, and grow. Through a collaborative ecosystem, we aim to transform education into an accessible and engaging experience for everyone.
         </p>
-        <h2>Our Mission</h2>
     </div>
 
     <div class="work-flow">
-        <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
-        <h2>How Learn Hub Works</h2>
+        <div class="box">
+            <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
+            <h2>How Learn Hub Works</h2>
+        </div>
         <p>The Learn Hub workflow seamlessly connects tutors and learners: tutors register and create engaging classes, while learners sign up to explore and enroll in diverse learning opportunities, fostering collaboration and interactive learning within a vibrant, connected ecosystem.</p>
     </div>
 
