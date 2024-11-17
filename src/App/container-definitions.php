@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use App\Config\{AppConstants, Paths};
-use App\Services\{UserService, ValidatorService, CourseService, ReviewService};
+use App\Services\{UserService, ValidatorService, CourseService, ReviewService, SubjectService};
 use Framework\{Container, Database, TemplateEngine};
 
 return [
@@ -27,5 +27,9 @@ return [
     ReviewService::class => function (Container $container) {
         $db = $container->get(Database::class);
         return new ReviewService($db);
+    },
+    SubjectService::class => function (Container $container) {
+        $db = $container->get(Database::class);
+        return new SubjectService($db);
     }
 ];
