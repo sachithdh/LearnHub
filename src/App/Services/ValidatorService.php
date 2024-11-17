@@ -57,4 +57,13 @@ class ValidatorService
             "pricing_period" => ["required"],
         ]);
     }
+
+    public function validateCourseRequest(array $formData)
+    {
+        $this->validator->validate($formData, [
+            "requestTitle" => ["required"],
+            "requestDescription" => ["required"],
+            "subject_id" => ["required"],
+        ]);
+    }
 }
