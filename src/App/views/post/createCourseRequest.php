@@ -13,19 +13,19 @@
         <div class="create-section">
             <h2>Course Request Details</h2>
             <div class="create-form-group">
-                <label for="courseTitle">Course Title *</label>
-                <input type="text" id="courseTitle" name="courseTitle" required>
+                <label for="requestTitle">Course Request Title *</label>
+                <input type="text" id="requestTitle" name="requestTitle" required>
             </div>
             <div class="create-form-group">
-                <label for="courseDescription">Course Description *</label>
-                <textarea id="courseDescription" name="courseDescription" required></textarea>
+                <label for="requestDescription">Course Request Description *</label>
+                <textarea id="requestDescription" name="requestDescription" required></textarea>
             </div>
             <div class="create-course-form-group">
                 <label for="subject_id">Subject *</label>
                 <select id="subject_id" name="subject_id" required>
                     <?php foreach ($subjects as $subject): ?>
-                        <option value="<?= htmlspecialchars($subject["subject_id"]); ?>">
-                            <?= htmlspecialchars($subject["subject_title"]); ?>
+                        <option value="<?= e($subject["subject_id"]); ?>">
+                            <?= e($subject["subject_title"]); ?>
                         </option>
                     <?php endforeach; ?>
 
