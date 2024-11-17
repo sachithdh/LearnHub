@@ -64,7 +64,7 @@
     </div>
 
     <div class="work-flow">
-        <div class="box">
+        <div class="up">
             <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
             <h2>How Learn Hub Works</h2>
         </div>

@@ -89,12 +89,14 @@ body {
   padding: 4rem;
 }
 
-.work-flow .box {
+.work-flow .up {
+  width: 100%;
   align-items: center;
   display: grid;
-  gap:2rem;
+  gap:4rem;
   grid-template-columns: 
-    repeat(auto-fit, minmax(70vh, 1fr));
+    repeat(auto-fit, minmax(50vh, 2fr));
+  margin-inline: auto;
   margin-top: 4rem;
 }
 
@@ -105,17 +107,10 @@ body {
 }
 
 .work-flow h2 {
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  text-align: center;
 }
 
-.work-flow h2 {
-  flex: 1 1 40rem;
-}
-
-.work-flow img {
-  flex: 1 1 40rem;
+.work-flow p {
 }
 
 .team {
