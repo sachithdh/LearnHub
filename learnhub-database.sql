@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS attendance (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
--- Post requests (discussions, help requests, etc.)
+-- Posts (discussions, help requests, etc.)
 CREATE TABLE IF NOT EXISTS posts (
     post_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     description TEXT NOT NULL,
@@ -174,3 +174,29 @@ CREATE TABLE IF NOT EXISTS tutor_review(
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+-- Course requests
+CREATE TABLE IF NOT EXISTS course_requests (
+    request_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    subject_id BIGINT(20) UNSIGNED,
+    created_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    updated_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+    user_id BIGINT(20) UNSIGNED NOT NULL,
+    PRIMARY KEY(request_id),
+    FOREIGN KEY (subject_id) REFERENCES subjects(subject_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+
+-- Comments on course requests
+CREATE TABLE IF NOT EXISTS course_request_comments (
+    comment_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    comment TEXT NOT NULL,
+    created_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    updated_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+    user_id BIGINT(20) UNSIGNED NOT NULL,
+    request_id BIGINT(20) UNSIGNED NOT NULL,
+    PRIMARY KEY(comment_id),
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (request_id) REFERENCES course_requests(request_id) ON DELETE CASCADE
+);
