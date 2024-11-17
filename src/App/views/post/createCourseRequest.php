@@ -9,7 +9,7 @@
         <p>Share your course request with the community</p>
     </div>
 
-    <form class="create-form" id="createCourseRequestForm">
+    <form class="create-form" id="createCourseRequestForm" method="POST" action="/course/request/create">
         <div class="create-section">
             <h2>Course Request Details</h2>
             <div class="create-form-group">

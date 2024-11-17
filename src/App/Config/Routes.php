@@ -40,10 +40,11 @@ function registerRoutes(App $app)
     $app->post('/create-course', [CoursesController::class, 'createCourse']);
     $app->get('/courses/my', [CoursesController::class, 'myCourses']);
 
-    // Post
+    // Course Requests
     $app->get('/course/request', [PostController::class, 'courseRequest']);
     $app->get('/course/request/id', [PostController::class, 'requestDetail']);
-    $app->get('/course/request/create', [PostController::class, 'createCourseRequest']);
+    $app->get('/course/request/create', [PostController::class, 'createCourseRequestView']);
+    $app->post('/course/request/create', [PostController::class, 'createCourseRequest']);
 
     // Resources
     $app->get('/resource', [ResourceController::class, 'resource']);
