@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use App\Config\{AppConstants, Paths};
-use App\Services\{UserService, ValidatorService,};
+use App\Services\{CourseRequestService, UserService, ValidatorService, CourseService, ReviewService, SubjectService};
 use Framework\{Container, Database, TemplateEngine};
 
 return [
@@ -18,5 +18,22 @@ return [
         // return $container->resolve(UserService::class);
         $db = $container->get(Database::class);
         return new UserService($db);
+    },
+    CourseService::class => function (Container $container) {
+        // return $container->resolve(CourseService::class);
+        $db = $container->get(Database::class);
+        return new CourseService($db);
+    },
+    ReviewService::class => function (Container $container) {
+        $db = $container->get(Database::class);
+        return new ReviewService($db);
+    },
+    SubjectService::class => function (Container $container) {
+        $db = $container->get(Database::class);
+        return new SubjectService($db);
+    },
+    CourseRequestService::class => function (Container $container) {
+        $db = $container->get(Database::class);
+        return new CourseRequestService($db);
     }
 ];

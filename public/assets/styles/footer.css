@@ -1,0 +1,153 @@
+/* Footer styling */
+footer {
+    background-color: #171a1f;
+    padding: 40px 20px;
+    color: #f8f9fa;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    min-width: 250px;
+    padding: 0 15px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    color: #ffc400;
+    margin-bottom: 20px;
+}
+
+.footer-section p {
+    font-size: 14px;    
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #f0f2f5;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffc400;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons li a img {
+    width: 24px;
+    height: 24px;
+}
+
+.newsletter-form {
+    margin-top: 20px;
+}
+
+.newsletter-form label {
+    font-size: 14px;
+    color: #ddd;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    width: calc(100% - 22px);
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #171a1f;
+    background-color: #ffc400;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+    background-color: #ffd033;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #565d6d;
+}
+
+.footer-bottom p {
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.footer-bottom-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-bottom-links li a {
+    color: #f0f2f5;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom-links li a:hover {
+    color: #ffc400;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

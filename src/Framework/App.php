@@ -36,7 +36,12 @@ class App
 
     public function post(string $path, array $controller, array $routeMiddleware = [])
     {
-        $this->router->add('POST', $path, $controller, $routeMiddleware);
+        $this->router->add('post', $path, $controller, $routeMiddleware);
+    }
+
+    public function delete(string $path, array $controller, array $routeMiddleware = [])
+    {
+        $this->router->add('DELETE', $path, $controller, $routeMiddleware);
     }
 
     public function addMiddleware(string $middleware)

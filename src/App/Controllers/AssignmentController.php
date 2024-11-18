@@ -6,15 +6,14 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class CourseInfoController
+class AssignmentController
 {
-
     public function __construct(private TemplateEngine $view) {}
 
-    public function courseInfo()
+    public function createAssignment()
     {
-        echo $this->view->render('course/CourseInfo.php', [
-            "title" => "Course"
+        echo $this->view->render("assignment/createAssignment.php", [
+            "title" => "Create Assignment"
         ]);
     }
 }

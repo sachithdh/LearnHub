@@ -8,99 +8,114 @@
     <div class="main-container">
         <div class="main-title">
             <h1>My Courses</h1>
-            <p>Track your progress and continue learning</p>
         </div>
 
-        <div class="courses-grid">
-            <!-- Computer Science Course -->
-            <div class="course-card">
-                <div class="course-header">
-                    <div class="course-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="course-title">
-                        <h3>Computer Science</h3>
-                        <p>Advanced Level</p>
-                    </div>
+        <div class="admin-header">
+            <div class="header-actions">
+                <div class="search-form">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search users...">
+                    <button class="search-btn" onclick="searchUsers()">Search</button>
                 </div>
-                <div class="course-info">
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <span>12 weeks course</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-book"></i>
-                        <span>8 modules completed</span>
-                    </div>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 75%"></div>
-                </div>
-                <div class="course-footer">
-                    <button class="continue-btn">Continue Learning</button>
-                    <button class="details-btn">Details</button>
-                </div>
+                <button class="add-user-btn" onclick="toggleModal()">Add New User</button>
             </div>
+        </div>
 
-            <!-- Physics Course -->
-            <div class="course-card">
-                <div class="course-header">
-                    <div class="course-icon">
-                        <i class="fas fa-atom"></i>
-                    </div>
-                    <div class="course-title">
-                        <h3>Physics</h3>
-                        <p>Intermediate Level</p>
-                    </div>
-                </div>
-                <div class="course-info">
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <span>10 weeks course</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-book"></i>
-                        <span>5 modules completed</span>
-                    </div>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 45%"></div>
-                </div>
-                <div class="course-footer">
-                    <button class="continue-btn">Continue Learning</button>
-                    <button class="details-btn">Details</button>
-                </div>
+        <div class="table-container">
+            <table class="courses-table">
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Students</th>
+                        <th>Time</th>
+                        <th>Revenue</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($myCourses as $courseData): ?>
+                        <tr>
+                            <td>
+                                <div class="course-name">
+                                    <?php echo e($courseData['title']) ?>
+                                    <span class="grade-badge">Grade <?php echo e($courseData['grade_id']) ?></span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="students-count">24 students</span>
+                            </td>
+                            <td>
+                                <div class="time-slot">
+                                    <i class="fas fa-clock"></i>
+                                    <?php
+                                    $start = date('g:i A', strtotime($courseData['start_time']));
+                                    $end = date('g:i A', strtotime($courseData['end_time']));
+                                    ?>
+                                    <span><?php echo e($start) ?> - <?php echo e($end) ?></span>
+                                    <span class="day-badge"><?php echo e($courseData['day']) ?></span>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="revenue">Rs. <?php echo e($courseData['price'] * 24) ?></span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/manage-course/edit/<?php echo e($courseData['course_id']); ?>" class="btn btn-edit">Edit</a>
+                                    <button onclick="showModal()" class="btn btn-delete">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Delete confirmation modal -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Confirm Delete</h3>
             </div>
-
-            <!-- Chemistry Course -->
-            <div class="course-card">
-                <div class="course-header">
-                    <div class="course-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <div class="course-title">
-                        <h3>Chemistry</h3>
-                        <p>Beginner Level</p>
-                    </div>
-                </div>
-                <div class="course-info">
-                    <div class="info-item">
-                        <i class="fas fa-clock"></i>
-                        <span>8 weeks course</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-book"></i>
-                        <span>3 modules completed</span>
-                    </div>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 30%"></div>
-                </div>
-                <div class="course-footer">
-                    <button class="continue-btn">Continue Learning</button>
-                    <button class="details-btn">Details</button>
-                </div>
+            <div class="modal-body">
+                Are you sure you want to delete this course? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button onclick="hideModal()" class="btn btn-cancel">Cancel</button>
+                <form method="POST" action="/manage-course/delete/<?php echo e($courseData['course_id']) ?>">
+                    <?php include $this->resolve("partials/_csrf.php"); ?>
+                    <input type="hidden" name="_METHOD" value="DELETE" />
+                    <button type="submit" class="btn btn-delete">Delete</button>
+                </form>
             </div>
         </div>
     </div>
+
+    <script>
+        const modal = document.getElementById('deleteModal');
+
+        function showModal() {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                hideModal();
+            }
+        }
+
+        // Close modal on escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                hideModal();
+            }
+        });
+    </script>
 </section>
+<?php include $this->resolve("partials/_footer.php"); ?>

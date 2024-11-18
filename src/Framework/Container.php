@@ -44,13 +44,11 @@ class Container
             $type = $param->getType();
 
             if (!$type) {
-                throw new ContainerException("Failed to reslove class $className
-                                            because $name is missing");
+                throw new ContainerException("Failed to reslove class $className because $name is missing");
             }
 
             if (!$type instanceof ReflectionNamedType || $type->isBuiltin()) {
-                throw new ContainerException("Failed to resolve class $className
-                                            because invalid param name.");
+                throw new ContainerException("Failed to resolve class $className because invalid param name.");
             }
 
             $dependencies[] = $this->get($type->getName());

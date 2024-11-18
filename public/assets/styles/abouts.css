@@ -64,7 +64,6 @@ body {
   background-color: rgb(248, 248, 248);
   padding: 2rem;
   border-radius: 2rem;
-
 }
 
 .mision h2 {
@@ -73,20 +72,19 @@ body {
   display: flex;
 }
 
-.mision  h2 {
-  flex : 1 1 40rem;
+.mision h2 {
+  flex: 1 1 40rem;
 }
 
 .mision p {
   flex: 1 1 40rem;
 }
 
-.work-flow
-{
+.work-flow {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap:1.5rem;
+  gap: 1.5rem;
   padding: 4rem;
 }
 
@@ -139,19 +137,18 @@ body {
   perspective: 800px;
 }
 
-.members  .container:hover > .card {
+.members .container:hover > .card {
   cursor: pointer;
   transform: rotateY(180deg);
 }
 
-.members  .card {
+.members .card {
   height: 100%;
   width: 100%;
   position: relative;
   transition: transform 1500ms;
   transform-style: preserve-3d;
 }
-
 
 .members .front,
 .members .back {
@@ -163,7 +160,7 @@ body {
   backface-visibility: hidden;
 }
 
-.members  .front {
+.members .front {
   /* background-image: url(/assets/images/teacher1.png); */
   background-size: cover;
   background-position: center;
@@ -173,7 +170,6 @@ body {
   align-items: center;
   color: rgb(255, 255, 255);
   box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
-
 }
 
 .members .front h2 {
@@ -183,7 +179,7 @@ body {
   text-align: center;
 }
 
-.members  .back {
+.members .back {
   background-color: #e0e0e0;
   transform: rotateY(180deg);
   display: flex;
@@ -214,8 +210,8 @@ body {
   padding: 2rem;
 }
 
-.box-container .box{
-  border-radius: .5rem;
+.box-container .box {
+  border-radius: 0.5rem;
   background-color: var(--white);
   padding: 2rem;
   display: flex;
@@ -223,18 +219,72 @@ body {
   gap: 2.5rem;
 }
 
-.box-container .box i{
+.box-container .box i {
   font-size: 4rem;
-  color: #FFC400;
+  color: #ffc400;
 }
 
-.box-container .box h3{
+.box-container .box h3 {
   font-size: 2.5rem;
   color: var(--black);
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
-.box-container .box p{
+.box-container .box p {
   font-size: 1.7rem;
-  color:var(--light-color);
+  color: var(--light-color);
+}
+
+/* Features section */
+.features {
+  padding: 5rem 1rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.features h2 {
+  font-family: "Archivo", sans-serif;
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.feature-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: calc(25% - 1.5rem);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: #565d6d;
 }

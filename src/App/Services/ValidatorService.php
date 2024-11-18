@@ -42,4 +42,28 @@ class ValidatorService
             "password" => ["required"],
         ]);
     }
+
+    public function validateCourse(array $formData)
+    {
+        $this->validator->validate($formData, [
+            "title" => ["required"],
+            "description" => ["required"],
+            "subject_id" => ["required"],
+            "grade_id" => ["required"],
+            "start_time" => ["required"],
+            "end_time" => ["required"],
+            "day" => ["required"],
+            "price" => ["required"],
+            "pricing_period" => ["required"],
+        ]);
+    }
+
+    public function validateCourseRequest(array $formData)
+    {
+        $this->validator->validate($formData, [
+            "requestTitle" => ["required"],
+            "requestDescription" => ["required"],
+            "subject_id" => ["required"],
+        ]);
+    }
 }

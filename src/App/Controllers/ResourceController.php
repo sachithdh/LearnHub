@@ -6,15 +6,15 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class CourseRequestController
-{
 
+class ResourceController
+{
     public function __construct(private TemplateEngine $view) {}
 
-    public function courseRequest()
+    public function resource()
     {
-        echo $this->view->render('post/CourseRequest.php', [
-            "title" => "Course Requiest"
+        echo $this->view->render('Resource/resource.php', [
+            'title' => 'Resource'
         ]);
     }
 }

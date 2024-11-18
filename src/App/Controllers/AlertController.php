@@ -6,15 +6,14 @@ namespace App\Controllers;
 
 use Framework\TemplateEngine;
 
-class TeacherController
+class AlertController
 {
-
     public function __construct(private TemplateEngine $view) {}
 
-    public function teacher()
+    public function alert()
     {
-        echo $this->view->render('User/TeacherDashboard.php', [
-            "title" => "Teacher"
+        echo $this->view->render('partials/_alert.php', [
+            'title' => 'Alert'
         ]);
     }
 }

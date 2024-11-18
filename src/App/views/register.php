@@ -90,6 +90,7 @@
                 </div>
                 <button type="submit" class="signup-button">Sign Up</button>
             </form>
+            <p> <?php echo $_SESSION['role'] ?> </p>
         </div>
     </div>
 
