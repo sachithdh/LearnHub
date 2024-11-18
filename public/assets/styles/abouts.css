@@ -7,9 +7,14 @@ Reset and base styles
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
   max-width: 1200px;
-  position: relative;
-  margin: 0 auto;
 }
 
 .head {
@@ -19,6 +24,7 @@ body {
   grid-template-columns: 
     repeat(auto-fit, minmax(70vh, 1fr));
   margin-top: 4rem;
+  position: relative;
 }
 
 .head .image img{
@@ -190,17 +196,6 @@ body {
   padding: 1rem;
 }
 
-.features {
-  padding: 0;
-  font-size: 2.5rem;
-  color: #1a1a1a;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-.features h2 {
-  padding: 3rem;
-}
-
 .box-container{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(45vh, 1fr));
@@ -236,13 +231,17 @@ body {
 }
 
 /* Features section */
+
 .features {
   padding: 5rem 1rem;
-  width: 100%;
-  max-width: 1200px;
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .features h2 {
+  padding: 3rem;
   font-family: "Archivo", sans-serif;
   font-size: 2rem;
   color: #1a1a1a;
@@ -250,15 +249,13 @@ body {
   text-align: center;
 }
 
-.feature-cards {
+
+.feature-card {
+  background-color: #ffffff;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
-}
-
-.feature-card {
-  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
