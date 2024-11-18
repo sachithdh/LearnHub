@@ -1,18 +1,3 @@
-/* Reset and base styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body, .profile {
-    font-family: 'Inter', sans-serif;
-    color: #333;
-    /* background-color: #f5f6fa; */
-    padding: 20px;
-    margin-top: 50px;
-}
-
 .profile h2 {
     font-weight: 700;
     color: #2f3e57;
@@ -30,6 +15,30 @@ body, .profile {
 .left-container, .right-container {
     flex: 1;
     padding: 15px;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 1200px) {
+    .main-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .left-container, .right-container {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left-container, .right-container {
+        padding: 10px;
+        max-width: 100%;
+    }
 }
 
 /* Course Stats Section */
@@ -61,7 +70,6 @@ body, .profile {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 .stat-value {
     font-size: 30px;
     font-weight: 700;
@@ -74,6 +82,16 @@ body, .profile {
     text-transform: uppercase;
 }
 
+@media (max-width: 768px) {
+    .stat-card {
+        min-width: 120px;
+    }
+
+    .stat-value {
+        font-size: 24px;
+    }
+}
+
 /* Timeline Section */
 .timeline-section {
     background-color: #ffffff;
@@ -81,6 +99,7 @@ body, .profile {
     padding: 24px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    overflow-x: auto;
 }
 
 .timeline-table {
@@ -89,6 +108,7 @@ body, .profile {
     border-spacing: 0;
     text-align: center;
     font-size: 14px;
+    min-width: 600px; /* Ensures minimum width for scroll on smaller screens */
 }
 
 .timeline-table th, .timeline-table td {
@@ -118,48 +138,6 @@ body, .profile {
 }
 
 /* Enrolled Courses Section */
-
-/* User Profile Summary */
-.user-profile-summary {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 24px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.profile-picture {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.user-info h3 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600;
-}
-.upcoming-tasks, .notifications{
-    margin-bottom: 42px ;
-}
-
-/* Notifications */
-.notifications ul, .upcoming-tasks ul, .recent-activity ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.notifications li, .upcoming-tasks li, .recent-activity li {
-    padding: 10px;
-    border-bottom: 1px solid #e0e0e0;
-    color: #6c757d;
-    font-size: 14px;
-}
-/* Enrolled Courses */
 .enrolled-courses {
     background-color: #fff;
     padding: 24px;
@@ -178,7 +156,7 @@ body, .profile {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-height: 300px; /* Ensures we display only 4 rows max */
+    max-height: 300px;
     overflow: hidden;
 }
 
@@ -266,39 +244,82 @@ body, .profile {
     background-color: #FFC400;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .main-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .timeline-table th, .timeline-table td {
-        padding: 10px;
-        font-size: 12px;
-    }
+/* User Profile Summary */
+.user-profile-summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 24px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    .course-card {
-        width: 100%;
-        flex-basis: 100%;
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Notifications and Upcoming Tasks */
+.upcoming-tasks, .notifications {
+    margin-bottom: 42px;
+}
+
+.notifications ul, .upcoming-tasks ul, .recent-activity ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.notifications li, .upcoming-tasks li, .recent-activity li {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #6c757d;
+    font-size: 14px;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 576px) {
+    .stats-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .course-row h4 {
+        font-size: 16px;
+    }
+
+    .view-all-button {
+        font-size: 14px;
+    }
+
+    .profile-picture {
+        width: 50px;
+        height: 50px;
+    }
+
+    .user-info h3 {
+        font-size: 18px;
+    }
+
+    .quick-action-button {
+        padding: 8px 15px;
+        font-size: 14px;
     }
     .timeline-table {
         font-size: 12px;
+        min-width: 100%; /* Allows better fit on smaller screens */
     }
-}
 
-@media (max-width: 480px) {
-    .course-card {
-        flex-basis: 100%;
-    }
-    .course-info h4 {
-        font-size: 16px;
-    }
-    .course-info p {
-        font-size: 12px;
-    }
     .timeline-table th, .timeline-table td {
-        padding: 5px;
+        padding: 12px;
     }
 }
