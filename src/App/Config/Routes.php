@@ -6,28 +6,32 @@ declare(strict_types=1);
 
 namespace App\Config;
 
-use App\Controllers\{HomeController, AboutController, AlertController, AssignmentController, AuthController, ProfileController, DashboardController, CoursesController,  CreateCourseController, TutorProfileController, SettingController, MyCoursesController, ResourceController, PostController, ReviewController};
+use App\Controllers\{AlertController, AssignmentController, AuthController, ProfileController, CoursesController, TutorProfileController, SettingController, PageController, ResourceController, PostController, ReviewController};
 use App\Middleware\AuthRequiredMiddleware;
 use App\Middleware\GuestOnlyMiddleware;
 use Framework\App;
 
 function registerRoutes(App $app)
 {
-    $app->get('/', [HomeController::class, 'home'], [AuthRequiredMiddleware::class]);
-    $app->get('/about', [AboutController::class, 'about']);
+    $app->get('/', [PageController::class, 'home'], [AuthRequiredMiddleware::class]);
+    $app->get('/about', [PageController::class, 'about']);
     $app->get('/profile', [ProfileController::class, 'profile']);
-    $app->get('/dashboard', [DashboardController::class, 'dashboard']);
+    $app->get('/dashboard', [PageController::class, 'dashboard']);
+    $app->get('/admin-dashboard', [PageController::class, 'adminDashboard']);
+    $app->get('/admin-dashboard/user-managment', [PageController::class, 'userManagment']);
+    $app->get('/admin-dashboard/course-managment', [PageController::class, 'courseManagment']);
     $app->get('/settings', [SettingController::class, 'settings']);
     $app->get('/tutor', [TutorProfileController::class, 'tutorProfile']);
     $app->get('/alert', [AlertController::class, 'alert']);
 
     // User
-    $app->get('/register', [AuthController::class, 'registerView'], [GuestOnlyMiddleware::class]);
-    $app->get('/register/role', [AuthController::class, 'registerRoleView'], [GuestOnlyMiddleware::class]);
+    $app->post('/register/create-account', [AuthController::class, 'registerView'], [GuestOnlyMiddleware::class]);
+    $app->get('/register', [AuthController::class, 'registerRoleView'], [GuestOnlyMiddleware::class]);
     $app->post('/register', [AuthController::class, 'register']);
     $app->get('/login', [AuthController::class, 'loginView'], [GuestOnlyMiddleware::class]);
     $app->post('/login', [AuthController::class, 'login']);
     $app->get('/logout', [AuthController::class, 'logout']);
+    $app->get('/billing-and-payment', [PageController::class, 'billingAndPayment']);
 
     // Courses
     $app->get('/courses', [CoursesController::class, 'course']);
