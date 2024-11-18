@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="/assets/styles/about.css">
+    <link rel="stylesheet" href="/assets/styles/abouts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 
@@ -50,7 +50,7 @@
             <i class="fas fa-chalkboard-user"></i>
             <div>
                 <h3>+2k</h3>
-                <p>expert tutors</p>
+                <p>expert <br> tutors</p>
             </div>
         </div>
 
