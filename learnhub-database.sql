@@ -165,6 +165,7 @@ CREATE TABLE IF NOT EXISTS post_request_comments (
     FOREIGN KEY (post_req_id) REFERENCES posts_requests(post_req_id) ON DELETE CASCADE
 );
 
+-- Reviews for tutor
 CREATE TABLE IF NOT EXISTS tutor_review(
     review_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     review TEXT NOT NULL,
@@ -176,3 +177,11 @@ CREATE TABLE IF NOT EXISTS tutor_review(
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
+-- Course Transaction
+CREATE TABLE IF NOT EXISTS course_transactions(
+    transaction_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    course_id BIGINT(20) UNSIGNED NOT NULL,
+    user_id BIGINT(20) UNSIGNED NOT NULL,
+    amount decimal(10,2) NOT NULL,
+    transaction_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
+)
