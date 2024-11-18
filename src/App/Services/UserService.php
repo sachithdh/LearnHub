@@ -64,12 +64,12 @@ class UserService
             'email' => $formData['email']
         ])->find();
         if ($user === false) {
-            throw new ValidationException(['password' => ['Invalid Credentials']]);
+            throw new ValidationException(['password' => ['Invalid Email address or Password. Please try again.']]);
         }
 
         $passwordMatch = password_verify($formData['password'], $user['password']);
         if (!$passwordMatch) {
-            throw new ValidationException(['password' => ['Invalid Credentials']]);
+            throw new ValidationException(['password' => ['Invalid Email address or Password. Please try again.']]);
         }
 
         session_regenerate_id();

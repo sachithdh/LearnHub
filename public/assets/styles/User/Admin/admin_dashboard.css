@@ -1,0 +1,425 @@
+/* Admin Dashboard Styles */
+.admin-dashboard {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.admin-main-container {
+    display: flex;
+    gap: 24px;
+    max-width: 1800px;
+    margin: auto;
+    padding: 24px;
+}
+
+/* Admin Sidebar */
+.admin-sidebar {
+    width: 280px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: calc(100vh - 48px);
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Profile Section */
+.admin-profile {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    border: 2px solid #FFC400; /* Highlight border */
+}
+
+.admin-profile h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 600;
+}
+
+.admin-profile p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 4px 0 0;
+}
+
+/* Navigation Styles */
+.admin-nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.admin-nav ul li {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-nav ul li:hover {
+    background: rgba(255, 196, 0, 0.1); /* Light hover effect */
+    color: #2c3e50;
+}
+
+.admin-nav ul li.nav-active {
+    background: #FFC400; 
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(255, 196, 0, 0.3);
+}
+
+
+.admin-content {
+    flex: 1;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+}
+/* Date Range Wrapper */
+.date-range {
+    position: relative;
+    display: inline-block;
+}
+
+/* Select Dropdown */
+.date-range select {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    appearance: none; /* Removes default arrow */
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and Focus Styles */
+.date-range select:hover {
+    border-color: #FFC400;
+    box-shadow: 0 0 4px rgba(255, 196, 0, 0.3);
+}
+
+.date-range select:focus {
+    outline: none;
+    border-color: #FFC400;
+    box-shadow: 0 0 4px rgba(255, 196, 0, 0.4);
+}
+
+/* Custom Arrow Icon */
+.date-range::after {
+    content: '▼';
+    font-size: 10px;
+    color: #495057;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensures clickability of the select */
+}
+
+@media (max-width: 768px) {
+    .date-range select {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-box h3 {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-box .value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.stat-box .trend {
+    font-size: 14px;
+    color: #FFC400;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.trend.negative {
+    color: #dc3545;
+}
+
+.chart-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.chart-container h2 {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+/* SVG Chart Styles */
+.chart-svg {
+    width: 100%;
+    height: 300px;
+}
+
+.chart-line {
+    fill: none;
+    stroke: #FFC400;
+    stroke-width: 2;
+}
+
+.chart-area {
+    fill: rgba(255, 196, 0, 0.1);
+}
+
+.chart-dot {
+    fill: #FFC400;
+}
+
+.chart-grid {
+    stroke: #e9ecef;
+    stroke-width: 1;
+}
+
+/* Table Styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.data-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.data-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-active {
+    background: #e3fcef;
+    color: #0ca678;
+}
+
+.status-pending {
+    background: #fff3bf;
+    color: #FFC400;
+}
+
+/* Sidebar Active State */
+.admin-nav ul li.active {
+    color: #FFC400;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .admin-main-container {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    /* Admin Sidebar */
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 16px;
+        box-shadow: none;
+        border-radius: 0;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .admin-profile {
+        display: none;
+    }
+
+    .admin-nav ul {
+        flex-direction: row;
+        gap: 2px;
+        overflow-x: auto;
+        padding: 6px 0;
+        text-align: center;
+    }
+
+    .admin-nav ul li {
+        padding: 6px;
+        font-size: 14px;
+    }
+
+    /* Admin Content */
+    .admin-content {
+        padding: 0;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .admin-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Stat boxes - Reduce padding and font sizes */
+    .stat-box {
+        padding: 16px;
+    }
+
+    .stat-box h3 {
+        font-size: 12px;
+    }
+
+    .stat-box .value {
+        font-size: 24px;
+    }
+
+    /* Chart container adjustments */
+    .chart-container {
+        padding: 16px;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .chart-svg {
+        height: 200px;
+    }
+
+    /* Data Tables - Enable scrolling and change layout */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    /* Adjust status badges */
+    .status-badge {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+}
+
+/* Very Small Screens (up to 480px) */
+@media (max-width: 480px) {
+    .admin-main-container {
+        padding: 8px;
+    }
+
+    .admin-header h1 {
+        font-size: 18px;
+    }
+
+    .admin-header .date-range select {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    /* Adjust the stat-box values to fit smaller screens */
+    .stat-box h3 {
+        font-size: 10px;
+    }
+
+    .stat-box .value {
+        font-size: 20px;
+    }
+
+    .chart-container {
+        padding: 12px;
+    }
+
+    /* Reduce padding on the data table */
+    .data-table th,
+    .data-table td {
+        padding: 4px;
+    }
+
+    /* Adjust button and table alignment */
+    .chart-header {
+        align-items: flex-start;
+    }
+
+    /* Smaller status badges for compact appearance */
+    .status-badge {
+        font-size: 8px;
+    }
+}
+

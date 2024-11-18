@@ -74,34 +74,69 @@
     <div class="right-container">
       <div class="main-content">
         <!-- Timeline/Course Schedule -->
-        <section class="timeline-section">
-          <h2>Course Schedule</h2>
-          <table class="timeline-table">
-            <tr>
-              <th>Time</th>
-              <th>Monday</th>
-              <th>Tuesday</th>
-              <th>Wednesday</th>
-              <th>Thursday</th>
-              <th>Friday</th>
-            </tr>
-            <tr>
-              <td>9:00 AM</td>
-              <td>
-                <div class="course-slot">Intro to Programming</div>
-              </td>
-              <td></td>
-              <td>
-                <div class="course-slot">Web Development</div>
-              </td>
-              <td></td>
-              <td>
-                <div class="course-slot">Intro to Programming</div>
-              </td>
-            </tr>
-            <!-- Add more schedule rows as needed -->
-          </table>
-        </section>
+        <div class="timeline-container">
+          <section class="timeline-section">
+            <h2>Course Schedule</h2>
+            <table class="timeline-table">
+              <tr>
+                <th>Day</th>
+                <th>9:00 AM</th>
+                <th>10:00 AM</th>
+                <th>11:00 AM</th>
+                <th>12:00 PM</th>
+                <th>1:00 PM</th>
+                <th>2:00 PM</th>
+              </tr>
+              <tr>
+                <td>Monday</td>
+                <td>
+                  <div class="course-slot">Intro to Programming</div>
+                </td>
+                <td></td>
+                <td>
+                  <div class="course-slot">Data Structures</div>
+                </td>
+                <td></td>
+                <td>
+                  <div class="course-slot">Algorithms</div>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td></td>
+                <td>
+                  <div class="course-slot">Mathematics</div>
+                </td>
+                <td></td>
+                <td>
+                  <div class="course-slot">Web Development</div>
+                </td>
+                <td></td>
+                <td>
+                  <div class="course-slot">Intro to Programming</div>
+                </td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>
+                  <div class="course-slot">Web Development</div>
+                </td>
+                <td></td>
+                <td>
+                  <div class="course-slot">Database Systems</div>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                  <div class="course-slot">Data Science</div>
+                </td>
+              </tr>
+              <!-- Add more days and time slots as needed -->
+            </table>
+          </section>
+        </div>
+
 
         <!-- Enrolled Courses Section -->
         <div class="enrolled-courses">
