@@ -83,7 +83,7 @@
         </div>
 
         <section class="features">
-            <h2>Why Learn<span style="color:#FFC400;">Hub</span> ?</h2>
+
             <div class="feature-content">
                 <div class="feature-left">
                     <h1>Join with Us!</h1>
@@ -91,6 +91,7 @@
                     <img src="/assets/images/Online learning.svg" />
                 </div>
                 <div class="feature-cards">
+                    <h2>Why Learn<span style="color:#FFC400;">Hub</span> ?</h2>
                     <div class="feature-card">
                         <h3>Interactive Lessons</h3>
                         <p>Engage with dynamic content and real-time feedback.</p>

@@ -6,7 +6,7 @@
 
 <section class="course-request-detail">
     <div class="back-button">
-        <a href="/course/requests">← Back to Requests</a>
+        <a href="/course/request">← Back to Requests</a>
     </div>
 
     <!-- Main Post Content -->

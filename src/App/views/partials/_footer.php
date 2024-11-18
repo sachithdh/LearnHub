@@ -29,3 +29,6 @@
         <p>&copy; 2024 LearnHub. All rights reserved.</p>
     </div>
 </footer>
+</body>
+
+</html>
