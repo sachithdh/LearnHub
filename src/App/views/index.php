@@ -78,7 +78,7 @@
             <section id="community" class="community">
                 <h2>Join Our Learning Community</h2>
                 <p>Connect with fellow learners, share your goals, and find the perfect course for your needs.</p>
-                <a href="/post/create" class="community-btn" id="post-requirement">Post Your Course Requirement</a>
+                <a href="/course/request/create" class="community-btn" id="post-requirement">Post Your Course Requirement</a>
             </section>
         </div>
 
