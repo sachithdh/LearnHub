@@ -16,7 +16,7 @@
                     <input type="text" class="search-input" id="searchInput" placeholder="Search users...">
                     <button class="search-btn" onclick="searchUsers()">Search</button>
                 </div>
-                <button class="add-user-btn" onclick="toggleModal()">Add New User</button>
+                <button class="add-user-btn" onclick="toggleModal()"><a href="/course/create" style="text-decoration: none;"> Add New Course </a></button>
             </div>
         </div>
 
@@ -33,7 +33,7 @@
                 </thead>
                 <tbody>
                     <?php foreach ($myCourses as $courseData): ?>
-                        <tr>
+                        <tr onclick="window.location.href='/courses/my-courses/<?php echo e($courseData['course_id']) ?>';" style="cursor: pointer;">
                             <td>
                                 <div class="course-name">
                                     <?php echo e($courseData['title']) ?>

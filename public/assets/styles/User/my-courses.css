@@ -160,6 +160,10 @@
     gap: 8px;
 }
 
+.action-buttons a{
+    text-decoration: none;
+}
+
 .btn {
     padding: 8px 16px;
     border: none;

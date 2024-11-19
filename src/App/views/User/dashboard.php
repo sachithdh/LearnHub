@@ -89,46 +89,39 @@
               </tr>
               <tr>
                 <td>Monday</td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Intro to Programming</div>
                 </td>
-                <td></td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Data Structures</div>
                 </td>
-                <td></td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Algorithms</div>
                 </td>
-                <td></td>
               </tr>
               <tr>
                 <td>Tuesday</td>
                 <td></td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Mathematics</div>
                 </td>
-                <td></td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Web Development</div>
                 </td>
-                <td></td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Intro to Programming</div>
                 </td>
               </tr>
               <tr>
                 <td>Wednesday</td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Web Development</div>
                 </td>
-                <td></td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Database Systems</div>
                 </td>
                 <td></td>
-                <td></td>
-                <td>
+                <td colspan="2">
                   <div class="course-slot">Data Science</div>
                 </td>
               </tr>
@@ -182,6 +175,6 @@
     <button class="quick-action-button">Contact Support</button>
   </div>
 
-
-
 </section>
+
+<?php include $this->resolve("partials/_footer.php"); ?>

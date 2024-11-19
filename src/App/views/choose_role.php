@@ -1,15 +1,3 @@
-<?php
-session_start();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Save selected role in the session
-    $_SESSION['role'] = $_POST['role'];
-    // Redirect to register.php
-    header("Location: register.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,10 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="choose-role-text">
             <h1>How do you want to use LEARN<span style="color: #ffc400;">HUB</span>?</h1>
         </div>
-        <form method="POST" class="choose-role-form" id="roleForm" action="/register/create-account">
+        <form method="POST" class="choose-role-form" id="roleForm" action="/choose-role">
             <?php include $this->resolve('partials/_csrf.php') ?>
             <div class="role-option">
-                <input type="radio" id="tutor" name="role" value="tutor">
+                <input type="radio" id="tutor" name="role" value="teacher">
                 <label for="tutor">I'm a Tutor</label>
             </div>
             <div class="role-option">

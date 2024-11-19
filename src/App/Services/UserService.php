@@ -50,7 +50,7 @@ class UserService
                 "last_name" => $formData['last_name'],
                 "date_of_birth" => $formData['date_of_birth'],
                 "email" => $formData['email'],
-                "user_role" => 'student',
+                "user_role" => $_SESSION['role'],
                 "password" => $password,
             ]
         );
