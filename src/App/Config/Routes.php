@@ -26,8 +26,9 @@ function registerRoutes(App $app)
     $app->get('/alert', [AlertController::class, 'alert']);
 
     // User
-    $app->post('/register/create-account', [AuthController::class, 'registerView'], [GuestOnlyMiddleware::class]);
+    $app->get('/register/create-account', [AuthController::class, 'registerView'], [GuestOnlyMiddleware::class]);
     $app->get('/register', [AuthController::class, 'registerRoleView'], [GuestOnlyMiddleware::class]);
+    $app->post('/choose-role', [AuthController::class, 'chooseRole'], [GuestOnlyMiddleware::class]);
     $app->post('/register', [AuthController::class, 'register']);
     $app->get('/login', [AuthController::class, 'loginView'], [GuestOnlyMiddleware::class]);
     $app->post('/login', [AuthController::class, 'login']);
@@ -39,11 +40,11 @@ function registerRoutes(App $app)
     $app->get('/manage-course/edit/{course}', [CoursesController::class, 'courseEditView']);
     $app->post('/manage-course/edit/{course}', [CoursesController::class, 'editCourse']);
     $app->delete('/manage-course/delete/{course}', [CoursesController::class, 'deleteCourse']);
-    $app->get('/course/course-info', [CoursesController::class, 'courseInfo']);
+    $app->get('/courses/my-courses/{course_id}', [CoursesController::class, 'courseInfo']);
     $app->get('/course/enroll', [CoursesController::class, 'enrollCourse']);
     $app->get('/course/create', [CoursesController::class, 'createCourseView']);
     $app->post('/create-course', [CoursesController::class, 'createCourse']);
-    $app->get('/courses/my', [CoursesController::class, 'myCourses']);
+    $app->get('/courses/my-courses', [CoursesController::class, 'myCourses']);
 
     // Course Requests
     $app->get('/course/request', [PostController::class, 'courseRequest']);

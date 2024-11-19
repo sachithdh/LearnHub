@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Framework\TemplateEngine;
-use App\Services\{ValidatorService, CourseService};
+use App\Services\{ValidatorService, CourseService, UserService};
 
 class CoursesController
 {
@@ -13,7 +13,8 @@ class CoursesController
     public function __construct(
         private TemplateEngine $view,
         private ValidatorService $validatorService,
-        private CourseService $courseService
+        private CourseService $courseService,
+        private UserService $userService
     ) {}
 
     public function course()
@@ -30,11 +31,24 @@ class CoursesController
         ]);
     }
 
-    public function courseInfo()
+    public function courseInfo(array $params)
     {
-        echo $this->view->render('course/CourseInfo.php', [
-            "title" => "Course"
-        ]);
+        $course = $this->courseService->getCourse($params['course_id']);
+        $user = $this->userService->getUserProfile();
+
+        if (!$course) {
+            redirectTo('/courses/my-courses');
+        }
+
+
+        echo $this->view->render(
+            'course/CourseInfo.php',
+            [
+                'course' => $course,
+                'title' => $course['title'],
+                'user' => $user
+            ]
+        );
     }
 
     public function createCourseView()
@@ -76,6 +90,7 @@ class CoursesController
             ]
         );
     }
+
     public function editCourse(array $params)
     {
         $course = $this->courseService->getCourse($params['course']);
