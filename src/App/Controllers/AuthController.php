@@ -28,6 +28,13 @@ class AuthController
         ]);
     }
 
+    public function chooseRole()
+    {
+        $role = $_POST['role'];
+        $_SESSION['role'] = $role;
+        redirectTo("/register/create-account");
+    }
+
     public function register()
     {
         $this->validatorService->validateRegister($_POST);
