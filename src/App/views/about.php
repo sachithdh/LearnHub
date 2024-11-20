@@ -122,31 +122,6 @@
         </div>
     </div>
 
-    <div class="features">
-        <h2>LearnHub Features</h2>
-        <div class="feature-cards">
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Interactive Lessons"> -->
-                <h3>Interactive Lessons</h3>
-                <p>Engage with dynamic content and real-time feedback.</p>
-            </div>
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Progress Tracking"> -->
-                <h3>Progress Tracking</h3>
-                <p>Monitor your learning journey with detailed analytics.</p>
-            </div>
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Personalized Learning Paths"> -->
-                <h3>Personalized Learning Paths</h3>
-                <p>Tailored course recommendations based on your goals.</p>
-            </div>
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Certification"> -->
-                <h3>Certification</h3>
-                <p>Earn recognized certificates upon course completion.</p>
-            </div>
-        </div>
-    </div>
 
 </section>
 <!-- End Main Content Area -->
