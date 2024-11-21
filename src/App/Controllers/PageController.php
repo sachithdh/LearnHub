@@ -25,6 +25,13 @@ class PageController
         ]);
     }
 
+    public function contact()
+    {
+        echo $this->view->render('contact.php', [
+            "title" => "contact-us"
+        ]);
+    }
+
     public function dashboard()
     {
         echo $this->view->render('User/dashboard.php', [
