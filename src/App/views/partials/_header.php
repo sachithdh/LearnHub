@@ -43,7 +43,7 @@
                 <li><a href="/course/request">Posts</a></li>
                 <li><a href="#">Resource </a></li>
                 <li><a href="/about">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="/contact">Contact Us</a></li>
                 <li><a href="#">Help</a></li>
             </ul>
         </div>
