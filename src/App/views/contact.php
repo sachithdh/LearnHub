@@ -17,6 +17,9 @@
 
             <div class="image">
                 <img src="/assets/images/contact-img.svg" alt="">
+
+                <h3>Reach Out Anytime!</h3>
+                <span>Have a question or idea? We’d love to hear from you—let’s make your experience better!</span>
             </div>
 
             <form action="" method="post">
@@ -25,7 +28,7 @@
                 <input id="email" type="email" placeholder="enter your email" name="email" required maxlength="50" class="input-feild inputs">
                 <textarea id="message" name="msg" class="input-message inputs" placeholder="enter your message" required maxlength="1000" cols="30" rows="10"></textarea>
 
-                <input id="sendButton" type="button" value="send message" class="btn" name="submit">
+                <input id="sendButton" type="submit" value="send message" class="btn" name="submit">
             </form>
 
         </div>
@@ -50,7 +53,7 @@
     </section>
 
 
-    <script>
+    <!-- <script>
         document.getElementById('sendButton').addEventListener('click', function() {
 
             const name = document.getElementById('name').value;
@@ -64,7 +67,7 @@
 
             window.location.href = mailtoLink;
         });
-    </script>
+    </script> -->
 
 </body>
 
