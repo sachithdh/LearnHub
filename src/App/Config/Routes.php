@@ -15,6 +15,7 @@ use Framework\App;
 function registerRoutes(App $app)
 {
     $app->get('/', [PageController::class, 'home'], [AuthRequiredMiddleware::class]);
+    $app->get('/contact', [PageController::class, 'contact']);
     $app->get('/about', [PageController::class, 'about']);
     $app->get('/profile', [ProfileController::class, 'profile']);
     $app->get('/dashboard', [PageController::class, 'dashboard']);
