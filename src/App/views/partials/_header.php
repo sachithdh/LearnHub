@@ -40,7 +40,7 @@
             <ul class="desktop-menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Courses</a></li>
-                <li><a href="/course/request">Posts</a></li>
+                <li><a href="/course/request">Course Requests</a></li>
                 <li><a href="#">Resource </a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>

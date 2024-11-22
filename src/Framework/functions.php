@@ -22,3 +22,9 @@ function redirectTo(string $path)
     http_response_code(302);
     exit;
 }
+
+function formatDate($date, $format = 'F j, Y, g:i a')
+{
+    $dateTime = new DateTime($date);
+    return $dateTime->format($format);
+}
