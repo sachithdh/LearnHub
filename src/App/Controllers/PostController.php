@@ -7,7 +7,6 @@ namespace App\Controllers;
 use App\Services\CourseRequestService;
 use App\Services\SubjectService;
 use App\Services\ValidatorService;
-use Exception;
 use Framework\TemplateEngine;
 
 class PostController
@@ -29,8 +28,10 @@ class PostController
 
     public function courseRequest()
     {
-        echo $this->view->render('post/CourseRequest.php', [
-            "title" => "Course Requiest"
+        $courseRequests = $this->courseRequestService->getCourseRequestsforView();
+        echo $this->view->render('post/CourseRequests.php', [
+            "title" => "Course Requests",
+            "courseRequests" => $courseRequests
         ]);
     }
 
