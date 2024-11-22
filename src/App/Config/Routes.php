@@ -49,7 +49,7 @@ function registerRoutes(App $app)
 
     // Course Requests
     $app->get('/course/request', [PostController::class, 'courseRequest']);
-    $app->get('/course/request/id', [PostController::class, 'requestDetail']);
+    $app->get('/course/request/{id}', [PostController::class, 'requestDetails']);
     $app->get('/course/request/create', [PostController::class, 'createCourseRequestView']);
     $app->post('/course/request/create', [PostController::class, 'createCourseRequest']);
 

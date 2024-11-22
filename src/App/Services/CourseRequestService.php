@@ -29,7 +29,8 @@ class CourseRequestService
     {
         $query =
             "SELECT 
-                cr.title, 
+                cr.title,
+                cr.request_id, 
                 cr.description, 
                 s.subject_title AS subject, 
                 cr.created_date, 

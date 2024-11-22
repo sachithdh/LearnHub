@@ -4,6 +4,10 @@
   padding: 0 20px;
 }
 
+.course-requests-title {
+  margin-bottom: 28px;
+}
+
 .post-link {
   text-decoration: none;
   display: block;

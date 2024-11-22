@@ -19,10 +19,10 @@ class PostController
         private ValidatorService $validatorService
     ) {}
 
-    public function requestDetail()
+    public function requestDetails()
     {
         echo $this->view->render('post/RequestDetail.php', [
-            "title" => "Course Requiest"
+            "title" => "Course Request"
         ]);
     }
 

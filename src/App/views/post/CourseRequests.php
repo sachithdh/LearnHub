@@ -3,11 +3,12 @@
 <link rel="stylesheet" href="/assets/styles/Post/course-requests.css">
 
 <section class="course-requests-container">
+    <h1 class="course-requests-title">Course Requests</h1>
 
     <?php foreach ($courseRequests as $request): ?>
         <!-- Request Feed -->
         <div class="request-feed">
-            <a class="post-link" href="/course/request/id">
+            <a class="post-link" href=<?= "/course/request/" . $request["request_id"] ?>>
                 <!-- Course Request -->
                 <div class="request-post">
                     <div class="user-info">
