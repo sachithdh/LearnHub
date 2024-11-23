@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS users (
     email VARCHAR(255) NOT NULL,
     phone_no VARCHAR(15),
     date_of_birth DATE NOT NULL,
+    joined_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_login DATETIME,
     location VARCHAR(255),
     password VARCHAR(255) NOT NULL,
@@ -182,7 +183,8 @@ CREATE TABLE IF NOT EXISTS course_transactions(
     user_id BIGINT(20) UNSIGNED NOT NULL,
     amount decimal(10,2) NOT NULL,
     transaction_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
-)
+    PRIMARY KEY(transaction_id) 
+);
 -- Course requests
 CREATE TABLE IF NOT EXISTS course_requests (
     request_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
