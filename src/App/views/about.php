@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="/assets/styles/about.css">
+    <link rel="stylesheet" href="/assets/styles/abouts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 
@@ -50,22 +50,24 @@
             <i class="fas fa-chalkboard-user"></i>
             <div>
                 <h3>+2k</h3>
-                <p>expert tutors</p>
+                <p>expert <br> tutors</p>
             </div>
         </div>
 
     </div>
 
     <div class="mision">
+        <h2>Our Mission</h2>
         <p>
             To bridge the gap in educational infrastructure, empowering passionate tutors to share their knowledge seamlessly while providing learners with flexible and diverse opportunities to connect, learn, and grow. Through a collaborative ecosystem, we aim to transform education into an accessible and engaging experience for everyone.
         </p>
-        <h2>Our Mission</h2>
     </div>
 
     <div class="work-flow">
-        <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
-        <h2>How Learn Hub Works</h2>
+        <div class="up">
+            <img src="/assets/images/work-flow.jpeg" alt="work-flow-img">
+            <h2>How Learn Hub Works</h2>
+        </div>
         <p>The Learn Hub workflow seamlessly connects tutors and learners: tutors register and create engaging classes, while learners sign up to explore and enroll in diverse learning opportunities, fostering collaboration and interactive learning within a vibrant, connected ecosystem.</p>
     </div>
 
@@ -120,31 +122,6 @@
         </div>
     </div>
 
-    <div class="features">
-        <h2>LearnHub Features</h2>
-        <div class="feature-cards">
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Interactive Lessons"> -->
-                <h3>Interactive Lessons</h3>
-                <p>Engage with dynamic content and real-time feedback.</p>
-            </div>
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Progress Tracking"> -->
-                <h3>Progress Tracking</h3>
-                <p>Monitor your learning journey with detailed analytics.</p>
-            </div>
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Personalized Learning Paths"> -->
-                <h3>Personalized Learning Paths</h3>
-                <p>Tailored course recommendations based on your goals.</p>
-            </div>
-            <div class="feature-card">
-                <!-- <img src="/api/placeholder/64/64" alt="Certification"> -->
-                <h3>Certification</h3>
-                <p>Earn recognized certificates upon course completion.</p>
-            </div>
-        </div>
-    </div>
 
 </section>
 <!-- End Main Content Area -->

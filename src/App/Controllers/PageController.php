@@ -26,6 +26,13 @@ class PageController
         ]);
     }
 
+    public function contact()
+    {
+        echo $this->view->render('contact.php', [
+            "title" => "contact-us"
+        ]);
+    }
+
     public function dashboard()
     {
         $myCourses = $this->courseService->getMyCourses();
@@ -88,5 +95,17 @@ class PageController
                 'title' => "User Courses"
             ]
         );
+    public function notFound()
+    {
+        echo $this->view->render('notFound.php', [
+            'title' => "not-Found-404"
+        ]);
+    }
+
+    public function denied()
+    {
+        echo $this->view->render('accessDenied.php', [
+            'title' => "not-Found-404"
+        ]);
     }
 }

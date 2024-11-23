@@ -24,6 +24,19 @@ class UserService
         return $userDetails;
     }
 
+    public function getUserDetailsById(string $id)
+    {
+        $userDetails = $this->db->query(
+            "SELECT * FROM users
+            WHERE user_id = :userId",
+            ['userId' => $id]
+        )->find();
+
+        unset($userDetails['password']);
+
+        return $userDetails;
+    }
+
     public function isEmailTaken(string $email)
     {
         $emailCount =  $this->db->query(

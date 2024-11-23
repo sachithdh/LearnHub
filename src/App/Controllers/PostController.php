@@ -7,7 +7,6 @@ namespace App\Controllers;
 use App\Services\CourseRequestService;
 use App\Services\SubjectService;
 use App\Services\ValidatorService;
-use Exception;
 use Framework\TemplateEngine;
 
 class PostController
@@ -20,17 +19,20 @@ class PostController
         private ValidatorService $validatorService
     ) {}
 
-    public function requestDetail()
+    public function requestDetails(array $params)
     {
-        echo $this->view->render('post/RequestDetail.php', [
-            "title" => "Course Requiest"
+        echo $this->view->render('post/courseRequestDetails.php', [
+            "title" => "Course Request",
+            "requestId" => $params["id"]
         ]);
     }
 
     public function courseRequest()
     {
-        echo $this->view->render('post/CourseRequest.php', [
-            "title" => "Course Requiest"
+        $courseRequests = $this->courseRequestService->getCourseRequestsforView();
+        echo $this->view->render('post/CourseRequests.php', [
+            "title" => "Course Requests",
+            "courseRequests" => $courseRequests
         ]);
     }
 
@@ -48,5 +50,12 @@ class PostController
         $this->validatorService->validateCourseRequest($_POST);
         $this->courseRequestService->create($_POST);
         redirectTo('/course/request');
+    }
+
+    public function createComment(array $params)
+    {
+        $this->validatorService->validateCourseRequestComment($_POST);
+        $this->courseRequestService->createComment($_POST, $params['id']);
+        redirectTo($_SERVER['HTTP_REFERER']);
     }
 }
