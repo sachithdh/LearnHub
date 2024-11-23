@@ -25,7 +25,8 @@ function registerRoutes(App $app)
     $app->get('/settings', [SettingController::class, 'settings']);
     $app->get('/tutor', [TutorProfileController::class, 'tutorProfile']);
     $app->get('/alert', [AlertController::class, 'alert']);
-
+    
+    $app->get('/denied', [PageController::class, 'denied']);
     // User
     $app->get('/register/create-account', [AuthController::class, 'registerView'], [GuestOnlyMiddleware::class]);
     $app->get('/register', [AuthController::class, 'registerRoleView'], [GuestOnlyMiddleware::class]);

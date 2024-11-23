@@ -69,4 +69,11 @@ class PageController
             'title' => "not-Found-404"
         ]);
     }
+
+    public function denied()
+    {
+        echo $this->view->render('accessDenied.php', [
+            'title' => "not-Found-404"
+        ]);
+    }
 }
