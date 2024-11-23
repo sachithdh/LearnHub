@@ -66,4 +66,11 @@ class ValidatorService
             "subject_id" => ["required"],
         ]);
     }
+
+    public function validateCourseRequestComment(array $formData)
+    {
+        $this->validator->validate($formData, [
+            "comment" => ["required"],
+        ]);
+    }
 }

@@ -19,10 +19,11 @@ class PostController
         private ValidatorService $validatorService
     ) {}
 
-    public function requestDetails()
+    public function requestDetails(array $params)
     {
-        echo $this->view->render('post/RequestDetail.php', [
-            "title" => "Course Request"
+        echo $this->view->render('post/courseRequestDetails.php', [
+            "title" => "Course Request",
+            "requestId" => $params["id"]
         ]);
     }
 
@@ -49,5 +50,12 @@ class PostController
         $this->validatorService->validateCourseRequest($_POST);
         $this->courseRequestService->create($_POST);
         redirectTo('/course/request');
+    }
+
+    public function createComment(array $params)
+    {
+        $this->validatorService->validateCourseRequestComment($_POST);
+        $this->courseRequestService->createComment($_POST, $params['id']);
+        redirectTo($_SERVER['HTTP_REFERER']);
     }
 }

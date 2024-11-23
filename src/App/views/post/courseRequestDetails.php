@@ -1,8 +1,6 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
-<head>
-    <link rel="stylesheet" href="/assets/styles/Post/post-detail.css">
-</head>
+<link rel="stylesheet" href="/assets/styles/Post/course-request-details.css">
 
 <section class="course-request-detail">
     <div class="back-button">
@@ -58,8 +56,7 @@
             </div>
 
             <!-- New Comment Form -->
-            <form class="comment-form" action="/course/add-comment" method="POST">
-                <input type="hidden" name="request_id" value="<?php echo $requestId; ?>">
+            <form class="comment-form" action=<?= "/course/request/$requestId/comments/create" ?> method="POST">
                 <textarea name="comment" placeholder="Write a comment..." required></textarea>
                 <button type="submit">Post Comment</button>
             </form>
@@ -67,3 +64,5 @@
     </div>
 
 </section>
+
+<?php include $this->resolve("partials/_footer.php"); ?>
