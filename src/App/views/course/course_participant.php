@@ -1,14 +1,14 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
 <head>
-    <link rel="stylesheet" href="/assets/styles/User/Admin/user_managment.css">
+    <link rel="stylesheet" href="/assets/styles/Course/course_participant.css">
 
 </head>
 <section class="user-dashboard">
-    <div class="user-managment-container">
+    <div class="user-main-container">
         <div class="user-content">
             <div class="user-header">
-                <h1>User Management</h1>
+                <h1>Course Participant</h1>
                 <div class="header-actions">
                     <div class="search-form">
                         <input type="text" class="search-input" id="searchInput" placeholder="Search users...">
@@ -26,20 +26,20 @@
                             <th>ID</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th>Joined Date</th>
+                            <th>Registered Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody id="userTableBody">
                         <?php foreach ($users as $user) : ?>
 
-                            <tr>
+                            <tr onclick="window.location.href='participant/stats/<?php echo e($user['user_id']) ?>';" style="cursor: pointer;">
                                 <td><?php echo $user['user_id']; ?></td>
                                 <td><?php echo $user['first_name']; ?> <?php echo $user['last_name']; ?></td>
                                 <td><?php echo $user['email']; ?></td>
                                 <td>2024-01-15</td>
                                 <td>
-                                    <button class="delete-btn">Delete</button>
+                                    <button class="delete-btn" onclick="event.stopPropagation();">Remove</button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -73,55 +73,6 @@
 </section>
 
 <script>
-    // Sample user data
-    let users = [{
-            id: 1,
-            username: "john_doe",
-            email: "john@example.com",
-            joinedDate: "2024-01-15"
-        },
-        {
-            id: 2,
-            username: "jane_smith",
-            email: "jane@example.com",
-            joinedDate: "2024-02-01"
-        },
-        {
-            id: 3,
-            username: "mike_johnson",
-            email: "mike@example.com",
-            joinedDate: "2024-02-15"
-        },
-        {
-            id: 4,
-            username: "sarah_wilson",
-            email: "sarah@example.com",
-            joinedDate: "2024-03-01"
-        },
-        {
-            id: 5,
-            username: "tom_brown",
-            email: "tom@example.com",
-            joinedDate: "2024-03-15"
-        }
-    ];
-
-    // Function to render users table
-    function renderUsers(usersToRender = users) {
-        const tableBody = document.getElementById('userTableBody');
-        tableBody.innerHTML = usersToRender.map(user => `
-                <tr>
-                    <td>${user.id}</td>
-                    <td>${user.username}</td>
-                    <td>${user.email}</td>
-                    <td>${new Date(user.joinedDate).toLocaleDateString()}</td>
-                    <td>
-                        <button class="delete-btn" onclick="deleteUser(${user.id})">Delete</button>
-                    </td>
-                </tr>
-            `).join('');
-    }
-
     // Function to handle user search
     function searchUsers() {
         const searchTerm = document.getElementById('searchInput').value.toLowerCase();

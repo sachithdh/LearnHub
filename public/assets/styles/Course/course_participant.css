@@ -1,15 +1,15 @@
-.user-managment-container {
+.user-main-container {
     display: flex;
     gap: 24px;
-    max-width: 100%;
-    width: 1400px;
+    width: 80%; /* Ensure it spans the entire width */
     margin: 0 auto;
+    margin-top: 80px;
     padding: 24px;
 }
 
 .user-content {
     flex: 1;
-    /* width: 100%; */
+    width: 100%; /* Allow it to fill available space */
 }
 
 .user-header {
@@ -123,7 +123,7 @@
 
 /* Modal Styles */
 .modal {
-    display: block;
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -187,7 +187,7 @@
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .user-managment-container {
+    .user-main-container {
         padding: 16px;
     }
 

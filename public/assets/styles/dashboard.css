@@ -1,325 +1,424 @@
-.profile h2 {
-    font-weight: 700;
-    color: #2f3e57;
+.admin-dashboard {
+    background-color: #f8f9fa;
+    min-height: 100vh;
 }
 
-.main-container {
+.admin-main-container {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
-    max-width: 1500px;
+    gap: 24px;
+    max-width: 100%;
     margin: auto;
-    padding: 20px;
+    padding-right: 24px;
 }
 
-.left-container, .right-container {
-    flex: 1;
-    padding: 15px;
-}
-
-/* Responsive Layout Adjustments */
-@media (max-width: 1200px) {
-    .main-container {
-        max-width: 100%;
-        padding: 15px;
-    }
-
-    .left-container, .right-container {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 992px) {
-    .main-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .left-container, .right-container {
-        padding: 10px;
-        max-width: 100%;
-    }
-}
-
-/* Course Stats Section */
-.course-stats {
-    background-color: #ffffff;
+/* Admin Sidebar */
+.admin-sidebar {
+    width: 350px;
+    background: #fff;
     border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.stats-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.stat-card {
-    background-color: #fafafa;
-    border-radius: 10px;
-    padding: 20px;
-    flex: 1;
-    min-width: 150px;
+    padding-top: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: calc(100vh);
+    position: sticky;
+    top: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.stat-value {
-    font-size: 30px;
-    font-weight: 700;
-    color: #FFC400;
-}
-
-.stat-label {
-    font-size: 14px;
-    color: #767676;
-    text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-    .stat-card {
-        min-width: 120px;
-    }
-
-    .stat-value {
-        font-size: 24px;
-    }
-}
-
-/* Timeline Section */
-.timeline-section {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    overflow-x: auto;
-}
-
-.timeline-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
+/* Profile Section */
+.admin-profile {
     text-align: center;
-    font-size: 14px;
-    min-width: 600px; /* Ensures minimum width for scroll on smaller screens */
-}
-
-.timeline-table th, .timeline-table td {
-    padding: 16px;
-    border-bottom: 1px solid #e0e0e0;
-    background-color: #f9f9f9;
-    font-weight: 600;
-}
-
-.timeline-table th {
-    background-color: #FFC400;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.course-slot {
-    background-color: #fae08c;
-    color: #000000;
-    border-radius: 8px;
-    padding: 10px;
-    transition: all 0.3s ease;
-    font-size: 14px;
-}
-
-.course-slot:hover {
-    background-color: #f7d66b;
-}
-
-/* Enrolled Courses Section */
-.enrolled-courses {
-    background-color: #fff;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.enrolled-courses h2 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.course-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-height: 300px;
-    overflow: hidden;
-}
-
-.course-row {
-    padding: 12px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.course-row h4 {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-    color: #333;
-}
-
-.course-row p {
-    font-size: 14px;
-    color: #6c757d;
-    margin: 5px 0 0;
-}
-
-/* View All Button */
-.view-all-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.view-all-button {
-    background-color: #FFC400;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-size: 16px;
-}
-
-.view-all-button:hover {
-    background-color: #FFC400;
-}
-
-/* Course Progress */
-.course-progress {
-    padding: 24px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.progress-bar {
-    background-color: #e0e0e0;
-    border-radius: 8px;
-    height: 10px;
-    overflow: hidden;
-}
-
-.progress {
-    background-color: #4caf50;
-    height: 100%;
-    border-radius: 8px;
-    text-align: center;
-    color: #fff;
-    font-size: 12px;
-    line-height: 1.2;
-}
-
-/* Quick Actions */
-.quick-actions {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.quick-action-button {
-    background-color: #f7d66b;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.quick-action-button:hover {
-    background-color: #FFC400;
-}
-
-/* User Profile Summary */
-.user-profile-summary {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 24px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 .profile-picture {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    object-fit: cover;
+    margin-bottom: 12px;
+    border: 2px solid #FFC400; /* Highlight border */
 }
 
-.user-info h3 {
-    margin: 0;
+.admin-profile h3 {
     font-size: 20px;
+    color: #2c3e50;
+    margin: 0;
     font-weight: 600;
 }
 
-/* Notifications and Upcoming Tasks */
-.upcoming-tasks, .notifications {
-    margin-bottom: 42px;
+.admin-profile p {
+    font-size: 14px;
+    color: #6c757d;
+    margin: 4px 0 0;
 }
 
-.notifications ul, .upcoming-tasks ul, .recent-activity ul {
+/* Navigation Styles */
+.admin-nav ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    width: 100%;
 }
 
-.notifications li, .upcoming-tasks li, .recent-activity li {
-    padding: 10px;
-    border-bottom: 1px solid #e0e0e0;
+.admin-nav ul li {
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #495057;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-nav ul li:hover {
+    background: rgba(255, 196, 0, 0.1); /* Light hover effect */
+    color: #2c3e50;
+}
+
+.admin-nav ul li.nav-active {
+    background: #FFC400; 
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(255, 196, 0, 0.3);
+}
+
+
+.admin-content {
+    flex: 1;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+}
+/* Date Range Wrapper */
+.date-range {
+    position: relative;
+    display: inline-block;
+}
+
+/* Select Dropdown */
+.date-range select {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #495057;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    appearance: none; /* Removes default arrow */
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover and Focus Styles */
+.date-range select:hover {
+    border-color: #FFC400;
+    box-shadow: 0 0 4px rgba(255, 196, 0, 0.3);
+}
+
+.date-range select:focus {
+    outline: none;
+    border-color: #FFC400;
+    box-shadow: 0 0 4px rgba(255, 196, 0, 0.4);
+}
+
+/* Custom Arrow Icon */
+.date-range::after {
+    content: '▼';
+    font-size: 10px;
+    color: #495057;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensures clickability of the select */
+}
+
+@media (max-width: 768px) {
+    .date-range select {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+
+.admin-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.stat-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-box h3 {
     color: #6c757d;
     font-size: 14px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* Media Query for Small Screens */
-@media (max-width: 576px) {
-    .stats-container {
+.stat-box .value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+}
+
+.stat-box .trend {
+    font-size: 14px;
+    color: #FFC400;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.trend.negative {
+    color: #dc3545;
+}
+
+.chart-container {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.chart-container h2 {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+/* SVG Chart Styles */
+.chart-svg {
+    width: 100%;
+    height: 300px;
+}
+
+.chart-line {
+    fill: none;
+    stroke: #FFC400;
+    stroke-width: 2;
+}
+
+.chart-area {
+    fill: rgba(255, 196, 0, 0.1);
+}
+
+.chart-dot {
+    fill: #FFC400;
+}
+
+.chart-grid {
+    stroke: #e9ecef;
+    stroke-width: 1;
+}
+
+/* Table Styles */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.data-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.data-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-active {
+    background: #e3fcef;
+    color: #0ca678;
+}
+
+.status-pending {
+    background: #fff3bf;
+    color: #FFC400;
+}
+
+/* Sidebar Active State */
+.admin-nav ul li.active {
+    color: #FFC400;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .admin-main-container {
         flex-direction: column;
-        gap: 15px;
+        padding: 16px;
     }
 
-    .course-row h4 {
-        font-size: 16px;
+    /* Admin Sidebar */
+    .admin-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 16px;
+        box-shadow: none;
+        border-radius: 0;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    .view-all-button {
+    .admin-profile {
+        display: none;
+    }
+
+    .admin-nav ul {
+        flex-direction: row;
+        gap: 2px;
+        overflow-x: auto;
+        padding: 6px 0;
+        text-align: center;
+    }
+
+    .admin-nav ul li {
+        padding: 6px;
         font-size: 14px;
     }
 
-    .profile-picture {
-        width: 50px;
-        height: 50px;
+    /* Admin Content */
+    .admin-content {
+        padding: 0;
     }
 
-    .user-info h3 {
+    .admin-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .admin-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Stat boxes - Reduce padding and font sizes */
+    .stat-box {
+        padding: 16px;
+    }
+
+    .stat-box h3 {
+        font-size: 12px;
+    }
+
+    .stat-box .value {
+        font-size: 24px;
+    }
+
+    /* Chart container adjustments */
+    .chart-container {
+        padding: 16px;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .chart-svg {
+        height: 200px;
+    }
+
+    /* Data Tables - Enable scrolling and change layout */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    /* Adjust status badges */
+    .status-badge {
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+}
+
+/* Very Small Screens (up to 480px) */
+@media (max-width: 480px) {
+    .admin-main-container {
+        padding: 8px;
+    }
+
+    .admin-header h1 {
         font-size: 18px;
     }
 
-    .quick-action-button {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-    .timeline-table {
+    .admin-header .date-range select {
         font-size: 12px;
-        min-width: 100%; /* Allows better fit on smaller screens */
+        padding: 6px;
     }
 
-    .timeline-table th, .timeline-table td {
+    /* Adjust the stat-box values to fit smaller screens */
+    .stat-box h3 {
+        font-size: 10px;
+    }
+
+    .stat-box .value {
+        font-size: 20px;
+    }
+
+    .chart-container {
         padding: 12px;
     }
+
+    /* Reduce padding on the data table */
+    .data-table th,
+    .data-table td {
+        padding: 4px;
+    }
+
+    /* Adjust button and table alignment */
+    .chart-header {
+        align-items: flex-start;
+    }
+
+    /* Smaller status badges for compact appearance */
+    .status-badge {
+        font-size: 8px;
+    }
 }
+

@@ -6,7 +6,10 @@
 </head>
 
 
-<section class="main-content">
+<section class="course-content">
+    <div class="back-button">
+        <a href="/course/request">← Back to Requests</a>
+    </div>
     <div class="header">
         <h1>Course Management</h1>
         <div class="search-bar">

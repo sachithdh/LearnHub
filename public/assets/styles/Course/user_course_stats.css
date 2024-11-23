@@ -1,0 +1,176 @@
+    :root {
+        --theme-color: #FFC400;
+        --bg-light: #f7f9fc;
+        --text-primary: #2c3e50;
+        --text-secondary: #6c757d;
+        --border-color: #e3e7eb;
+        --card-bg: #ffffff;
+        --hover-effect: #f0f4f8;
+    }
+
+    .stat-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        line-height: 1.6;
+    }
+
+    .stats-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        background-color: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+        width: 1200px;
+    }
+
+    .stats-header:hover {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .user-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid var(--theme-color);
+        box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .stat-card {
+        background-color: var(--card-bg);
+        border-radius: 16px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-card h3 {
+        font-weight: 600;
+        color: var(--theme-color);
+        border-bottom: 2px solid var(--theme-color);
+        padding-bottom: 0.75rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .progress-circle {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .progress-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--theme-color);
+    }
+
+    .assignment-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .assignment-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: var(--hover-effect);
+        border: 1px solid var(--border-color);
+        transition: background-color 0.3s ease;
+    }
+
+    .assignment-item:hover {
+        background-color: #f3f7fa;
+    }
+
+    .assignment-item.completed {
+        background-color: rgba(76, 175, 80, 0.05);
+        border-color: rgba(76, 175, 80, 0.2);
+    }
+
+    .assignment-item.pending {
+        background-color: rgba(255, 152, 0, 0.05);
+        border-color: rgba(255, 152, 0, 0.2);
+    }
+
+    .grade-breakdown, .payment-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .grade-item, .payment-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+        background-color: var(--hover-effect);
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+
+    .payment-status {
+        text-align: center;
+        padding: 0.75rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .payment-status.completed {
+        background-color: rgba(76, 175, 80, 0.1);
+        color: #2E7D32;
+        border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+
+    .payment-status.pending {
+        background-color: rgba(255, 152, 0, 0.1);
+        color: #F57C00;
+        border: 1px solid rgba(255, 152, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .stats-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 1rem;
+        }
+    }

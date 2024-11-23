@@ -62,7 +62,7 @@ class CoursesController
     {
         $this->validatorService->validateCourse($_POST);
         $this->courseService->create($_POST);
-        redirectTo('/courses/my');
+        redirectTo('/courses/my-courses');
     }
 
     public function myCourses()
@@ -79,7 +79,7 @@ class CoursesController
         $course = $this->courseService->getCourse($params['course']);
 
         if (!$course) {
-            redirectTo('/courses/my');
+            redirectTo('/courses/my-courses');
         }
 
         echo $this->view->render(
@@ -96,7 +96,7 @@ class CoursesController
         $course = $this->courseService->getCourse($params['course']);
 
         if (!$course) {
-            redirectTo('/courses/my');
+            redirectTo('/courses/my-courses');
         }
         $this->validatorService->validateCourse($_POST);
         $this->courseService->update($_POST, (int)$params['course']);
@@ -106,6 +106,25 @@ class CoursesController
     public function deleteCourse(array $params)
     {
         $this->courseService->delete((int)$params['course']);
-        redirectTo('/courses/my');
+        redirectTo('/courses/my-courses');
+    }
+
+    public function courseParticipant()
+    {
+        $users = $this->userService->getAllUsers();
+        echo $this->view->render('course/course_participant.php', [
+            "title" => "Create Course",
+            'users' => $users
+        ]);
+    }
+
+    public function courseParticipantStat()
+    {
+        echo $this->view->render(
+            "course/user_course_stats.php",
+            [
+                'title' => "Stats"
+            ]
+        );
     }
 }

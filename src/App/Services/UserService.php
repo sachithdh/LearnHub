@@ -95,4 +95,13 @@ class UserService
         unset($_SESSION['user']);
         session_regenerate_id();
     }
+
+    public function getAllUsers()
+    {
+        $users = $this->db->query(
+            "SELECT * FROM users"
+        )->findAll();
+
+        return $users;
+    }
 }
