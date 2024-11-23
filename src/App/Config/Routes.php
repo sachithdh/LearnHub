@@ -67,4 +67,7 @@ function registerRoutes(App $app)
 
     // This is how paths with router params are added
     $app->get('/auth/{param1}/something/{param2}', [AuthController::class, 'testParamRoute']);
+
+    // Catch-all route for 404 page
+    $app->get('/{any:.*}', [PageController::class, 'notFound']);
 }
