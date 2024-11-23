@@ -63,4 +63,13 @@ class PageController
             'title' => "Course Managment"
         ]);
     }
+    public function notFound()
+    {
+        // echo $this->view->render('notFound.php',[
+        //     'title' => "not-Found-404"
+        // ]);
+
+        http_response_code(404);
+        echo '404 Not Found';
+    }
 }
