@@ -6,19 +6,19 @@
 .admin-main-container {
     display: flex;
     gap: 24px;
-    max-width: 1800px;
+    max-width: 100%;
     margin: auto;
-    padding: 24px;
+    padding-right: 24px;
 }
 
 /* Admin Sidebar */
 .admin-sidebar {
-    width: 280px;
+    width: 350px;
     background: #fff;
     border-radius: 12px;
-    padding: 24px;
+    padding-top: 50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    height: calc(100vh - 48px);
+    height: calc(100vh);
     position: sticky;
     top: 24px;
     display: flex;

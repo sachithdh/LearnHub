@@ -105,8 +105,8 @@
         <span class="close-btn" onclick="closeAlert('errorAlert')">&times;</span>
     </div>
 
-    <!-- <button onclick="showAlert('success')">Show Success Alert</button>
-    <button onclick="showAlert('error')">Show Error Alert</button> -->
+    <!-- <button onclick="showAlert('success', 'Success! Your action was completed successfully.')">Show Success Alert</button>
+    <button onclick="showAlert('error', 'Error! Something went wrong. Please try again.')">Show Error Alert</button> -->
 
     <script>
         // Show the alert based on type

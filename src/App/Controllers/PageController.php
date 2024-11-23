@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use Framework\TemplateEngine;
+use App\Services\{UserService, CourseService};
 
 
 class PageController
 {
-    public function __construct(private TemplateEngine $view) {}
+    public function __construct(private TemplateEngine $view, private UserService $userService, private CourseService $courseService) {}
 
     public function home()
     {
@@ -27,14 +28,22 @@ class PageController
 
     public function dashboard()
     {
+        $myCourses = $this->courseService->getMyCourses();
+        $users = $this->userService->getAllUsers();
         echo $this->view->render('User/dashboard.php', [
-            "title" => "Dashboard"
+            "title" => "Dashboard",
+            'users' => $users,
+            "myCourses" => $myCourses
         ]);
     }
     public function adminDashboard()
     {
+        $myCourses = $this->courseService->getMyCourses();
+        $users = $this->userService->getAllUsers();
         echo $this->view->render('User/Admin/admin_dashboard.php', [
-            "title" => "Admin Dashboard"
+            "title" => "Admin Dashboard",
+            'users' => $users,
+            "myCourses" => $myCourses
         ]);
     }
 
@@ -46,8 +55,10 @@ class PageController
     }
     public function userManagment()
     {
+        $users = $this->userService->getAllUsers();
         echo $this->view->render('User/Admin/user_managment.php', [
-            'title' => "User Managment"
+            'title' => "User Managment",
+            'users' => $users
         ]);
     }
     public function courseManagment()
@@ -55,5 +66,27 @@ class PageController
         echo $this->view->render('User/Admin/course_managment.php', [
             'title' => "Course Managment"
         ]);
+    }
+    public function unauthorizedAccess()
+    {
+        echo $this->view->render("unauthorized_access.php", [
+            'title' => "Unauthorized Access"
+        ]);
+    }
+    public function error()
+    {
+        echo $this->view->render("404.php", [
+            'title' => "404 Error"
+        ]);
+    }
+
+    public function myCourses()
+    {
+        echo $this->view->render(
+            "User/user_courses.php",
+            [
+                'title' => "User Courses"
+            ]
+        );
     }
 }

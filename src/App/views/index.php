@@ -19,23 +19,107 @@
         <section id="courses" class="courses">
             <h2>Featured Courses</h2>
             <div class="course-cards">
-                <div class="course-card">
-                    <img src="/assets/images/intro-to-web.jpg" alt="Course 1">
-                    <h3>Introduction to Web Development</h3>
-                    <p>Learn the basics of web developing with this comprehensive course.</p>
-                    <button>Enroll Now</button>
+                <div class="search-course-card">
+                    <div class="course-card-header">
+                        <img src="/assets/images/dm.jpg" alt="Web Development" class="course-image">
+                        <h4 class="course-title">Introduction to Web Development</h4>
+                        <hr class="course-card-line" />
+                    </div>
+                    <div class="course-description">
+
+                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, </p>
+                    </div>
+                    <div class="course-info">
+                        <div class="course-stat">
+                            <p>
+                                <i class="fa fa-star icon"></i> 4.5
+                            </p>
+                            <p>
+                                <i class="fa fa-map-marker icon"></i>
+                                Colombo
+                            </p>
+                            <p class="price">
+                                Rs. 24,500/Course
+                            </p>
+                        </div>
+                        <div class="course-meta">
+                            <div class="course-teacher">
+                                <img src="/assets/images/user.jpeg" alt="teacher" />
+                                <p>Isuru Naveen</p>
+                            </div>
+                            <div>
+                                <a href="#"> See More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="course-card">
-                    <img src="/assets/images/dataSci.png" alt="Course 2">
-                    <h3>Data Science Fundamentals</h3>
-                    <p>Dive into the world of data science and analytics.</p>
-                    <button>Enroll Now</button>
+                <div class="search-course-card">
+                    <div class="course-card-header">
+                        <img src="/assets/images/intro-to-web.jpg" alt="Web Development" class="course-image">
+                        <h4 class="course-title">Introduction to Web Development</h4>
+                        <hr class="course-card-line" />
+                    </div>
+                    <div class="course-description">
+
+                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, </p>
+                    </div>
+                    <div class="course-info">
+                        <div class="course-stat">
+                            <p>
+                                <i class="fa fa-star icon"></i> 4.5
+                            </p>
+                            <p>
+                                <i class="fa fa-map-marker icon"></i>
+                                Colombo
+                            </p>
+                            <p class="price">
+                                Rs. 2,500/Month
+                            </p>
+                        </div>
+                        <div class="course-meta">
+                            <div class="course-teacher">
+                                <img src="/assets/images/user.jpeg" alt="teacher" />
+                                <p>Isuru Naveen</p>
+                            </div>
+                            <div>
+                                <a href="#"> See More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="course-card">
-                    <img src="/assets/images/dm.jpg" alt="Course 3">
-                    <h3>Digital Marketing Mastery</h3>
-                    <p>Master the art of digital marketing in this hands-on course.</p>
-                    <button>Enroll Now</button>
+                <div class="search-course-card">
+                    <div class="course-card-header">
+                        <img src="/assets/images/dataSci.png" alt="Web Development" class="course-image">
+                        <h4 class="course-title">Introduction to Web Development lore</h4>
+                        <hr class="course-card-line" />
+                    </div>
+                    <div class="course-description">
+
+                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae ut cumque iure sapiente eum illum eos sit iste voluptates facilis voluptate sunt ducimus eligendi molestiae, eaque illo non veniam? Repellendus? </p>
+                    </div>
+                    <div class="course-info">
+                        <div class="course-stat">
+                            <p>
+                                <i class="fa fa-star icon"></i> 4.5
+                            </p>
+                            <p>
+                                <i class="fa fa-map-marker icon"></i>
+                                Colombo
+                            </p>
+                            <p class="price">
+                                Rs. 1,000/Month
+                            </p>
+                        </div>
+                        <div class="course-meta">
+                            <div class="course-teacher">
+                                <img src="/assets/images/user.jpeg" alt="teacher" />
+                                <p>Isuru Naveen</p>
+                            </div>
+                            <div>
+                                <a href="#"> See More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

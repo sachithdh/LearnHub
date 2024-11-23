@@ -24,6 +24,8 @@ function registerRoutes(App $app)
     $app->get('/settings', [SettingController::class, 'settings']);
     $app->get('/tutor', [TutorProfileController::class, 'tutorProfile']);
     $app->get('/alert', [AlertController::class, 'alert']);
+    $app->get('/error', [PageController::class, 'error']);
+    $app->get('/unauthorized-access', [PageController::class, 'unauthorizedAccess']);
 
     // User
     $app->get('/register/create-account', [AuthController::class, 'registerView'], [GuestOnlyMiddleware::class]);
@@ -34,6 +36,7 @@ function registerRoutes(App $app)
     $app->post('/login', [AuthController::class, 'login']);
     $app->get('/logout', [AuthController::class, 'logout']);
     $app->get('/billing-and-payment', [PageController::class, 'billingAndPayment']);
+    $app->get('/mycourses', [PageController::class, 'myCourses']);
 
     // Courses
     $app->get('/courses', [CoursesController::class, 'course']);
@@ -41,6 +44,8 @@ function registerRoutes(App $app)
     $app->post('/manage-course/edit/{course}', [CoursesController::class, 'editCourse']);
     $app->delete('/manage-course/delete/{course}', [CoursesController::class, 'deleteCourse']);
     $app->get('/courses/my-courses/{course_id}', [CoursesController::class, 'courseInfo']);
+    $app->get('/courses/my-courses/{course_id}/participant', [CoursesController::class, 'courseParticipant']);
+    $app->get('/courses/my-courses/{course_id}/participant/stats/{participant_id}', [CoursesController::class, 'courseParticipantStat']);
     $app->get('/course/enroll', [CoursesController::class, 'enrollCourse']);
     $app->get('/course/create', [CoursesController::class, 'createCourseView']);
     $app->post('/create-course', [CoursesController::class, 'createCourse']);

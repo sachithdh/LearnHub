@@ -39,12 +39,11 @@
 
             <ul class="desktop-menu">
                 <li><a href="/">Home</a></li>
-                <li><a href="#">Courses</a></li>
+                <li><a href="/courses">Courses</a></li>
                 <li><a href="/course/request">Posts</a></li>
                 <li><a href="#">Resource </a></li>
                 <li><a href="/about">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Help</a></li>
             </ul>
         </div>
         <div class="middle-section">
@@ -88,7 +87,8 @@
                         </svg>
                         Profile
                     </a>
-                    <a href="/dashboard">
+                    <a href="<?php echo $_SESSION["user_role"] === 'admin' ? '/admin-dashboard' : ($_SESSION['user_role'] === 'student' ? '/dashboard' : '/dashboard'); ?>">
+
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="3" width="7" height="7"></rect>
                             <rect x="14" y="3" width="7" height="7"></rect>
@@ -112,7 +112,7 @@
                         </svg>
                         Courses
                     </a>
-                    <a href="/courses/my">
+                    <a href="/courses/my-courses">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
@@ -135,6 +135,15 @@
                             <line x1="1" y1="10" x2="23" y2="10"></line>
                         </svg>
                         Billing and Payments
+                    </a>
+                    <hr />
+                    <a href="/help">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 8a4 4 0 0 1 4 4c0 1.5-1 2-2 2s-2-.5-2-2"></path>
+                            <line x1="12" y1="16" x2="12" y2="16.01"></line>
+                        </svg>
+                        Help & Support
                     </a>
                     <hr />
                     <a href="/logout" class="text-red-600">

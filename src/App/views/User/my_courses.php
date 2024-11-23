@@ -59,8 +59,8 @@
                             </td>
                             <td>
                                 <div class="action-buttons">
-                                    <a href="/manage-course/edit/<?php echo e($courseData['course_id']); ?>" class="btn btn-edit">Edit</a>
-                                    <button onclick="showModal()" class="btn btn-delete">Delete</button>
+                                    <a href="/manage-course/edit/<?php echo e($courseData['course_id']); ?>" onclick="event.stopPropagation();" class="btn btn-edit">Edit</a>
+                                    <button onclick="event.stopPropagation(); showModal()" class="btn btn-delete">Delete</button>
                                 </div>
                             </td>
                         </tr>

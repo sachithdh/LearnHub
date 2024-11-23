@@ -12,7 +12,7 @@ class AssignmentController
 
     public function createAssignment()
     {
-        echo $this->view->render("assignment/createAssignment.php", [
+        echo $this->view->render("Assignment/createAssignment.php", [
             "title" => "Create Assignment"
         ]);
     }
