@@ -95,6 +95,7 @@ class PageController
                 'title' => "User Courses"
             ]
         );
+    }
     public function notFound()
     {
         echo $this->view->render('notFound.php', [
