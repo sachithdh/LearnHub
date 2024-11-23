@@ -49,9 +49,10 @@ function registerRoutes(App $app)
 
     // Course Requests
     $app->get('/course/request', [PostController::class, 'courseRequest']);
-    $app->get('/course/request/id', [PostController::class, 'requestDetail']);
+    $app->get('/course/request/{id}', [PostController::class, 'requestDetails']);
     $app->get('/course/request/create', [PostController::class, 'createCourseRequestView']);
     $app->post('/course/request/create', [PostController::class, 'createCourseRequest']);
+    $app->post('/course/request/{id}/comments/create', [PostController::class, 'createComment']);
 
     // Resources
     $app->get('/resource', [ResourceController::class, 'resource']);
@@ -64,9 +65,6 @@ function registerRoutes(App $app)
 
     // Assignments
     $app->get('/course/{courseId}/assignment/create', [AssignmentController::class, 'createAssignment']);
-
-    // This is how paths with router params are added
-    $app->get('/auth/{param1}/something/{param2}', [AuthController::class, 'testParamRoute']);
 
     // Catch-all route for 404 page
     $app->get('/{any:.*}', [PageController::class, 'notFound']);

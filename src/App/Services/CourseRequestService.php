@@ -29,7 +29,8 @@ class CourseRequestService
     {
         $query =
             "SELECT 
-                cr.title, 
+                cr.title,
+                cr.request_id, 
                 cr.description, 
                 s.subject_title AS subject, 
                 cr.created_date, 
@@ -45,5 +46,23 @@ class CourseRequestService
         $requests = $this->db->query($query)->findAll();
 
         return $requests;
+    }
+
+    public function createComment(array $formData, string $requestId)
+    {
+        $user_id = $_SESSION['user'];
+
+        $query =
+            "INSERT INTO course_request_comments(comment, user_id, request_id)
+            VALUES (:comment, :user_id, :request_id) ";
+
+        $this->db->query(
+            $query,
+            [
+                "comment" => $formData['comment'],
+                "user_id" => $user_id,
+                "request_id" => $requestId,
+            ]
+        );
     }
 }

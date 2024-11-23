@@ -62,10 +62,4 @@ class AuthController
         $this->userService->logout();
         redirectTo('/login');
     }
-
-    // TODO: Remove this method later along with the route
-    public function testParamRoute(array $params)
-    {
-        dd($params);
-    }
 }
