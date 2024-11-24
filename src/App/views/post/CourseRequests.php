@@ -37,8 +37,8 @@
                     <!-- Comments Section -->
                     <div class="comments-section">
                         <span class="comments-count">
-                            <?= 2 ?>
-                            <?= 2 == 1 ? "Comment" : "Comments" ?>
+                            <?= e($request["comments_count"] ?? 0) ?>
+                            <?= $request["comments_count"] == 1 ? "Comment" : "Comments" ?>
                         </span>
                     </div>
                 </div>
