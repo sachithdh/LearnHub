@@ -49,6 +49,11 @@
   font-size: 14px;
   color: #666;
 }
+.comment-edited {
+  color: #888;
+  font-size: 12px;
+  font-style: italic;
+}
 
 .request-content {
   font-size: 16px;
