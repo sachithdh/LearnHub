@@ -22,19 +22,23 @@ function registerRoutes(App $app)
     $app->get('/admin-dashboard', [PageController::class, 'adminDashboard']);
     $app->get('/admin-dashboard/user-managment', [PageController::class, 'userManagment']);
     $app->get('/admin-dashboard/course-managment', [PageController::class, 'courseManagment']);
-    $app->get('/settings', [SettingController::class, 'settings']);
+    $app->get('/settings', [PageController::class, 'settings']);
     $app->get('/tutor', [TutorProfileController::class, 'tutorProfile']);
     $app->get('/alert', [AlertController::class, 'alert']);
     $app->get('/error', [PageController::class, 'error']);
     $app->get('/unauthorized-access', [PageController::class, 'unauthorizedAccess']);
 
-
     $app->get('/denied', [PageController::class, 'denied']);
+
     // User
+    $app->post('/choose-role', [AuthController::class, 'chooseRole'], [GuestOnlyMiddleware::class]);
     $app->get('/register/create-account', [AuthController::class, 'registerView'], [GuestOnlyMiddleware::class]);
     $app->get('/register', [AuthController::class, 'registerRoleView'], [GuestOnlyMiddleware::class]);
-    $app->post('/choose-role', [AuthController::class, 'chooseRole'], [GuestOnlyMiddleware::class]);
     $app->post('/register', [AuthController::class, 'register']);
+    $app->get('/interest', [PageController::class, 'interest'], [AuthRequiredMiddleware::class]);
+    $app->get('/interest/skip', [PageController::class, 'interestSkip'], [AuthRequiredMiddleware::class]);
+    $app->get('/interest/continue', [PageController::class, 'interestContinue'], [AuthRequiredMiddleware::class]);
+
     $app->get('/login', [AuthController::class, 'loginView'], [GuestOnlyMiddleware::class]);
     $app->post('/login', [AuthController::class, 'login']);
     $app->get('/logout', [AuthController::class, 'logout']);

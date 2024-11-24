@@ -109,4 +109,41 @@ class PageController
             'title' => "not-Found-404"
         ]);
     }
+
+    public function interest()
+    {
+        echo $this->view->render(
+            'interest_selection.php',
+            [
+                'title' => "Pick Your Interest"
+            ]
+        );
+    }
+    public function interestSkip()
+    {
+        echo $this->view->render(
+            'index.php',
+            [
+                'title' => "Pick Your Interest"
+            ]
+        );
+    }
+    public function interestContinue()
+    {
+        echo $this->view->render(
+            'index.php',
+            [
+                'title' => "Pick Your Interest"
+            ]
+        );
+    }
+
+    public function settings()
+    {
+        $userDetails = $this->userService->getUserProfile();
+        echo $this->view->render('User/settings.php', [
+            "title" => "Settings",
+            "userDetails" => $userDetails
+        ]);
+    }
 }
