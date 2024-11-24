@@ -96,51 +96,31 @@
 }
 
 .comments-section {
-  border-top: 1px solid #eaeaea;
-  padding-top: 24px;
-  margin-top: 20px;
-}
-
-.comment-form {
+  margin-top: 10px;
   display: flex;
-  gap: 12px;
   align-items: center;
+  opacity: 0.7;
 }
 
-.comment-form input[type="text"] {
-  flex: 1;
-  padding: 14px 20px;
-  border: 2px solid #eaeaea;
-  border-radius: 25px;
-  font-size: 15px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.comment-form input[type="text"]:focus {
-  outline: none;
-  border-color: #ffc400;
-  box-shadow: 0 0 0 4px rgba(255, 196, 0, 0.1);
-}
-
-.comment-form button {
-  padding: 12px 24px;
-  background-color: #ffc400;
-  color: #000000;
-  border: none;
-  border-radius: 25px;
-  font-weight: 600;
-  font-size: 15px;
+.comments-count {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
   cursor: pointer;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: text-decoration 0.2s ease, opacity 0.2s ease;
 }
 
-.comment-form button:hover {
-  background-color: #ffcf33;
-  transform: translateY(-1px);
+.comments-count::before {
+  content: "💬";
+  margin-right: 5px;
 }
 
-.comment-form button:active {
-  transform: translateY(1px);
+.comments-count:hover {
+  text-decoration: underline;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
@@ -155,21 +135,6 @@
 
   .request-details {
     flex-direction: column;
-  }
-
-  .comment-form {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .comment-form input[type="text"] {
-    width: 100%;
-    padding: 12px 16px;
-  }
-
-  .comment-form button {
-    width: 100%;
-    padding: 12px;
   }
 
   .request-metadata {

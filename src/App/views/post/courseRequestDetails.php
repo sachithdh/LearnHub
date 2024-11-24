@@ -12,18 +12,24 @@
         <div class="user-info">
             <img src="/assets/images/user.jpeg" alt="User Avatar" class="avatar">
             <div class="user-details">
-                <h4>John Doe</h4>
-                <span class="post-time">2 hours ago</span>
+                <h4><?= e($request["author"]) ?></h4>
+                <span class="post-time">
+                    <?= e(
+                        $request["updated_date"] === $request["created_date"] ?
+                            "Posted on " . formatDate($request["created_date"], 'F j, Y') :
+                            "Edited on " . formatDate($request["updated_date"], 'F j, Y')
+                    ) ?>
+                </span>
             </div>
         </div>
 
         <div class="request-content">
-            <p>Looking for an advanced React.js course that covers Redux and Next.js. Would prefer weekend classes.</p>
+            <div class="request-title">
+                <h3><?= e($request["title"]) ?></h3>
+            </div>
+            <p><?= e($request["description"]) ?></p>
             <div class="request-metadata">
-                <span class="location">📍 Colombo</span>
-                <span class="budget">💰 Rs. 25,000</span>
-                <span class="category">💻 Programming</span>
-                <span class="availability">🕒 Weekends Preferred</span>
+                <span class="subject"><?= e($request["subject"]  ?? "Other") ?></span>
             </div>
         </div>
         <!-- Comments Section -->

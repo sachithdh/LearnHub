@@ -35,17 +35,55 @@ class CourseRequestService
                 s.subject_title AS subject, 
                 cr.created_date, 
                 cr.updated_date, 
+                CONCAT(u.first_name, ' ', u.last_name) AS author,
+                COUNT(c.comment_id) AS comments_count
+            FROM 
+                course_requests cr
+            LEFT JOIN 
+                subjects s ON cr.subject_id = s.subject_id
+            JOIN 
+                users u ON cr.user_id = u.user_id
+            LEFT JOIN 
+                course_request_comments c ON cr.request_id = c.request_id
+            GROUP BY 
+                cr.title, cr.request_id, cr.description, s.subject_title, 
+                cr.created_date, cr.updated_date, u.first_name, u.last_name;    
+            ";
+
+        $requests = $this->db->query($query)->findAll();
+
+        return $requests;
+    }
+
+    public function getCourseReuqestById(string $requestId)
+    {
+        $query =
+            "SELECT 
+                cr.title,
+                cr.request_id, 
+                cr.description, 
+                s.subject_title AS subject, 
+                cr.created_date, 
+                cr.updated_date, 
                 CONCAT(u.first_name, ' ', u.last_name) AS author
             FROM 
                 course_requests cr
             LEFT JOIN 
                 subjects s ON cr.subject_id = s.subject_id
             JOIN 
-                users u ON cr.user_id = u.user_id";
+                users u ON cr.user_id = u.user_id
+            WHERE 
+                request_id = :request_id  
+            ";
 
-        $requests = $this->db->query($query)->findAll();
+        $request = $this->db->query(
+            $query,
+            [
+                "request_id" => $requestId
+            ]
+        )->find();
 
-        return $requests;
+        return $request;
     }
 
     public function getCommentsByRequestId(string $requestId)

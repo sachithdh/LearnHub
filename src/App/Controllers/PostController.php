@@ -23,11 +23,13 @@ class PostController
     {
         $requestId = $params["id"];
 
+        $request = $this->courseRequestService->getCourseReuqestById($requestId);
         $comments = $this->courseRequestService->getCommentsByRequestId($requestId);
 
         echo $this->view->render('post/courseRequestDetails.php', [
             "title" => "Course Request",
             "requestId" => $requestId,
+            "request" => $request,
             "comments" => $comments,
         ]);
     }

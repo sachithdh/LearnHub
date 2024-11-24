@@ -152,6 +152,23 @@
   background-color: #e6b000;
 }
 
+.subject {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #f8f8f8;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.request-title h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 0 0 10px;
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .request-metadata {
     gap: 15px;
