@@ -161,12 +161,86 @@ nav ul li a.active {
   background-color: #e9ecef;
 }
 
+/* Welcome Section */
+.welcome-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+.welcome-section h2{
+    font-size: 34px;
+}
+.welcome-section h2{
+    font-size: 34px;
+}
+
+.welcome-inner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 120px;
+    margin-bottom: 120px;
+    /* background: linear-gradient(to right, #ffc400 55%, #ffffff); */
+    background-color: #F9F9F9;
+    padding: 10px 10px 0 50px;
+    border-radius: 10px;
+}
+
+.welcome-section h2{
+    font-size: 34px;
+}
+
+.welcome-section p{
+    font-size: 16px;
+}
+
+.welcome-section .left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.welcome-inner .left a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #FFC400;
+    padding: 12px 18px;
+    width: 220px;
+    border-radius: 20px;
+    color: black;
+}   
+.welcome-section .right{
+    display: flex;
+
+}
+
 /* Courses Section */
+.courses-container{
+    background-color: #fffefa;
+    width: 100%;
+}
 .courses {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px 20px;
+}
+
+.courses hr{
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    background-color: #FFC400;
+    height: 2px;
+    border: none;
 }
 
 .courses h2 {
@@ -372,6 +446,8 @@ nav ul li a.active {
     align-items: center;
     margin-top: 80px;
     margin-bottom: 80px;
+    width: 100%;
+    background-color: #E0E0E0;
 }   
 
 .community {
@@ -379,7 +455,6 @@ nav ul li a.active {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #E0E0E0;
     padding: 100px 20px;
     text-align: center;
     width: 50%;
@@ -485,17 +560,85 @@ nav ul li a.active {
   color: #565d6d;
 }
 
-/* Footer */
-footer {
-    background-color: #333;
-    color: #FFF;
-    padding: 20px;
-    text-align: center;
+/* Testimonial */
+.testimonial-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-footer p {
-    font-size: 0.9rem;
-    color: #b3b3b3;
+.testimonial-content h2{
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.testimonial{
+    display: grid;
+    width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card:hover{
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.2);
+}
+.testimonial-card:hover .comma{
+    color: #FFC400;
+}
+.testimonial-card .title-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.testimonial-card .comma{
+    font-size: 60px;
+    color: #d1d1d1;
+}
+.testimonial-card .title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #FFC400;
+}
+.testimonial-card .description{
+    color: #555555;
+    line-height: 1.5;
+}
+
+.testimonial-card .user-data{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+.testimonial-card .user-data img{
+    width: 54px;
+    border-radius: 100px;
+    border: 3px solid #ffc400;
+    padding: 5px;
+}
+
+.testimonial-card .user-meta{
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+.testimonial-card .user-meta .username{
+    font-size: 15px;
+    font-weight: 500;
+}
+.testimonial-card .user-meta .userrole{
+    font-size: 15px;
 }
 
 /* Media Queries */
