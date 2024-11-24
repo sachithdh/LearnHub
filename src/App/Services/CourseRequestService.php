@@ -48,6 +48,33 @@ class CourseRequestService
         return $requests;
     }
 
+    public function getCommentsByRequestId(string $requestId)
+    {
+        $query =
+            "SELECT 
+                comments.comment_id,
+                comments.comment,
+                comments.created_date, 
+                comments.updated_date,
+                CONCAT(u.first_name, ' ', u.last_name) AS author
+            FROM 
+                course_request_comments AS comments
+            JOIN
+                users u ON comments.user_id = u.user_id
+            WHERE 
+                request_id = :request_id      
+            ";
+
+        $comments = $this->db->query(
+            $query,
+            [
+                "request_id" => $requestId
+            ]
+        )->findAll();
+
+        return $comments;
+    }
+
     public function createComment(array $formData, string $requestId)
     {
         $user_id = $_SESSION['user'];

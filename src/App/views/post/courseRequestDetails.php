@@ -32,27 +32,27 @@
 
             <!-- Existing Comments -->
             <div class="comments-list">
-                <div class="comment">
-                    <div class="comment-user-info">
-                        <img src="/assets/images/user.jpeg" alt="Commenter Avatar" class="comment-avatar">
-                        <div class="comment-user-details">
-                            <h5>Jane Smith</h5>
-                            <span class="comment-time">1 hour ago</span>
+                <?php foreach ($comments as $comment): ?>
+                    <div class="comment">
+                        <div class="comment-user-info">
+                            <img src="/assets/images/user.jpeg" alt="Commenter Avatar" class="comment-avatar">
+                            <div class="comment-user-details">
+                                <h5><?= e($comment["author"]) ?> </h5>
+                                <span class="comment-time">
+                                    <?= e(
+                                        $comment["updated_date"] === $comment["created_date"] ?
+                                            formatDate(e($comment["created_date"], 'F j, Y')) :
+                                            formatDate(e($comment["updated_date"], 'F j, Y'))
+                                    ) ?>
+                                </span>
+                                <?php if (e($comment["created_date"]) !== e($comment["updated_date"])): ?>
+                                    <span class="comment-edited">(edited)</span>
+                                <?php endif; ?>
+                            </div>
                         </div>
+                        <p class="comment-text"><?= e($comment["comment"]) ?></p>
                     </div>
-                    <p class="comment-text">I'm a React.js instructor and I can help you with this. My weekend batch starts next month.</p>
-                </div>
-
-                <div class="comment">
-                    <div class="comment-user-info">
-                        <img src="/assets/images/user.jpeg" alt="Commenter Avatar" class="comment-avatar">
-                        <div class="comment-user-details">
-                            <h5>Mike Johnson</h5>
-                            <span class="comment-time">30 minutes ago</span>
-                        </div>
-                    </div>
-                    <p class="comment-text">I took a similar course. Would recommend checking out Tech Institute.</p>
-                </div>
+                <?php endforeach; ?>
             </div>
 
             <!-- New Comment Form -->
