@@ -36,11 +36,10 @@
 
                     <!-- Comments Section -->
                     <div class="comments-section">
-                        <form class="comment-form" action="/course/add-comment" method="POST">
-                            <input type="hidden" name="request_id" value="1">
-                            <input type="text" placeholder="Write a comment..." name="comment" required>
-                            <button type="submit">Comment</button>
-                        </form>
+                        <span class="comments-count">
+                            <?= 2 ?>
+                            <?= 2 == 1 ? "Comment" : "Comments" ?>
+                        </span>
                     </div>
                 </div>
             </a>
