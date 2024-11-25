@@ -22,8 +22,9 @@
       <nav class="admin-nav">
         <ul>
           <li id="dashboardTab" class="nav-active" onclick="showSection('adminContent', 'dashboardTab')">Dashboard</li>
-          <li id="userManagementTab" onclick="showSection('userManagementContent', 'userManagementTab')">Management Students</li>
-          <li id="courseManagementTab" onclick="showSection('courseManagementContent', 'courseManagementTab')">Management Courses</li>
+          <li id="userManagementTab" onclick="showSection('userManagementContent', 'userManagementTab')">Manage Students</li>
+          <li id="courseManagementTab" onclick="showSection('courseManagementContent', 'courseManagementTab')">Manage Courses</li>
+          <li id="adManagementTab" onclick="showSection('adManagementContent', 'adManagementTab')">Manage Ads</li>
           <li>Transactions</li>
         </ul>
       </nav>
@@ -344,6 +345,130 @@
 
       </section>
     </div>
+    <!-- 
+        ***********************
+        ***********************
+        ****Ad Managment*****
+        ***********************
+        ***********************
+        -->
+    <div id="adManagementContent" class="course-content-section" style="display: none;">
+      <section class="courses-page">
+        <div class="main-container">
+          <!-- <div class="main-title">
+            <h1>My Courses</h1>
+          </div> -->
+
+          <div class="admin-header">
+            <h1>Advertisement</h1>
+            <div class="header-actions">
+              <div class="search-form">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search ad...">
+                <button class="search-btn" onclick="searchUsers()">Search</button>
+              </div>
+              <button class="add-user-btn" onclick="toggleModal()"><a href="/course/create" style="text-decoration: none;"> + Create new Ad </a></button>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="courses-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>No. of clicks</th>
+                  <th>Published Date</th>
+                  <th>Price</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="course-name">
+                      2024 A/L Physics
+                    </div>
+                  </td>
+                  <td>
+                    <span class="students-count">50</span>
+                  </td>
+                  <td>
+                    <span class="">10/11/2024</span>
+                  </td>
+                  <td>
+                    <span class="revenue">Rs. 1000</span>
+                  <td>
+                    <div class="action-buttons">
+                      <button onclick="showModal()" class="btn btn-delete">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="course-name">
+                      Combined Maths - Grade 12
+                    </div>
+                  </td>
+                  <td>
+                    <span class="students-count">50</span>
+                  </td>
+                  <td>
+                    <span class="">10/11/2024</span>
+                  </td>
+                  <td>
+                    <span class="revenue">Rs. 1800</span>
+                  <td>
+                    <div class="action-buttons">
+                      <button onclick="showModal()" class="btn btn-delete">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="course-name">
+                      Science class for grade 10
+                    </div>
+                  </td>
+                  <td>
+                    <span class="students-count">50</span>
+                  </td>
+                  <td>
+                    <span class="">10/11/2024</span>
+                  </td>
+                  <td>
+                    <span class="revenue">Rs. 2000</span>
+                  <td>
+                    <div class="action-buttons">
+                      <button class="btn btn-delete">Delete</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Delete confirmation modal -->
+        <div id="deleteModal" class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Confirm Delete</h3>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete this course? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+              <button onclick="hideModal()" class="btn btn-cancel">Cancel</button>
+              <form method="POST" action="/manage-course/delete/<?php echo e($courseData['course_id']) ?>">
+                <?php include $this->resolve("partials/_csrf.php"); ?>
+                <input type="hidden" name="_METHOD" value="DELETE" />
+                <button type="submit" class="btn btn-delete">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
   </div>
 
   <script>
@@ -358,11 +483,13 @@
       document.getElementById('adminContent').style.display = 'none';
       document.getElementById('userManagementContent').style.display = 'none';
       document.getElementById('courseManagementContent').style.display = 'none';
+      document.getElementById('adManagementContent').style.display = 'none';
 
       // Remove the 'nav-active' class from all tabs
       document.getElementById('dashboardTab').classList.remove('nav-active');
       document.getElementById('userManagementTab').classList.remove('nav-active');
       document.getElementById('courseManagementTab').classList.remove('nav-active');
+      document.getElementById('adManagementTab').classList.remove('nav-active');
 
       // Display the selected content section
       document.getElementById(contentId).style.display = 'block';

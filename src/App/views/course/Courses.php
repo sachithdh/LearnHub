@@ -23,7 +23,7 @@
                 <div class="filters">
                     <h3>Filters</h3>
                     <div class="date-updated" onclick="showDate()">
-                        <h4>Date Updated</h4>
+                        <h4>Date Updated <i class="fas fa-chevron-down chevron-icon"></i></h4>
                         <div class="date-dropdown">
                             <label><input type="radio" name="updated_date"> Last Day</label>
                             <label><input type="radio" name="updated_date"> Last Week</label>
@@ -43,10 +43,10 @@
                     <div class="filter-section">
                         <h4>Location</h4>
                         <div class="checkbox-group">
-                            <label><input type="checkbox"> New York</label>
-                            <label><input type="checkbox"> Los Angeles</label>
-                            <label><input type="checkbox"> Chicago</label>
-                            <label><input type="checkbox"> Houston</label>
+                            <label><input type="checkbox"> Colombo</label>
+                            <label><input type="checkbox"> Kandy</label>
+                            <label><input type="checkbox"> Gampaha</label>
+                            <label><input type="checkbox"> Matara</label>
                         </div>
                     </div>
                     <div class="filter-section">
@@ -240,7 +240,11 @@
         </div>
         <script>
             function showDate() {
-                document.querySelector(".date-dropdown").style.display = "flex;"
+                const date = document.querySelector(".date-dropdown");
+                const chevron = document.querySelector('.chevron-icon');
+
+                date.classList.toggle("show");
+                chevron.classList.toggle('rotated');
             }
         </script>
     </div>

@@ -112,6 +112,14 @@
             <button type="button" class="create-course-add-button" id="addModuleBtn">Add Module</button>
         </div>
         </div>
+        <div class="create-course-form-group">
+            <label for="courseImage">Course Thumbnail</label>
+            <div class="upload-area" onclick="document.getElementById('courseImage').click()">
+                <p>Click to upload image</p>
+                <p>or drag and drop</p>
+                <input type="file" id="courseImage" name="courseImage" accept="image/*" style="display: none">
+            </div>
+        </div>
 
         <button type="submit" class="create-course-submit">Create Course</button>
     </form>
