@@ -65,4 +65,10 @@ class PostController
         $this->courseRequestService->createComment($_POST, $params['id']);
         redirectTo($_SERVER['HTTP_REFERER']);
     }
+
+    public function deleteCourseRequest(array $params)
+    {
+        $this->courseRequestService->deleteCourseRequestById($params["id"]);
+        redirectTo($_SERVER['HTTP_REFERER']);
+    }
 }

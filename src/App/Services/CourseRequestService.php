@@ -35,6 +35,7 @@ class CourseRequestService
                 s.subject_title AS subject, 
                 cr.created_date, 
                 cr.updated_date, 
+                u.user_id as author_id,
                 CONCAT(u.first_name, ' ', u.last_name) AS author,
                 COUNT(c.comment_id) AS comments_count
             FROM 
@@ -127,6 +128,17 @@ class CourseRequestService
                 "comment" => $formData['comment'],
                 "user_id" => $user_id,
                 "request_id" => $requestId,
+            ]
+        );
+    }
+
+    public function deleteCourseRequestById(string $requestId)
+    {
+        $this->db->query(
+            "DELETE FROM course_requests WHERE request_id = :request_id AND user_id = :user_id",
+            [
+                "request_id" => $requestId,
+                "user_id" => $_SESSION['user']
             ]
         );
     }
