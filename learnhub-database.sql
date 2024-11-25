@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS course_transactions(
     course_id BIGINT(20) UNSIGNED NOT NULL,
     user_id BIGINT(20) UNSIGNED NOT NULL,
     amount decimal(10,2) NOT NULL,
-    transaction_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP()
+    transaction_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
     PRIMARY KEY(transaction_id) 
 );
 -- Course requests
