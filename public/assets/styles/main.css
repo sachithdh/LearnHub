@@ -235,7 +235,7 @@ nav ul li a.active {
     padding: 50px 20px;
 }
 
-.courses hr{
+.courses hr, .tutors hr, .testimonial-content hr{
     width: 50px;
     margin-left: auto;
     margin-right: auto;
@@ -350,7 +350,6 @@ nav ul li a.active {
     transition: transform 0.3s ease;
     height: 180px;
     width: 480px;
-    border: 1px solid #FFC400;
 }
 
 .tutor-card:hover {
@@ -486,16 +485,16 @@ nav ul li a.active {
     border-radius: 20px;
     color: black;
     font-weight: 600;
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  width: 250px;
-  text-align: center;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
 }
 
 .advertisement h3 {
@@ -528,13 +527,14 @@ nav ul li a.active {
   background-color: #ffd033;
 }
 
-/* ... (previous CSS remains the same) ... */
 
 /* Tutors section */
 .tutors {
-  padding: 5rem 1rem;
-  width: 100%;
-  max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 1rem;
+    width: 100%;
+    max-width: 1500px;
 }
 
 .tutors h2 {
@@ -568,9 +568,9 @@ nav ul li a.active {
 }
 
 .tutor-card img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border-radius: 200px;
   object-fit: cover;
   margin-bottom: 1rem;
 }
@@ -603,6 +603,17 @@ nav ul li a.active {
   background-color: #ffd033;
 }
 
+.tutor-card .tutor-social{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.tutor-card .tutor-social i{
+    color: #6d6d6d;
+}
+
 /* Community section */
 .community {
   background-color: #f8f9fa;
@@ -628,24 +639,24 @@ nav ul li a.active {
 }
 
 /* Features section */
-.features {
+/* .features {
   padding: 5rem 1rem;
   width: 100%;
   max-width: 1200px;
 }
 
-/* Features Section */
 .features{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 .feature-content{
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 120px;
-    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 1200px;
 }
 .feature-left{
     display: flex;
@@ -661,7 +672,6 @@ nav ul li a.active {
     width: 480px;
     padding: 0;
     margin-top: 80px;
-    margin-bottom: -170px;
 }
 
 .feature-btn{
@@ -715,6 +725,10 @@ nav ul li a.active {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 120px;
+    background-color: #F6F6F6;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .testimonial-content h2{
