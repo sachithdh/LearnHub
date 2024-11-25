@@ -130,4 +130,15 @@ class CourseRequestService
             ]
         );
     }
+
+    public function deleteCourseRequestById(string $requestId)
+    {
+        $this->db->query(
+            "DELETE FROM course_requests WHERE request_id = :request_id AND user_id = :user_id",
+            [
+                "request_id" => $requestId,
+                "user_id" => $_SESSION['user']
+            ]
+        );
+    }
 }
