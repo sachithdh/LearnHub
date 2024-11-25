@@ -143,43 +143,69 @@
 
         <section id="tutors" class="tutors">
             <h2>Our Expert Tutors</h2>
+            <hr>
             <div class="tutor-cards">
                 <div class="tutor-card">
-                    <img src="/assets/images/teacher1.png" alt="Tutor 1">
+                    <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 1">
                     <div class="tutor-info">
                         <h3>Isuru Naveen</h3>
                         <p>Computer Science</p>
+                        <div class="tutor-social">
+                            <i class="fab fa-facebook"></i> <!-- Facebook Icon -->
+                            <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+                            <i class="fab fa-youtube"></i> <!-- YouTube Icon -->
+                            <i class="fas fa-envelope"></i> <!-- Email Icon -->
 
+                        </div>
                     </div>
                 </div>
                 <div class="tutor-card">
-                    <img src="/assets/images/teacher2.jpeg" alt="Tutor 2">
+                    <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 2">
                     <div class="tutor-info">
                         <h3>Nadun Madusanka</h3>
                         <p>Data Science</p>
+                        <div class="tutor-social">
+                            <i class="fab fa-facebook"></i> <!-- Facebook Icon -->
+                            <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+                            <i class="fab fa-youtube"></i> <!-- YouTube Icon -->
+                            <i class="fas fa-envelope"></i> <!-- Email Icon -->
+
+                        </div>
                     </div>
                 </div>
                 <div class="tutor-card">
-                    <img src="/assets/images/teacher3.jpg" alt="Tutor 3">
+                    <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 3">
                     <div class="tutor-info">
                         <h3>Kavinda Dimuthu</h3>
                         <p>Digital Marketing</p>
+                        <div class="tutor-social">
+                            <i class="fab fa-facebook"></i> <!-- Facebook Icon -->
+                            <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+                            <i class="fab fa-youtube"></i> <!-- YouTube Icon -->
+                            <i class="fas fa-envelope"></i> <!-- Email Icon -->
+
+                        </div>
                     </div>
                 </div>
                 <div class="tutor-card">
-                    <img src="/assets/images/teacher4.jpg" alt="Tutor 4">
+                    <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 4">
                     <div class="tutor-info">
-                        <h3>Nimantha Mctavish</h3>
+                        <h3>Nimantha </h3>
                         <p>Business Management</p>
+                        <div class="tutor-social">
+                            <i class="fab fa-facebook"></i> <!-- Facebook Icon -->
+                            <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
+                            <i class="fab fa-youtube"></i> <!-- YouTube Icon -->
+                            <i class="fas fa-envelope"></i> <!-- Email Icon -->
+
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
         <div class="community-container">
             <section id="community" class="community">
-                <div class="left">
-
-                </div>
                 <div class="right">
                     <h2>Join Our Learning Community</h2>
                     <p>Connect with fellow learners, share your goals, and find the perfect course for your needs.</p>
@@ -190,6 +216,7 @@
         </div>
 
         <section class="features">
+            <h2>Why Learn<span style="color:#FFC400;">Hub</span> ?</h2>
 
             <div class="feature-content">
                 <div class="feature-left">
@@ -198,7 +225,6 @@
                     <img src="/assets/images/Online learning.svg" />
                 </div>
                 <div class="feature-cards">
-                    <h2>Why Learn<span style="color:#FFC400;">Hub</span> ?</h2>
                     <div class="feature-card">
                         <h3>Interactive Lessons</h3>
                         <p>Engage with dynamic content and real-time feedback.</p>
