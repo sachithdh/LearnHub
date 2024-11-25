@@ -35,6 +35,7 @@ class CourseRequestService
                 s.subject_title AS subject, 
                 cr.created_date, 
                 cr.updated_date, 
+                u.user_id as author_id,
                 CONCAT(u.first_name, ' ', u.last_name) AS author,
                 COUNT(c.comment_id) AS comments_count
             FROM 
