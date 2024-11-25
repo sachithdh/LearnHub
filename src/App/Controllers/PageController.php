@@ -103,6 +103,13 @@ class PageController
         ]);
     }
 
+    public function helpAndSupport()
+    {
+        echo $this->view->render('help_and_support.php', [
+            'title' => "help-and-support"
+        ]);
+    }
+
     public function denied()
     {
         echo $this->view->render('accessDenied.php', [
