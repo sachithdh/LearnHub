@@ -53,6 +53,12 @@ class CourseService
             ]
         )->find();
     }
+    public function getAllCourses()
+    {
+        return $this->db->query(
+            "SELECT * FROM courses"
+        )->findAll();
+    }
 
     public function update(array $formData, int $id)
     {

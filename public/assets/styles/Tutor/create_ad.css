@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #FFC400;
+    --primary-dark: #e6b000;
+    --text-dark: #333;
+    --secondary-color: #4CAF50;
+    --secondary-dark: #45a049;
+}
+
+.ad-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.ad-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ad-header h1 {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.ad-form-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ad-form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.price-duration {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.upload-area {
+    border: 2px dashed #ddd;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.price-duration-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.total-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-display {
+    padding: 0.75rem;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    height: 42px;
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-payment {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-payment:hover {
+    background-color: var(--secondary-dark);
+}
+
+@media (max-width: 600px) {
+    .price-duration-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .price-duration {
+        grid-template-columns: 1fr;
+    }
+}

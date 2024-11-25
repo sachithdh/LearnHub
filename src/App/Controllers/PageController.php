@@ -45,12 +45,12 @@ class PageController
     }
     public function adminDashboard()
     {
-        $myCourses = $this->courseService->getMyCourses();
+        $courses = $this->courseService->getAllCourses();
         $users = $this->userService->getAllUsers();
         echo $this->view->render('User/Admin/admin_dashboard.php', [
             "title" => "Admin Dashboard",
             'users' => $users,
-            "myCourses" => $myCourses
+            "courses" => $courses
         ]);
     }
 
@@ -134,6 +134,15 @@ class PageController
             'index.php',
             [
                 'title' => "Pick Your Interest"
+            ]
+        );
+    }
+    public function createAd()
+    {
+        echo $this->view->render(
+            'Tutor/create_ad.php',
+            [
+                'title' => "Create Ad"
             ]
         );
     }

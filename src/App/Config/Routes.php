@@ -45,6 +45,8 @@ function registerRoutes(App $app)
     $app->get('/billing-and-payment', [PageController::class, 'billingAndPayment']);
     $app->get('/mycourses', [PageController::class, 'myCourses']);
 
+    $app->get('/create-ad', [PageController::class, 'createAd']);
+
     // Courses
     $app->get('/courses', [CoursesController::class, 'course']);
     $app->get('/manage-course/edit/{course}', [CoursesController::class, 'courseEditView']);
