@@ -47,7 +47,7 @@ C:\xampp\apache\conf\extra\httpd-vhosts.conf
 ```
 <VirtualHost *:80>
     DocumentRoot "C:\Users\mahima\Documents\UCSC\Group Project 1\learnhub\public"
-    ServerName learhub.local
+    ServerName learnhub.local
     <Directory "C:\Users\mahima\Documents\UCSC\Group Project 1\learnhub\public">
         Require all granted
     </Directory>
