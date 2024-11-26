@@ -52,6 +52,25 @@ class PostController
         ]);
     }
 
+    public function updateCourseRequestView(array $params)
+    {
+        $subjects = $this->subjectService->getSubjects();
+        $request = $this->courseRequestService->getCourseReuqestById($params['id']);
+        echo $this->view->render('post/updateCourseRequest.php', [
+            'title' => 'Update Course Request',
+            'subjects' => $subjects,
+            'oldRequestData' => $request
+        ]);
+    }
+
+    public function updateCourseRequest(array $params)
+    {
+        $requestId = $params['id'];
+        $this->validatorService->validateCourseRequest($_POST);
+        $this->courseRequestService->updateCourseRequestById($_POST, $requestId);
+        redirectTo('/course/request/' . $requestId);
+    }
+
     public function createCourseRequest()
     {
         $this->validatorService->validateCourseRequest($_POST);

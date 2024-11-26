@@ -29,8 +29,8 @@
                             <button class="menu-button">⋮</button>
                             <div class="menu-dropdown">
                                 <a href="<?= "/course/request/" . $request["request_id"] ?>">View</a>
-                                <a href="<?= "/course/request/edit/" . $request["request_id"] ?>">Edit</a>
                                 <?php if ($request["author_id"] == $_SESSION["user"]): ?>
+                                    <a href="<?= "/course/request/edit/" . $request["request_id"] ?>">Edit</a>
                                     <form action="<?= "/course/request/" . $request["request_id"] ?>" method="POST">
                                         <input type="hidden" name="_METHOD" value="DELETE" />
                                         <button type="submit" onclick="return confirm('Are you sure you want to delete this request?')">Delete</button>
