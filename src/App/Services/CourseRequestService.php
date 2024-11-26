@@ -35,6 +35,7 @@ class CourseRequestService
                 s.subject_title AS subject, 
                 cr.created_date, 
                 cr.updated_date, 
+                u.user_id as author_id,
                 CONCAT(u.first_name, ' ', u.last_name) AS author,
                 COUNT(c.comment_id) AS comments_count
             FROM 
@@ -61,7 +62,8 @@ class CourseRequestService
             "SELECT 
                 cr.title,
                 cr.request_id, 
-                cr.description, 
+                cr.description,
+                s.subject_id, 
                 s.subject_title AS subject, 
                 cr.created_date, 
                 cr.updated_date, 
@@ -127,6 +129,38 @@ class CourseRequestService
                 "comment" => $formData['comment'],
                 "user_id" => $user_id,
                 "request_id" => $requestId,
+            ]
+        );
+    }
+
+    public function deleteCourseRequestById(string $requestId)
+    {
+        $this->db->query(
+            "DELETE FROM course_requests WHERE request_id = :request_id AND user_id = :user_id",
+            [
+                "request_id" => $requestId,
+                "user_id" => $_SESSION['user']
+            ]
+        );
+    }
+
+    public function updateCourseRequestById(array $formData, string $requestId)
+    {
+        $query =
+            "UPDATE course_requests SET
+            title = :title,
+            description = :description,
+            subject_id = :subject_id
+            WHERE request_id = :request_id AND user_id = :user_id";
+
+        $this->db->query(
+            $query,
+            [
+                "title" => $formData['requestTitle'],
+                "description" => $formData['requestDescription'],
+                "subject_id" => $formData['subject_id'] != -1 ? $formData['subject_id'] : null,
+                "request_id" => $requestId,
+                "user_id" => $_SESSION['user']
             ]
         );
     }

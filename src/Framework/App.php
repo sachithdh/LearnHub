@@ -39,6 +39,11 @@ class App
         $this->router->add('post', $path, $controller, $routeMiddleware);
     }
 
+    public function put(string $path, array $controller, array $routeMiddleware = [])
+    {
+        $this->router->add('PUT', $path, $controller, $routeMiddleware);
+    }
+
     public function delete(string $path, array $controller, array $routeMiddleware = [])
     {
         $this->router->add('DELETE', $path, $controller, $routeMiddleware);
