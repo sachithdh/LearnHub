@@ -16,7 +16,9 @@
                     <input type="text" class="search-input" id="searchInput" placeholder="Search users...">
                     <button class="search-btn" onclick="searchUsers()">Search</button>
                 </div>
-                <button class="add-user-btn" onclick="toggleModal()"><a href="/course/create" style="text-decoration: none;"> Add New Course </a></button>
+                <?php if ($_SESSION['user_role'] === "admin" || $_SESSION['user_role'] === "teacher"): ?>
+                    <button class="add-user-btn" onclick="toggleModal()"><a href="/course/create" style="text-decoration: none;"> Add New Course </a></button>
+                <?php endif; ?>
             </div>
         </div>
 

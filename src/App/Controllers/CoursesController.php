@@ -67,8 +67,9 @@ class CoursesController
 
     public function myCourses()
     {
+        $url = $_SESSION['user_role'] === 'teacher' ? 'Tutor/my_courses.php' : 'User/user_courses.php';
         $myCourses = $this->courseService->getMyCourses();
-        echo $this->view->render('User/my_courses.php', [
+        echo $this->view->render($url, [
             "title" => "My Courses",
             "myCourses" => $myCourses
         ]);
@@ -124,6 +125,33 @@ class CoursesController
             "course/user_course_stats.php",
             [
                 'title' => "Stats"
+            ]
+        );
+    }
+    public function demoCourses()
+    {
+        echo $this->view->render(
+            "course/demo_courseInfo.php",
+            [
+                'title' => "ICT 2024 A/L"
+            ]
+        );
+    }
+    public function regCourses()
+    {
+        echo $this->view->render(
+            "course/demo_registered_course.php",
+            [
+                'title' => "ICT 2024 A/L"
+            ]
+        );
+    }
+    public function userCourses()
+    {
+        echo $this->view->render(
+            "User/user_courses.php",
+            [
+                'title' => "ICT 2024 A/L"
             ]
         );
     }

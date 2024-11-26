@@ -27,10 +27,10 @@
                 <input type="radio" id="credit-card" name="payment-method" checked>
                 <label for="credit-card">Credit Card</label>
             </div>
-            <div class="payment-option">
+            <!-- <div class="payment-option">
                 <input type="radio" id="paypal" name="payment-method">
                 <label for="paypal">PayPal</label>
-            </div>
+            </div> -->
         </div>
 
         <form id="payment-form">
@@ -52,7 +52,7 @@
                     <input type="text" id="card-name" placeholder="John Doe" required>
                 </div>
             </div>
-            <button type="submit" class="pay-button" style="">Pay Now</button>
+            <button type="submit" class="pay-button">Pay Now</button>
         </form>
 
         <p class="terms">By enrolling, you agree to our Terms of Service and Privacy Policy.</p>
@@ -60,7 +60,7 @@
     <script>
         document.getElementById('payment-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Enrollment confirmed! Thank you for joining the course.');
+            window.location.href = '/courses/my/registered'
         });
     </script>
 </section>
