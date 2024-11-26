@@ -10,7 +10,7 @@
                 <h1>Unlock Your Potential with LearnHub</h1>
                 <p>Discover a world of knowledge at your fingertips. Start your learning journey today!</p>
                 <div class="cta-buttons">
-                    <a href="#" class="cta-primary">Get Started</a>
+                    <a href="#courses" class="cta-primary">Get Started</a>
                     <a href="/courses" class="cta-secondary">Explore Courses</a>
                 </div>
             </div>
@@ -31,7 +31,7 @@
 
         <div class="courses-container">
 
-            <section id="courses" class="courses">
+            <section id="#courses" class="courses">
                 <h2>Popular Courses</h2>
                 <hr class="line">
                 <div class="course-cards">
@@ -144,7 +144,7 @@
         <section id="tutors" class="tutors">
             <h2>Our Expert Tutors</h2>
             <hr>
-            <div class="tutor-cards">
+            <div class="tutor-cards" onclick="window.location.href='/tutor'">
                 <div class="tutor-card">
                     <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 1">
                     <div class="tutor-info">
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tutor-card">
+                <div class="tutor-card" onclick="window.location.href='/tutor'">
                     <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 2">
                     <div class="tutor-info">
                         <h3>Nadun Madusanka</h3>
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tutor-card">
+                <div class="tutor-card" onclick="window.location.href='/tutor'">
                     <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 3">
                     <div class="tutor-info">
                         <h3>Kavinda Dimuthu</h3>
@@ -187,7 +187,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tutor-card">
+                <div class="tutor-card" onclick="window.location.href='/tutor'">
                     <img src="/assets/images/pp_placeholder.jpg" alt="Tutor 4">
                     <div class="tutor-info">
                         <h3>Nimantha </h3>
