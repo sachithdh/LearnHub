@@ -27,6 +27,7 @@ function registerRoutes(App $app)
     $app->get('/alert', [AlertController::class, 'alert']);
     $app->get('/error', [PageController::class, 'error']);
     $app->get('/unauthorized-access', [PageController::class, 'unauthorizedAccess']);
+    $app->get('/help-and-support', [PageController::class, 'helpAndSupport']);
 
     $app->get('/denied', [PageController::class, 'denied']);
 
