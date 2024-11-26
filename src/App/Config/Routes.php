@@ -27,7 +27,6 @@ function registerRoutes(App $app)
     $app->get('/alert', [AlertController::class, 'alert']);
     $app->get('/error', [PageController::class, 'error']);
     $app->get('/unauthorized-access', [PageController::class, 'unauthorizedAccess']);
-    $app->get('/help-and-support', [PageController::class, 'helpAndSupport']);
 
     $app->get('/denied', [PageController::class, 'denied']);
 
@@ -64,9 +63,12 @@ function registerRoutes(App $app)
     // Course Requests
     $app->get('/course/request', [PostController::class, 'courseRequest']);
     $app->get('/course/request/create', [PostController::class, 'createCourseRequestView']);
+    $app->get('/course/request/edit/{id}', [PostController::class, 'updateCourseRequestView']);
     $app->get('/course/request/{id}', [PostController::class, 'requestDetails']);
     $app->post('/course/request/create', [PostController::class, 'createCourseRequest']);
     $app->post('/course/request/{id}/comments/create', [PostController::class, 'createComment']);
+    $app->put('/course/request/{id}', [PostController::class, 'updateCourseRequest']);
+    $app->delete('/course/request/{id}', [PostController::class, 'deleteCourseRequest']);
 
     // Resources
     $app->get('/resource', [ResourceController::class, 'resource']);

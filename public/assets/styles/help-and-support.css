@@ -23,9 +23,10 @@
 
 
 /* Head Section */
-.head {
-
-    display: grid;
+.help .head {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     place-items: center;
     padding: 1.5rem;
     line-height: 3rem;
@@ -185,18 +186,120 @@
     transition: background-color 0.3s;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* FAQ section */
+.FAQ {
+    width: 100%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .FAQ  h2 {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .faq-section h3{
+    margin: 1rem 0;
+  }
+
+  .faq-section {
+    margin: 20px 0;
+  }
+
+  .faq-item {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .faq-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-question {
+    padding: 15px 20px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+  }
+
+  .faq-question::after {
+    content: '\25BC'; /* Down arrow */
+    font-size: 0.8rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .faq-item.open .faq-question::after {
+    transform: translateY(-50%) rotate(180deg); /* Rotates arrow */
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    border-top: 1px solid #ddd;
+  }
+
+  .faq-item.open .faq-answer {
+    display: block;
+  }
+
+  /* Accessibility focus styles */
+  .faq-question:focus {
+    outline: 3px solid black;
+    outline-offset: 3px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Feedback Section */
 .feedback-section {
     margin-top: 40px;
     text-align: center;
-    background: linear-gradient(90deg, #eaf4ff, #ffffff);
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .feedback-section h2 {
     font-size: 2rem;
-    color: #0056b3;
     margin-bottom: 20px;
 }
 
@@ -209,15 +312,15 @@
     font-size: 1rem;
     display: block;
     margin-bottom: 8px;
-    color: #333;
+    color: #414141;
     text-align: left;
 }
 
 .feedback-section textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 0.5px solid #ccc;
+    border-radius: 1.3rem;
     font-size: 1rem;
     margin-bottom: 20px;
     resize: vertical;
@@ -231,8 +334,8 @@
 
 .feedback-section button {
     padding: 12px 25px;
-    background: linear-gradient(90deg, #ffc400, #af8600);
     border: none;
+    background-color: var(--main-color);
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
@@ -242,7 +345,7 @@
 
 .feedback-section button:hover {
     transform: scale(1.05);
-    background: linear-gradient(90deg, #0056b3, #003f88);
+    background-color: var(--second-color);
 }
 
 /* Responsive Design */

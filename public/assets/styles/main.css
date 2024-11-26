@@ -532,7 +532,7 @@ nav ul li a.active {
 .tutors {
     display: flex;
     flex-direction: column;
-    padding: 5rem 1rem;
+    padding: 100px 1rem;
     width: 100%;
     max-width: 1500px;
 }

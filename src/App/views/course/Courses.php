@@ -249,3 +249,5 @@
         </script>
     </div>
 </section>
+
+<?php include $this->resolve("partials/_footer.php"); ?>
