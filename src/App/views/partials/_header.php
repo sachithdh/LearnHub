@@ -51,8 +51,6 @@
             <a href="/courses"><button class="search-button"> <img class="search-icon" src="/assets/icons/search.svg"></a>
             <div class="tooltip">Search</div>
             </button>
-
-
         </div> -->
         <div class="right-section">
             <a href="/course/request/create">
@@ -87,16 +85,18 @@
                         </svg>
                         Profile
                     </a>
-                    <a href="<?php echo $_SESSION["user_role"] === 'admin' ? '/admin-dashboard' : ($_SESSION['user_role'] === 'student' ? '/dashboard' : '/dashboard'); ?>">
+                    <?php if ($_SESSION["user_role"] === 'admin' || $_SESSION["user_role"] === 'teacher'): ?>
+                        <a href="<?php echo ($_SESSION["user_role"] === 'admin' ? '/admin-dashboard' : '/dashboard'); ?>">
 
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="3" width="7" height="7"></rect>
-                            <rect x="14" y="14" width="7" height="7"></rect>
-                            <rect x="3" y="14" width="7" height="7"></rect>
-                        </svg>
-                        Dashboard
-                    </a>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            Dashboard
+                        </a>
+                    <?php endif; ?>
                     <a href="/settings">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="12" cy="12" r="3"></circle>

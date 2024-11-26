@@ -95,7 +95,7 @@
                                 <p>Isuru Naveen</p>
                             </div>
                             <div>
-                                <a href="#"> See More</a>
+                                <a href="/courses/demo"> See More</a>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                 <p>Isuru Naveen</p>
                             </div>
                             <div>
-                                <a href="#"> See More</a>
+                                <a href="/courses/demo"> See More</a>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
                                 <p>Isuru Naveen</p>
                             </div>
                             <div>
-                                <a href="#"> See More</a>
+                                <a href="/courses/demo"> See More</a>
                             </div>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
                                 <p>Isuru Naveen</p>
                             </div>
                             <div>
-                                <a href="#"> See More</a>
+                                <a href="/courses/demo"> See More</a>
                             </div>
                         </div>
                     </div>
@@ -231,7 +231,7 @@
                                 <p>Isuru Naveen</p>
                             </div>
                             <div>
-                                <a href="#"> See More</a>
+                                <a href="/courses/demo"> See More</a>
                             </div>
                         </div>
                     </div>

@@ -339,6 +339,7 @@ nav ul li a.active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 2fr));
     gap: 40px;
+    cursor: pointer;
 }
 
 .tutor-card {
@@ -485,11 +486,9 @@ nav ul li a.active {
     border-radius: 20px;
     color: black;
     font-weight: 600;
-    position: fixed;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-    background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     padding: 20px;
