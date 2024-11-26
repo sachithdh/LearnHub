@@ -37,10 +37,10 @@ class ReviewController
         $review = $this->reviewService->getReviewById($params['review']);
 
         if (!$review) {
-            redirectTo('/profile');
+            redirectTo('/tutor');
         }
         $this->reviewService->update($_POST, (int)$params['review']);
-        redirectTo("/profile");
+        redirectTo("/tutor");
     }
 
     public function addReview()
