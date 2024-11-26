@@ -143,4 +143,25 @@ class CourseRequestService
             ]
         );
     }
+
+    public function updateCourseRequestById(array $formData, string $requestId)
+    {
+        $query =
+            "UPDATE course_requests SET
+            title = :title,
+            description = :description,
+            subject_id = :subject_id
+            WHERE request_id = :request_id AND user_id = :user_id";
+
+        $this->db->query(
+            $query,
+            [
+                "title" => $formData['requestTitle'],
+                "description" => $formData['requestDescription'],
+                "subject_id" => $formData['subject_id'] != -1 ? $formData['subject_id'] : null,
+                "request_id" => $requestId,
+                "user_id" => $_SESSION['user']
+            ]
+        );
+    }
 }

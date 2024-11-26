@@ -9,7 +9,9 @@
         <p>Share your course request with the community</p>
     </div>
 
-    <form class="create-form" id="createCourseRequestForm" method="POST" action="/course/request/create">
+    <form class="create-form" id="createCourseRequestForm" method="POST" action=<?= "/course/request/" . $oldRequestData["request_id"] ?>>
+        <input type="hidden" name="_METHOD" value="PUT" />
+
         <div class="create-section">
             <h2>Course Request Details</h2>
             <div class="create-form-group">
