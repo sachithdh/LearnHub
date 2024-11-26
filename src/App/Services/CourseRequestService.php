@@ -62,7 +62,8 @@ class CourseRequestService
             "SELECT 
                 cr.title,
                 cr.request_id, 
-                cr.description, 
+                cr.description,
+                s.subject_id, 
                 s.subject_title AS subject, 
                 cr.created_date, 
                 cr.updated_date, 
