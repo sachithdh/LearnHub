@@ -148,7 +148,7 @@
                         Billing and Payments
                     </a>
                     <hr />
-                    <a href="/help">
+                    <a href="/help-and-support">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="M12 8a4 4 0 0 1 4 4c0 1.5-1 2-2 2s-2-.5-2-2"></path>

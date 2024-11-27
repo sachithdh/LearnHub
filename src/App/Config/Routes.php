@@ -22,6 +22,7 @@ function registerRoutes(App $app)
     $app->get('/admin-dashboard', [PageController::class, 'adminDashboard']);
     $app->get('/admin-dashboard/user-managment', [PageController::class, 'userManagment']);
     $app->get('/admin-dashboard/course-managment', [PageController::class, 'courseManagment']);
+    $app->get('/admin-dashboard/help-and-support-review/:id', [PageController::class, 'courseManagment']);
     $app->get('/settings', [PageController::class, 'settings']);
     $app->get('/tutor', [TutorProfileController::class, 'tutorProfile']);
     $app->get('/alert', [AlertController::class, 'alert']);
@@ -46,6 +47,8 @@ function registerRoutes(App $app)
     $app->get('/logout', [AuthController::class, 'logout']);
     $app->get('/billing-and-payment', [PageController::class, 'billingAndPayment']);
     $app->get('/mycourses', [PageController::class, 'myCourses']);
+    $app->get('/dashboard/help-and-support-review/:id', [PageController::class, 'helpAndSupportReview']);
+
 
     $app->get('/create-ad', [PageController::class, 'createAd']);
 
