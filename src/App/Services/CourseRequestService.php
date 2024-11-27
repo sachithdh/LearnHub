@@ -177,4 +177,22 @@ class CourseRequestService
             ]
         );
     }
+
+    public function updateCommentById(array $formData, string $requestId, string $commentId)
+    {
+        $query =
+            "UPDATE course_request_comments SET
+            comment = :comment
+            WHERE request_id = :request_id AND user_id = :user_id AND comment_id = :comment_id";
+
+        $this->db->query(
+            $query,
+            [
+                "comment" => $formData["comment"],
+                "request_id" => $requestId,
+                "user_id" => $_SESSION['user'],
+                "comment_id" => $commentId
+            ]
+        );
+    }
 }

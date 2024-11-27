@@ -58,23 +58,24 @@
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <div class="action-menu">
-                                <button class="menu-button">⋮</button>
-                                <div class="menu-dropdown">
-                                    <a class="edit-comment-button" data-comment-id="<?= e($comment["comment_id"]) ?>">Edit</a>
-                                    <?php if (e($comment["author_id"]) == $_SESSION["user"]): ?>
+                            <?php if (e($comment["author_id"]) == $_SESSION["user"]): ?>
+                                <div class="action-menu">
+                                    <button class="menu-button">⋮</button>
+                                    <div class="menu-dropdown">
+                                        <a class="edit-comment-button" data-comment-id="<?= e($comment["comment_id"]) ?>">Edit</a>
                                         <form action="<?= "/course/request/" . $request["request_id"] . "/comments/" . $comment["comment_id"] ?>" method="POST">
                                             <input type="hidden" name="_METHOD" value="DELETE" />
                                             <button type="submit" onclick="return confirm('Are you sure you want to delete this comment?')">Delete</button>
                                         </form>
-                                    <?php endif; ?>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php endif; ?>
                         </div>
                         <!-- Comment Text or Edit Form -->
                         <div class="comment-content" id="comment-<?= e($comment["comment_id"]) ?>">
                             <p class="comment-text"><?= e($comment["comment"]) ?></p>
                             <form class="edit-comment-form hidden comment-form" action="<?= "/course/request/" . $request["request_id"] . "/comments/" . $comment["comment_id"] ?>" method="POST">
+                                <input type="hidden" name="_METHOD" value="PUT" />
                                 <textarea name="comment" data-comment=<?= e($comment["comment"]) ?> required><?= e($comment["comment"]) ?></textarea>
                                 <button type="submit">Save</button>
                                 <button type="button" class="cancel-edit">Cancel</button>
