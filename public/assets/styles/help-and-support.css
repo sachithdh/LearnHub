@@ -24,6 +24,7 @@
 
 /* Head Section */
 .help .head {
+    height: 20rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -37,6 +38,7 @@
     text-align: center;
     margin-top: -2rem;
     margin-bottom: 5rem;
+    gap: 2rem;
 }
 
 .head h2 {
