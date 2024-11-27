@@ -74,6 +74,7 @@ function registerRoutes(App $app)
     $app->post('/course/request/{id}/comments/create', [PostController::class, 'createComment']);
     $app->put('/course/request/{id}', [PostController::class, 'updateCourseRequest']);
     $app->delete('/course/request/{id}', [PostController::class, 'deleteCourseRequest']);
+    $app->delete('/course/request/{requestId}/comments/{commentId}', [PostController::class, 'deleteComment']);
 
     // Resources
     $app->get('/resource', [ResourceController::class, 'resource']);

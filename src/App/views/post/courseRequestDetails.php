@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="/assets/styles/Post/action-menu.css">
 <link rel="stylesheet" href="/assets/styles/Post/course-request-details.css">
 
-
 <section class="course-request-detail">
     <div class="back-button">
         <a href="/course/request">← Back to Course Requests</a>
@@ -62,9 +61,9 @@
                             <div class="action-menu">
                                 <button class="menu-button">⋮</button>
                                 <div class="menu-dropdown">
-                                    <?php if (true): ?>
-                                        <a href="<?= "/course/request/edit/" ?>">Edit</a>
-                                        <form action="<?= "/course/request/" ?>" method="POST">
+                                    <a href="<?= "/course/request/edit/" ?>">Edit</a>
+                                    <?php if (e($comment["author_id"]) == $_SESSION["user"]): ?>
+                                        <form action="<?= "/course/request/" . $request["request_id"] . "/comments/" . $comment["comment_id"] ?>" method="POST">
                                             <input type="hidden" name="_METHOD" value="DELETE" />
                                             <button type="submit" onclick="return confirm('Are you sure you want to delete this comment?')">Delete</button>
                                         </form>

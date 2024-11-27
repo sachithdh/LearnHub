@@ -96,6 +96,7 @@ class CourseRequestService
                 comments.comment,
                 comments.created_date, 
                 comments.updated_date,
+                comments.user_id as author_id,
                 CONCAT(u.first_name, ' ', u.last_name) AS author
             FROM 
                 course_request_comments AS comments
@@ -140,6 +141,18 @@ class CourseRequestService
             [
                 "request_id" => $requestId,
                 "user_id" => $_SESSION['user']
+            ]
+        );
+    }
+
+    public function deleteCommentById(string $requestId, string $commentId)
+    {
+        $this->db->query(
+            "DELETE FROM course_request_comments WHERE request_id = :request_id AND user_id = :user_id AND comment_id = :comment_id",
+            [
+                "request_id" => $requestId,
+                "user_id" => $_SESSION['user'],
+                "comment_id" => $commentId
             ]
         );
     }
