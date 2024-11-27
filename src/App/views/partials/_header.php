@@ -112,13 +112,15 @@
                         </svg>
                         Courses
                     </a>
-                    <a href="/courses/my-courses">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                        </svg>
-                        My Courses
-                    </a>
+                    <?php if ($_SESSION['user_role'] != 'admin'): ?>
+                        <a href="/courses/my-courses">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            My Courses
+                        </a>
+                    <?php endif; ?>
                     <?php if ($_SESSION['user_role'] === "teacher"): ?>
                         <a href="/course/create">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -148,7 +150,7 @@
                         Billing and Payments
                     </a>
                     <hr />
-                    <a href="/help">
+                    <a href="/help-and-support">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <path d="M12 8a4 4 0 0 1 4 4c0 1.5-1 2-2 2s-2-.5-2-2"></path>

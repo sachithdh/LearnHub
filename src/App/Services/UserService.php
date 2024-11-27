@@ -69,6 +69,7 @@ class UserService
         );
         session_regenerate_id();
         $_SESSION['user'] = $this->db->lastInsertId();
+        $_SESSION['user_role'] = $formData['role'];
     }
 
     public function login(array $formData)
