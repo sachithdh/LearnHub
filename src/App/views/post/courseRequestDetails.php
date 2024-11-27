@@ -61,7 +61,7 @@
                             <div class="action-menu">
                                 <button class="menu-button">⋮</button>
                                 <div class="menu-dropdown">
-                                    <a href="<?= "/course/request/edit/" ?>">Edit</a>
+                                    <a class="edit-comment-button" data-comment-id="<?= e($comment["comment_id"]) ?>">Edit</a>
                                     <?php if (e($comment["author_id"]) == $_SESSION["user"]): ?>
                                         <form action="<?= "/course/request/" . $request["request_id"] . "/comments/" . $comment["comment_id"] ?>" method="POST">
                                             <input type="hidden" name="_METHOD" value="DELETE" />
@@ -71,7 +71,15 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="comment-text"><?= e($comment["comment"]) ?></p>
+                        <!-- Comment Text or Edit Form -->
+                        <div class="comment-content" id="comment-<?= e($comment["comment_id"]) ?>">
+                            <p class="comment-text"><?= e($comment["comment"]) ?></p>
+                            <form class="edit-comment-form hidden comment-form" action="<?= "/course/request/" . $request["request_id"] . "/comments/" . $comment["comment_id"] ?>" method="POST">
+                                <textarea name="comment" data-comment=<?= e($comment["comment"]) ?> required><?= e($comment["comment"]) ?></textarea>
+                                <button type="submit">Save</button>
+                                <button type="button" class="cancel-edit">Cancel</button>
+                            </form>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -87,4 +95,5 @@
 </section>
 
 <script src="/assets/js/course-requests/course-requests-action-menu.js" defer></script>
+<script src="/assets/js/course-requests/edit-comment.js" defer></script>
 <?php include $this->resolve("partials/_footer.php"); ?>
