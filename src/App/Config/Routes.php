@@ -10,6 +10,7 @@ use App\Controllers\{AlertController, AssignmentController, AuthController, Prof
 
 use App\Middleware\AuthRequiredMiddleware;
 use App\Middleware\GuestOnlyMiddleware;
+use App\Middleware\TeacherOnlyMiddleware;
 use Framework\App;
 
 function registerRoutes(App $app)
@@ -67,7 +68,7 @@ function registerRoutes(App $app)
 
     // Course Requests
     $app->get('/course/request', [PostController::class, 'courseRequest']);
-    $app->get('/course/request/create', [PostController::class, 'createCourseRequestView']);
+    $app->get('/course/request/create', [PostController::class, 'createCourseRequestView'], [TeacherOnlyMiddleware::class]);
     $app->get('/course/request/edit/{id}', [PostController::class, 'updateCourseRequestView']);
     $app->get('/course/request/{id}', [PostController::class, 'requestDetails']);
     $app->post('/course/request/create', [PostController::class, 'createCourseRequest']);
