@@ -1,6 +1,8 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
+<link rel="stylesheet" href="/assets/styles/Post/action-menu.css">
 <link rel="stylesheet" href="/assets/styles/Post/course-request-details.css">
+
 
 <section class="course-request-detail">
     <div class="back-button">
@@ -40,20 +42,34 @@
             <div class="comments-list">
                 <?php foreach ($comments as $comment): ?>
                     <div class="comment">
-                        <div class="comment-user-info">
-                            <img src="/assets/images/user.jpeg" alt="Commenter Avatar" class="comment-avatar">
-                            <div class="comment-user-details">
-                                <h5><?= e($comment["author"]) ?> </h5>
-                                <span class="comment-time">
-                                    <?= e(
-                                        $comment["updated_date"] === $comment["created_date"] ?
-                                            formatDate(e($comment["created_date"], 'F j, Y')) :
-                                            formatDate(e($comment["updated_date"], 'F j, Y'))
-                                    ) ?>
-                                </span>
-                                <?php if (e($comment["created_date"]) !== e($comment["updated_date"])): ?>
-                                    <span class="comment-edited">(edited)</span>
-                                <?php endif; ?>
+                        <div class="comment-header">
+                            <div class="comment-user-info">
+                                <img src="/assets/images/user.jpeg" alt="Commenter Avatar" class="comment-avatar">
+                                <div class="comment-user-details">
+                                    <h5><?= e($comment["author"]) ?> </h5>
+                                    <span class="comment-time">
+                                        <?= e(
+                                            $comment["updated_date"] === $comment["created_date"] ?
+                                                formatDate(e($comment["created_date"], 'F j, Y')) :
+                                                formatDate(e($comment["updated_date"], 'F j, Y'))
+                                        ) ?>
+                                    </span>
+                                    <?php if (e($comment["created_date"]) !== e($comment["updated_date"])): ?>
+                                        <span class="comment-edited">(edited)</span>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="action-menu">
+                                <button class="menu-button">⋮</button>
+                                <div class="menu-dropdown">
+                                    <?php if (true): ?>
+                                        <a href="<?= "/course/request/edit/" ?>">Edit</a>
+                                        <form action="<?= "/course/request/" ?>" method="POST">
+                                            <input type="hidden" name="_METHOD" value="DELETE" />
+                                            <button type="submit" onclick="return confirm('Are you sure you want to delete this comment?')">Delete</button>
+                                        </form>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
                         <p class="comment-text"><?= e($comment["comment"]) ?></p>
@@ -71,4 +87,5 @@
 
 </section>
 
+<script src="/assets/js/course-requests/course-requests-action-menu.js" defer></script>
 <?php include $this->resolve("partials/_footer.php"); ?>
