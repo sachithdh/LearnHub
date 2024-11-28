@@ -111,7 +111,6 @@
             <div id="moduleContainer"></div>
             <button type="button" class="create-course-add-button" id="addModuleBtn">Add Module</button>
         </div>
-        </div>
         <div class="create-course-form-group">
             <label for="courseImage">Course Thumbnail</label>
             <div class="upload-area" onclick="document.getElementById('courseImage').click()">
