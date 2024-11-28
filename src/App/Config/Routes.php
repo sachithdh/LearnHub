@@ -48,7 +48,6 @@ function registerRoutes(App $app)
     $app->get('/logout', [AuthController::class, 'logout'], [AuthRequiredMiddleware::class]);
     $app->get('/billing-and-payment', [PageController::class, 'billingAndPayment'], [AuthRequiredMiddleware::class]);
     $app->get('/mycourses', [PageController::class, 'myCourses'], [AuthRequiredMiddleware::class]);
-
     $app->get('/create-ad', [PageController::class, 'createAd'], [TeacherOnlyMiddleware::class]);
 
     // Courses

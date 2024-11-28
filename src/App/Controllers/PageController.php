@@ -18,6 +18,12 @@ class PageController
             "title" => "Home"
         ]);
     }
+    public function helpAndSupportReview()
+    {
+        echo $this->view->render('User/Admin/help_And_Support_Review.php', [
+            "title" => "help_And_Support_Review"
+        ]);
+    }
 
     public function about()
     {
