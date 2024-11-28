@@ -175,6 +175,17 @@ CREATE TABLE IF NOT EXISTS tutor_review(
     FOREIGN KEY(tutor_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
 );
+-- Reviews for courses
+CREATE TABLE IF NOT EXISTS course_review(
+    review_id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    review TEXT NOT NULL,
+    rating TINYINT UNSIGNED CHECK (rating BETWEEN 0 AND 5),
+    course_id BIGINT(20) UNSIGNED NOT NULL,
+    user_id BIGINT(20) UNSIGNED NOT NULL,
+    PRIMARY KEY(review_id),
+    FOREIGN KEY(course_id) REFERENCES courses(course_id) ON DELETE CASCADE,
+    FOREIGN KEY(user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
 
 -- Course Transaction
 CREATE TABLE IF NOT EXISTS course_transactions(

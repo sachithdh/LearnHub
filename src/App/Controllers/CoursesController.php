@@ -139,6 +139,7 @@ class CoursesController
     }
     public function regCourses()
     {
+        $reviews = $this->courseService->getReviews();
         echo $this->view->render(
             "course/demo_registered_course.php",
             [
