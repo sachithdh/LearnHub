@@ -14,7 +14,7 @@ class TeacherOnlyMiddleware implements MiddlewareInterface
             redirectTo('/login');
         }
 
-        if ($_SESSION['user_role'] != "teacher") {
+        if ($_SESSION['user_role'] != "admin" && $_SESSION['user_role'] != "teacher") {
             redirectTo('/login');
         }
 
