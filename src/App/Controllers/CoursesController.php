@@ -19,8 +19,48 @@ class CoursesController
 
     public function course()
     {
+        $page = $_GET['p'] ?? 1;
+        $page = (int) $page;
+        $length = 6;
+        $offset = ($page - 1) * $length;
+        $searchTerm = $_GET['s'] ?? null;
+        $searchFilter = $_GET['f'] ?? null;
+
+        [$courses, $courseCount] = $this->courseService->getAllCourses(
+            $length,
+            $offset
+        );
+
+        $lastPage = ceil($courseCount / $length);
+        $pages = $lastPage ? range(1, $lastPage) : [];
+
+        $pageLinks = array_map(
+            fn($pageNum) => http_build_query([
+                'p' => $pageNum,
+                's' => $searchTerm,
+                'f' => $searchFilter
+            ]),
+            $pages
+        );
+
         echo $this->view->render('course/Courses.php', [
-            "title" => "Search Course"
+            "title" => "Search Course",
+            "courses" => $courses,
+            "currentPage" => $page,
+            "previousPageQuery" => http_build_query([
+                'p' => $page - 1,
+                's' => $searchTerm,
+                'f' => $searchFilter
+            ]),
+            "lastPage" => $lastPage,
+            "nextPageQuery" => http_build_query([
+                'p' => $page + 1,
+                's' => $searchTerm,
+                'f' => $searchFilter
+            ]),
+            "pageLinks" => $pageLinks,
+            "searchTerm" => $searchTerm,
+            "searchFilter" => $searchFilter
         ]);
     }
 
@@ -53,6 +93,7 @@ class CoursesController
 
     public function createCourseView()
     {
+
         echo $this->view->render('course/CreateCourse.php', [
             "title" => "Create Course"
         ]);
@@ -139,6 +180,7 @@ class CoursesController
     }
     public function regCourses()
     {
+        $reviews = $this->courseService->getReviews();
         echo $this->view->render(
             "course/demo_registered_course.php",
             [
