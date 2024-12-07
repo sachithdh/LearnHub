@@ -90,6 +90,7 @@ function registerRoutes(App $app)
     // Assignments
     $app->get('/course/{courseId}/assignment/create', [AssignmentController::class, 'createAssignment']);
 
+    $app->get('/test', [PageController::class, 'test']);
     // Catch-all route for 404 page
     $app->get('/{any:.*}', [PageController::class, 'notFound']);
 }

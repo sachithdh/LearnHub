@@ -1,6 +1,7 @@
 <?php include $this->resolve("partials/_header.php"); ?>
 
 <link rel="stylesheet" href="/assets/styles/main.css">
+<link rel="stylesheet" href="/assets/styles/components/course-card.css">
 
 
 <section class="main">
@@ -38,7 +39,7 @@
             <section id="courses" class="courses">
                 <h2>Popular Courses</h2>
                 <hr class="line">
-                <div class="course-cards">
+                <div class="card-container">
                     <div class="search-course-card">
                         <div class="course-card-header">
                             <img src="/assets/images/dm.jpg" alt="Web Development" class="course-image">
