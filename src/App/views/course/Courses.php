@@ -2,20 +2,23 @@
 
 <head>
     <link rel="stylesheet" href="/assets/styles/Course/courses.css">
+    <link rel="stylesheet" href="/assets/styles/components/course-card.css">
 
 </head>
 
 <section class="courses-container">
-    <div class="search-container">
-        <input type="text" class="course-search-bar" placeholder="Search for courses...">
-        <button class="course-search-button"><i class="fas fa-search"></i>
-        </button>
-        <select name="search-by" class="search-by">
-            <option value="">Search By</option>
-            <option value="course">Course</option>
-            <option value="tutor">Tutor</option>
-        </select>
-    </div>
+    <form method="GET">
+        <div class="search-container">
+            <input name="s" type="text" class="course-search-bar" placeholder="Search for courses..." value="<?php echo e((string)$searchTerm); ?>">
+            <button class="course-search-button" type="submit"><i class="fas fa-search"></i>
+            </button>
+            <select name="f" class="search-by">
+                <option value="">Search By</option>
+                <option value="course" <?php echo e((string)$searchFilter === 'course' ? 'selected' : ''); ?>>Course</option>
+                <option value="tutor" <?php echo e((string)$searchFilter === 'tutor' ? 'selected' : ''); ?>>Tutor</option>
+            </select>
+        </div>
+    </form>
     <div class="course-result-container">
         <div class="left-course-container">
             <div class="filter-section">
@@ -63,179 +66,69 @@
             </div>
         </div>
         <div class="right-course-container">
-            <div class="results">
+            <div class="card-container">
                 <!-- <h3>Search Results</h3> -->
                 <!-- ..................... -->
-                <div class="search-course-card">
-                    <div class="course-card-header">
-                        <img src="/assets/images/dm.jpg" alt="Web Development" class="course-image">
-                        <h4 class="course-title">Introduction to Web Development</h4>
-                        <hr class="course-card-line" />
-                    </div>
-                    <div class="course-description">
+                <?php if (empty($courses)): ?>
+                    <h3>No results...</h3>
 
-                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, </p>
-                    </div>
-                    <div class="course-info">
-                        <div class="course-stat">
-                            <p>
-                                <i class="fa fa-star icon"></i> 4.5
-                            </p>
-                            <p>
-                                <i class="fa fa-map-marker icon"></i>
-                                Colombo
-                            </p>
-                            <p class="price">
-                                Rs. 1,500/Day
-                            </p>
-                        </div>
-                        <div class="course-meta">
-                            <div class="course-teacher">
-                                <img src="/assets/images/user.jpeg" alt="teacher" />
-                                <p>Isuru Naveen</p>
+                <?php else: ?>
+                    <?php foreach ($courses as $course): ?>
+                        <div class="search-course-card">
+                            <div class="course-card-header">
+                                <img src="/assets/images/dm.jpg" alt="Web Development" class="course-image">
+                                <h4 class="course-title"><?php echo ($course['title']); ?></h4>
+                                <hr class="course-card-line" />
                             </div>
-                            <div>
-                                <a href="/courses/demo"> See More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="search-course-card">
-                    <div class="course-card-header">
-                        <img src="/assets/images/dataSci.png" alt="Web Development" class="course-image">
-                        <h4 class="course-title">Introduction to Web Development</h4>
-                        <hr class="course-card-line" />
-                    </div>
-                    <div class="course-description">
+                            <div class="course-description">
 
-                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, </p>
-                    </div>
-                    <div class="course-info">
-                        <div class="course-stat">
-                            <p>
-                                <i class="fa fa-star icon"></i> 4.5
-                            </p>
-                            <p>
-                                <i class="fa fa-map-marker icon"></i>
-                                Colombo
-                            </p>
-                            <p class="price">
-                                Rs. 2,000/Month
-                            </p>
-                        </div>
-                        <div class="course-meta">
-                            <div class="course-teacher">
-                                <img src="/assets/images/user.jpeg" alt="teacher" />
-                                <p>Isuru Naveen</p>
+                                <p><?php echo ($course['description']); ?></p>
                             </div>
-                            <div>
-                                <a href="/courses/demo"> See More</a>
+                            <div class="course-info">
+                                <div class="course-stat">
+                                    <p>
+                                        <i class="fa fa-star icon"></i> 4.5
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-map-marker icon"></i>
+                                        Colombo
+                                    </p>
+                                    <p class="price">
+                                        Rs. <?php echo ($course['price']); ?>/<?php echo ($course['pricing_period']); ?>
+                                    </p>
+                                </div>
+                                <div class="course-meta">
+                                    <div class="course-teacher">
+                                        <img src="/assets/images/user.jpeg" alt="teacher" />
+                                        <p>Isuru Naveen</p>
+                                    </div>
+                                    <div>
+                                        <a href="/courses/demo"> See More</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+            <div class="pagination-container">
+                <?php if ($currentPage > 1) : ?>
+                    <a href="?<?php echo e($previousPageQuery); ?>" class="pagination-btn prev-btn">
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </a>
+                <?php endif; ?>
+                <div class="page-numbers">
+                    <?php foreach ($pageLinks as $pageNum => $query): ?>
+                        <a href="?<?php echo e($query); ?>" class="<?php echo $pageNum + 1 === $currentPage ? "active-page" : "" ?>">
+                            <?php echo ($pageNum + 1); ?>
+                        </a>
+                    <?php endforeach; ?>
                 </div>
-                <div class="search-course-card">
-                    <div class="course-card-header">
-                        <img src="/assets/images/intro-to-web.jpg" alt="Web Development" class="course-image">
-                        <h4 class="course-title">Introduction to Web Development</h4>
-                        <hr class="course-card-line" />
-                    </div>
-                    <div class="course-description">
-
-                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, </p>
-                    </div>
-                    <div class="course-info">
-                        <div class="course-stat">
-                            <p>
-                                <i class="fa fa-star icon"></i> 4.5
-                            </p>
-                            <p>
-                                <i class="fa fa-map-marker icon"></i>
-                                Colombo
-                            </p>
-                            <p class="price">
-                                Rs. 2,500/Month
-                            </p>
-                        </div>
-                        <div class="course-meta">
-                            <div class="course-teacher">
-                                <img src="/assets/images/user.jpeg" alt="teacher" />
-                                <p>Isuru Naveen</p>
-                            </div>
-                            <div>
-                                <a href="/courses/demo"> See More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="search-course-card">
-                    <div class="course-card-header">
-                        <img src="/assets/images/dataSci.png" alt="Web Development" class="course-image">
-                        <h4 class="course-title">Introduction to Web Development lore</h4>
-                        <hr class="course-card-line" />
-                    </div>
-                    <div class="course-description">
-
-                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae ut cumque iure sapiente eum illum eos sit iste voluptates facilis voluptate sunt ducimus eligendi molestiae, eaque illo non veniam? Repellendus? </p>
-                    </div>
-                    <div class="course-info">
-                        <div class="course-stat">
-                            <p>
-                                <i class="fa fa-star icon"></i> 4.5
-                            </p>
-                            <p>
-                                <i class="fa fa-map-marker icon"></i>
-                                Colombo
-                            </p>
-                            <p class="price">
-                                Rs. 1,000/Month
-                            </p>
-                        </div>
-                        <div class="course-meta">
-                            <div class="course-teacher">
-                                <img src="/assets/images/user.jpeg" alt="teacher" />
-                                <p>Isuru Naveen</p>
-                            </div>
-                            <div>
-                                <a href="/courses/demo"> See More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="search-course-card">
-                    <div class="course-card-header">
-                        <img src="/assets/images/dm.jpg" alt="Web Development" class="course-image">
-                        <h4 class="course-title">Introduction to Web Development</h4>
-                        <hr class="course-card-line" />
-                    </div>
-                    <div class="course-description">
-
-                        <p>Learn the basics of HTML, CSS, and JavaScript. Lorem ipsum dolor sit amet, </p>
-                    </div>
-                    <div class="course-info">
-                        <div class="course-stat">
-                            <p>
-                                <i class="fa fa-star icon"></i> 4.5
-                            </p>
-                            <p>
-                                <i class="fa fa-map-marker icon"></i>
-                                Colombo
-                            </p>
-                            <p class="price">
-                                Rs. 24,500/Course
-                            </p>
-                        </div>
-                        <div class="course-meta">
-                            <div class="course-teacher">
-                                <img src="/assets/images/user.jpeg" alt="teacher" />
-                                <p>Isuru Naveen</p>
-                            </div>
-                            <div>
-                                <a href="/courses/demo"> See More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php if ($currentPage < $lastPage): ?>
+                    <a href="?<?php echo e($nextPageQuery); ?>" class="pagination-btn next-btn" onclick="changePage(1)">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
         <script>

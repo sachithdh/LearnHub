@@ -14,8 +14,8 @@ class CourseService
     {
         $tutor_id = $_SESSION['user'];
         $this->db->query(
-            "INSERT INTO courses(title, description, subject_id, grade_id, tutor_id, start_time, end_time, day, price, pricing_period, duration)
-            VALUES (:title, :description, :subject_id, :grade_id, :tutor_id, :start_time, :end_time, :day, :price, :pricing_period, :duration)",
+            "INSERT INTO courses(title, description, subject_id, grade_id, tutor_id, start_time, end_time, day, price, pricing_period, location, thumbnail)
+            VALUES (:title, :description, :subject_id, :grade_id, :tutor_id, :start_time, :end_time, :day, :price, :pricing_period, :location, :thumbnail)",
             [
                 "title" => $formData['title'],
                 "description" => $formData['description'],
@@ -27,7 +27,8 @@ class CourseService
                 "day" => $formData['day'],
                 "price" => $formData['price'],
                 "pricing_period" => $formData['pricing_period'],
-                "duration" => $formData['duration']
+                "location" => $formData['location'],
+                "thumbnail" => "thumbnail"
             ]
         );
     }
@@ -53,11 +54,26 @@ class CourseService
             ]
         )->find();
     }
-    public function getAllCourses()
+    public function getAllCourses(int $length = 6, int $offset = 0)
     {
-        return $this->db->query(
-            "SELECT * FROM courses"
+        $searchTerm = addcslashes($_GET['s'] ?? '', '-_/');
+        $searchFilter = $_GET['f'] ?? '';
+        $params = [
+            "title" => "%{$searchTerm}%"
+        ];
+
+        $courses = $this->db->query(
+            "SELECT * FROM courses WHERE title LIKE :title
+            LIMIT {$length} OFFSET {$offset}",
+            $params
         )->findAll();
+
+        $courseCount = $this->db->query(
+            "SELECT COUNT(*) FROM courses WHERE title LIKE :title",
+            $params
+        )->count();
+
+        return [$courses, $courseCount];
     }
 
     public function update(array $formData, int $id)
